@@ -6,6 +6,10 @@ import { CreateMatchRequest } from '@/lib/types';
 export async function GET(req: NextRequest) {
   try {
     const supabase = await getServerSupabaseClient();
+    if (!supabase) {
+      return errorResponse('Supabase not configured', 503);
+    }
+
     const { searchParams } = new URL(req.url);
     const tournamentId = searchParams.get('tournament_id');
 
@@ -28,6 +32,9 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const supabase = await getServerSupabaseClient();
+    if (!supabase) {
+      return errorResponse('Supabase not configured', 503);
+    }
 
     const {
       data: { user },

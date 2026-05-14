@@ -1,16 +1,28 @@
 import { createClient } from '@supabase/supabase-js';
 import type { RBACContext, RoleType, PermissionModule, PermissionAction } from './rbac-types';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 export class RBACManager {
-  private static supabase = createClient(supabaseUrl, supabaseKey);
+  private static supabase = (supabaseUrl && supabaseKey) ? createClient(supabaseUrl, supabaseKey) : null;
 
   /**
    * Get RBAC context for current user
    */
   static async getUserRBACContext(userId: string): Promise<RBACContext | null> {
+    if (!this.supabase) {
+      // Return default viewer context if Supabase not available
+      return {
+        user_id: userId,
+        roles: ['viewer'],
+        permissions: ['tournaments:read', 'teams:read', 'players:read'],
+        is_admin: false,
+        is_super_admin: false,
+        portal: 'public',
+      };
+    }
+
     try {
       // Fetch user roles with role details
       const { data: userRoles, error: rolesError } = await this.supabase

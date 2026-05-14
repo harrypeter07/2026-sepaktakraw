@@ -10,7 +10,7 @@ import {
   UserCheck,
   Zap,
   BarChart3,
-  LogStream,
+  FileText,
   Settings,
   X,
 } from 'lucide-react'
@@ -68,7 +68,7 @@ const menuItems = [
   {
     label: 'Audit Logs',
     href: '/admin/audit-logs',
-    icon: LogStream,
+    icon: FileText,
     roles: ['super_admin'],
   },
   {

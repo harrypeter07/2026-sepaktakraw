@@ -51,7 +51,7 @@ function getPortalFromHost(host: string): PortalInfo {
   return { type: 'public' };
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.headers.get('host') || '';
   const pathname = request.nextUrl.pathname;
 
