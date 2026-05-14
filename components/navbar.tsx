@@ -1,11 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, LogOut } from 'lucide-react'
 import { useState } from 'react'
+import { useAuth } from '@/lib/auth-context'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { user, signOut } = useAuth()
 
   const navLinks = [
     { label: 'About', href: '/about' },
@@ -28,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-1">
+          <div className="hidden md:flex gap-1 items-center">
             {navLinks.map(link => (
               <Link
                 key={link.href}
@@ -38,6 +40,40 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="flex gap-2 ml-4 border-l border-primary-foreground pl-4">
+              {user ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                  >
+                    Dashboard
+                  </Link>
+                  <button
+                    onClick={() => signOut()}
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition flex items-center gap-1"
+                  >
+                    <LogOut size={16} />
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/auth/login"
+                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/auth/signup"
+                    className="px-3 py-2 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -62,6 +98,45 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="border-t border-primary-foreground pt-2 mt-2 space-y-2">
+              {user ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Dashboard
+                  </Link>
+                  <button
+                    onClick={() => {
+                      signOut()
+                      setIsOpen(false)
+                    }}
+                    className="block w-full text-left px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/auth/login"
+                    className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/auth/signup"
+                    className="block px-3 py-2 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         )}
       </div>
