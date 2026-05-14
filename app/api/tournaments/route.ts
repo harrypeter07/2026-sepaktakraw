@@ -6,6 +6,9 @@ import { CreateTournamentRequest } from '@/lib/types';
 export async function GET(req: NextRequest) {
   try {
     const supabase = await getServerSupabaseClient();
+    if (!supabase) {
+      return errorResponse('Supabase not configured', 503);
+    }
 
     const { data, error } = await supabase
       .from('tournaments')

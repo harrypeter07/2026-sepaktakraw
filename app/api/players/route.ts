@@ -6,6 +6,10 @@ import { CreatePlayerRequest } from '@/lib/types';
 export async function GET(req: NextRequest) {
   try {
     const supabase = await getServerSupabaseClient();
+    if (!supabase) {
+      return errorResponse('Supabase not configured', 503);
+    }
+
     const { searchParams } = new URL(req.url);
     const teamId = searchParams.get('team_id');
 
