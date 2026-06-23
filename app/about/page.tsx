@@ -1,5 +1,8 @@
+'use client'
+
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { PageHero } from '@/components/page-hero'
 import { Card } from '@/components/ui/card'
 
 export default function AboutPage() {
@@ -8,16 +11,12 @@ export default function AboutPage() {
       <Navbar />
       <main className="flex flex-col min-h-screen">
         {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              About Maharashtra Sepaktakraw Association
-            </h1>
-            <p className="text-xl opacity-90 text-balance">
-              Promoting excellence and growth in Southeast Asian kick-volleyball sport
-            </p>
-          </div>
-        </section>
+        <PageHero
+          imageKey="about.hero.image"
+          kicker="Who We Are"
+          title="About Maharashtra Sepaktakraw Association"
+          subtitle="Promoting excellence and growth in Southeast Asian kick-volleyball sport"
+        />
 
         {/* Mission & Vision */}
         <section className="py-16 sm:py-24 bg-card">

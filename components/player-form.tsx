@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { ImageUpload } from '@/components/image-upload'
 import { X } from 'lucide-react'
 
 interface PlayerFormProps {
@@ -19,6 +20,7 @@ export interface PlayerFormData {
   jerseyNumber: string
   height?: string
   weight?: string
+  photoUrl?: string
 }
 
 const POSITIONS = ['Spiker', 'Setter', 'Blocker', 'Libero']
@@ -32,6 +34,7 @@ export function PlayerForm({ onClose, onSubmit, initialData, teams }: PlayerForm
       jerseyNumber: '',
       height: '',
       weight: '',
+      photoUrl: '',
     }
   )
 
@@ -44,9 +47,9 @@ export function PlayerForm({ onClose, onSubmit, initialData, teams }: PlayerForm
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <Card className="w-full max-w-2xl">
-        <div className="flex items-center justify-between p-6 border-b">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-card z-10">
           <h2 className="text-2xl font-bold">
             {initialData ? 'Edit Player' : 'Add Player'}
           </h2>
@@ -59,6 +62,14 @@ export function PlayerForm({ onClose, onSubmit, initialData, teams }: PlayerForm
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <ImageUpload
+            label="Player Photo"
+            folder="players"
+            shape="avatar"
+            value={formData.photoUrl}
+            onChange={(url) => setFormData({ ...formData, photoUrl: url })}
+          />
+
           <div>
             <label className="block text-sm font-medium mb-2">Player Name</label>
             <input

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { ImageUpload } from '@/components/image-upload'
 import { X } from 'lucide-react'
 
 interface TeamFormProps {
@@ -17,6 +18,7 @@ export interface TeamFormData {
   coach: string
   playerCount: string
   established: string
+  logoUrl?: string
 }
 
 export function TeamForm({ onClose, onSubmit, initialData }: TeamFormProps) {
@@ -27,6 +29,7 @@ export function TeamForm({ onClose, onSubmit, initialData }: TeamFormProps) {
       coach: '',
       playerCount: '',
       established: new Date().getFullYear().toString(),
+      logoUrl: '',
     }
   )
 
@@ -39,9 +42,9 @@ export function TeamForm({ onClose, onSubmit, initialData }: TeamFormProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <Card className="w-full max-w-2xl">
-        <div className="flex items-center justify-between p-6 border-b">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-card z-10">
           <h2 className="text-2xl font-bold">
             {initialData ? 'Edit Team' : 'Create Team'}
           </h2>
@@ -54,6 +57,14 @@ export function TeamForm({ onClose, onSubmit, initialData }: TeamFormProps) {
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <ImageUpload
+            label="Team Logo"
+            folder="teams"
+            shape="avatar"
+            value={formData.logoUrl}
+            onChange={(url) => setFormData({ ...formData, logoUrl: url })}
+          />
+
           <div>
             <label className="block text-sm font-medium mb-2">Team Name</label>
             <input

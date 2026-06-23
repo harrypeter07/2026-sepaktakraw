@@ -2,6 +2,7 @@
 
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { PageHero } from '@/components/page-hero'
 import { Card } from '@/components/ui/card'
 import { Calendar } from 'lucide-react'
 
@@ -58,16 +59,12 @@ export default function NewsPage() {
       <Navbar />
       <main className="flex flex-col min-h-screen">
         {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              News & Updates
-            </h1>
-            <p className="text-xl opacity-90 text-balance">
-              Stay informed with the latest from Maharashtra Sepaktakraw
-            </p>
-          </div>
-        </section>
+        <PageHero
+          imageKey="news.hero.image"
+          kicker="Latest"
+          title="News & Updates"
+          subtitle="Stay informed with the latest from Maharashtra Sepaktakraw"
+        />
 
         {/* News List */}
         <section className="py-16 sm:py-24 bg-background flex-1">

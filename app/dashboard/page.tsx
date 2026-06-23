@@ -128,14 +128,19 @@ export default function DashboardPage() {
               <Card className="p-6">
                 <h2 className="text-xl font-semibold text-foreground mb-4">Admin Tools</h2>
                 <div className="space-y-3">
-                  <Link href="/admin/users">
+                  <Link href="/admin?tab=teams">
                     <Button className="w-full justify-start bg-primary text-primary-foreground hover:bg-primary/90">
-                      Manage Users
+                      Manage Teams
                     </Button>
                   </Link>
-                  <Link href="/admin/tournaments">
+                  <Link href="/admin?tab=tournaments">
                     <Button className="w-full justify-start bg-primary text-primary-foreground hover:bg-primary/90">
                       Manage Tournaments
+                    </Button>
+                  </Link>
+                  <Link href="/admin?tab=players">
+                    <Button className="w-full justify-start bg-primary text-primary-foreground hover:bg-primary/90">
+                      Manage Players
                     </Button>
                   </Link>
                 </div>

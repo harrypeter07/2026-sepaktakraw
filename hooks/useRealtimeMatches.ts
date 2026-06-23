@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Match } from '@/lib/types';
 import { RealtimeChannel } from '@supabase/supabase-js';
@@ -7,9 +7,13 @@ export function useRealtimeMatches(tournamentId?: string) {
   const [matches, setMatches] = useState<Match[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  let channel: RealtimeChannel;
+  // A ref survives re-renders so cleanup always removes the channel that was
+  // actually created (a plain `let` would be reset to undefined on every render).
+  const channelRef = useRef<RealtimeChannel | null>(null);
 
   useEffect(() => {
+    setIsLoading(true);
+
     const fetchAndSubscribe = async () => {
       try {
         // Fetch initial data
@@ -28,7 +32,7 @@ export function useRealtimeMatches(tournamentId?: string) {
         setMatches(data || []);
 
         // Subscribe to realtime changes
-        channel = supabase
+        channelRef.current = supabase
           .channel(`matches${tournamentId ? `:${tournamentId}` : ''}`)
           .on(
             'postgres_changes',
@@ -63,8 +67,9 @@ export function useRealtimeMatches(tournamentId?: string) {
     fetchAndSubscribe();
 
     return () => {
-      if (channel) {
-        supabase.removeChannel(channel);
+      if (channelRef.current) {
+        supabase.removeChannel(channelRef.current);
+        channelRef.current = null;
       }
     };
   }, [tournamentId]);

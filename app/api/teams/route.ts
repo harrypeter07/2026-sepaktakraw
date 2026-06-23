@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSupabaseClient } from '@/lib/supabase';
+import { getServerSupabaseClient } from '@/lib/supabase-server';
 import { successResponse, errorResponse, validateRequest, unauthorized } from '@/lib/api-utils';
 import { CreateTeamRequest } from '@/lib/types';
 

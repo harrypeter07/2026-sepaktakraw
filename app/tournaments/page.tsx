@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { TournamentCard } from '@/components/tournament-card'
-import { Button } from '@/components/ui/button'
+import { PageHero } from '@/components/page-hero'
 import { TournamentManager } from '@/lib/data-manager'
 
 const SAMPLE_TOURNAMENTS = [
@@ -70,13 +70,21 @@ export default function TournamentsPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const customTournaments = TournamentManager.getAll()
-    if (customTournaments.length > 0) {
-      setTournaments(customTournaments)
-    } else {
-      setTournaments(SAMPLE_TOURNAMENTS)
+    const loadTournaments = async () => {
+      try {
+        const customTournaments = await TournamentManager.getAll()
+        if (customTournaments.length > 0) {
+          setTournaments(customTournaments)
+        } else {
+          setTournaments(SAMPLE_TOURNAMENTS)
+        }
+      } catch (err) {
+        console.error('Error loading tournaments:', err)
+      } finally {
+        setIsLoaded(true)
+      }
     }
-    setIsLoaded(true)
+    loadTournaments()
   }, [])
 
   const filteredTournaments = filterStatus === 'all'
@@ -88,20 +96,16 @@ export default function TournamentsPage() {
       <Navbar />
       <main className="flex flex-col min-h-screen">
         {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              Tournaments
-            </h1>
-            <p className="text-xl opacity-90 text-balance">
-              Explore upcoming, ongoing, and completed tournaments
-            </p>
-          </div>
-        </section>
+        <PageHero
+          imageKey="tournaments.hero.image"
+          kicker="Competitions"
+          title="Tournaments"
+          subtitle="Explore upcoming, ongoing, and completed tournaments"
+        />
 
         {/* Filter */}
-        <section className="py-8 bg-card border-b">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-8 bg-card border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => setFilterStatus('all')}
@@ -149,7 +153,7 @@ export default function TournamentsPage() {
 
         {/* Tournaments Grid */}
         <section className="py-16 sm:py-24 bg-background flex-1">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {filteredTournaments.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredTournaments.map(tournament => (

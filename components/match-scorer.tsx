@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Match } from '@/lib/types';
+import { Match, MatchStatus } from '@/lib/types';
 import { Button } from './ui/button';
 
 interface MatchScorerProps {
   match: Match;
-  onUpdate: (homeScore: number, awayScore: number, status: string) => Promise<void>;
+  onUpdate: (homeScore: number, awayScore: number, status: MatchStatus) => Promise<void>;
   isAdmin?: boolean;
 }
 
@@ -27,7 +27,7 @@ export function MatchScorer({ match, onUpdate, isAdmin }: MatchScorerProps) {
     }
   };
 
-  const handleStatusChange = async (newStatus: string) => {
+  const handleStatusChange = async (newStatus: MatchStatus) => {
     setIsUpdating(true);
     try {
       await onUpdate(homeScore, awayScore, newStatus);
@@ -46,7 +46,7 @@ export function MatchScorer({ match, onUpdate, isAdmin }: MatchScorerProps) {
         {isAdmin && (
           <select
             value={status}
-            onChange={(e) => handleStatusChange(e.target.value)}
+            onChange={(e) => handleStatusChange(e.target.value as MatchStatus)}
             disabled={isUpdating}
             className="px-3 py-1 rounded border border-input text-sm font-medium"
           >

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { ImageUpload } from '@/components/image-upload'
 import { X } from 'lucide-react'
 
 interface TournamentFormProps {
@@ -18,6 +19,7 @@ export interface TournamentFormData {
   location: string
   status: 'upcoming' | 'ongoing' | 'completed'
   teamsCount: string
+  imageUrl?: string
 }
 
 export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFormProps) {
@@ -29,6 +31,7 @@ export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFor
       location: '',
       status: 'upcoming',
       teamsCount: '',
+      imageUrl: '',
     }
   )
 
@@ -41,9 +44,9 @@ export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFor
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <Card className="w-full max-w-2xl">
-        <div className="flex items-center justify-between p-6 border-b">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <Card className="w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-card z-10">
           <h2 className="text-2xl font-bold">
             {initialData ? 'Edit Tournament' : 'Create Tournament'}
           </h2>
@@ -56,6 +59,14 @@ export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFor
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <ImageUpload
+            label="Tournament Banner"
+            folder="tournaments"
+            shape="banner"
+            value={formData.imageUrl}
+            onChange={(url) => setFormData({ ...formData, imageUrl: url })}
+          />
+
           <div>
             <label className="block text-sm font-medium mb-2">Tournament Name</label>
             <input

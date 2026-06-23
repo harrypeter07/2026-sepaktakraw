@@ -3,6 +3,7 @@
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { TeamCard } from '@/components/team-card'
+import { PageHero } from '@/components/page-hero'
 import { useState, useEffect } from 'react'
 import { TeamManager } from '@/lib/data-manager'
 
@@ -63,13 +64,21 @@ export default function TeamsPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const customTeams = TeamManager.getAll()
-    if (customTeams.length > 0) {
-      setTeams(customTeams)
-    } else {
-      setTeams(SAMPLE_TEAMS)
+    const loadTeams = async () => {
+      try {
+        const customTeams = await TeamManager.getAll()
+        if (customTeams.length > 0) {
+          setTeams(customTeams)
+        } else {
+          setTeams(SAMPLE_TEAMS)
+        }
+      } catch (err) {
+        console.error('Error loading teams:', err)
+      } finally {
+        setIsLoaded(true)
+      }
     }
-    setIsLoaded(true)
+    loadTeams()
   }, [])
 
   const filteredTeams = teams.filter(team =>
@@ -82,20 +91,16 @@ export default function TeamsPage() {
       <Navbar />
       <main className="flex flex-col min-h-screen">
         {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              Teams
-            </h1>
-            <p className="text-xl opacity-90 text-balance">
-              Meet the competitive teams across Maharashtra
-            </p>
-          </div>
-        </section>
+        <PageHero
+          imageKey="teams.hero.image"
+          kicker="Competitive Clubs"
+          title="Teams"
+          subtitle="Meet the competitive teams across Maharashtra"
+        />
 
         {/* Search */}
-        <section className="py-8 bg-card border-b">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-8 bg-card border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <input
               type="text"
               placeholder="Search teams by name or location..."
@@ -108,7 +113,7 @@ export default function TeamsPage() {
 
         {/* Teams Grid */}
         <section className="py-16 sm:py-24 bg-background flex-1">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {filteredTeams.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredTeams.map(team => (

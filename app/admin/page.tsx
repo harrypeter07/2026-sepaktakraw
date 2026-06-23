@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { TournamentCard } from '@/components/tournament-card'
@@ -9,12 +10,19 @@ import { PlayerCard } from '@/components/player-card'
 import { TournamentForm, TournamentFormData } from '@/components/tournament-form'
 import { TeamForm, TeamFormData } from '@/components/team-form'
 import { PlayerForm, PlayerFormData } from '@/components/player-form'
+import { LoginCard } from '@/components/login-card'
+import { SiteSettingsManager } from '@/components/site-settings-manager'
 import { TournamentManager, TeamManager, PlayerManager, Tournament, Team, Player } from '@/lib/data-manager'
 import { Button } from '@/components/ui/button'
-import { Plus, Trash2, Edit2 } from 'lucide-react'
+import { Plus, Trash2, Edit2, ShieldAlert } from 'lucide-react'
+import { useAuth } from '@/lib/auth-context'
+import { FEATURE_FLAGS } from '@/lib/feature-flags'
+
+type AdminTab = 'tournaments' | 'teams' | 'players' | 'site'
 
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState<'tournaments' | 'teams' | 'players'>('tournaments')
+  const { user, isLoading } = useAuth()
+  const [activeTab, setActiveTab] = useState<AdminTab>('tournaments')
   const [tournaments, setTournaments] = useState<Tournament[]>([])
   const [teams, setTeams] = useState<Team[]>([])
   const [players, setPlayers] = useState<Player[]>([])
@@ -28,65 +36,281 @@ export default function AdminPage() {
   const [editingTeam, setEditingTeam] = useState<Team | undefined>()
   const [editingPlayer, setEditingPlayer] = useState<Player | undefined>()
 
-  // Load data
+  // 1. Tab Selection from Search Params
   useEffect(() => {
-    setTournaments(TournamentManager.getAll())
-    setTeams(TeamManager.getAll())
-    setPlayers(PlayerManager.getAll())
-    setIsLoaded(true)
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      const tabParam = params.get('tab')
+      if (
+        tabParam === 'teams' ||
+        tabParam === 'players' ||
+        tabParam === 'tournaments' ||
+        tabParam === 'site'
+      ) {
+        setActiveTab(tabParam)
+      }
+    }
   }, [])
 
+  // Load data
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const [tournamentsData, teamsData, playersData] = await Promise.all([
+          TournamentManager.getAll(),
+          TeamManager.getAll(),
+          PlayerManager.getAll()
+        ])
+        setTournaments(tournamentsData)
+        setTeams(teamsData)
+        setPlayers(playersData)
+      } catch (error) {
+        console.error('Error loading data:', error)
+      } finally {
+        setIsLoaded(true)
+      }
+    }
+
+    if (!FEATURE_FLAGS.USE_SUPABASE) {
+      loadData()
+    } else if (user && user.role === 'admin') {
+      loadData()
+    } else if (!isLoading) {
+      setIsLoaded(true)
+    }
+  }, [user, isLoading])
+
   // Tournament handlers
-  const handleAddTournament = (data: TournamentFormData) => {
-    const newTournament = TournamentManager.add({
-      name: data.name,
-      startDate: data.startDate,
-      endDate: data.endDate,
-      location: data.location,
-      status: data.status,
-      teamsCount: parseInt(data.teamsCount),
-    })
-    setTournaments([...tournaments, newTournament])
+  const handleAddTournament = async (data: TournamentFormData) => {
+    try {
+      const newTournament = await TournamentManager.add({
+        name: data.name,
+        startDate: data.startDate,
+        endDate: data.endDate,
+        location: data.location,
+        status: data.status as any,
+        teamsCount: parseInt(data.teamsCount),
+        imageUrl: data.imageUrl,
+      })
+      setTournaments([...tournaments, newTournament])
+    } catch (err) {
+      alert('Failed to add tournament')
+    }
   }
 
-  const handleDeleteTournament = (id: string) => {
-    TournamentManager.delete(id)
-    setTournaments(tournaments.filter(t => t.id !== id))
+  const handleTournamentSubmit = async (data: TournamentFormData) => {
+    if (editingTournament) {
+      try {
+        await TournamentManager.update(editingTournament.id, {
+          name: data.name,
+          startDate: data.startDate,
+          endDate: data.endDate,
+          location: data.location,
+          status: data.status as any,
+          teamsCount: parseInt(data.teamsCount),
+          imageUrl: data.imageUrl,
+        })
+        setTournaments(tournaments.map(t => t.id === editingTournament.id ? {
+          ...t,
+          name: data.name,
+          startDate: data.startDate,
+          endDate: data.endDate,
+          location: data.location,
+          status: data.status as any,
+          teamsCount: parseInt(data.teamsCount),
+          imageUrl: data.imageUrl,
+        } : t))
+      } catch (err) {
+        alert('Failed to update tournament')
+      }
+    } else {
+      await handleAddTournament(data)
+    }
+    setShowTournamentForm(false)
+    setEditingTournament(undefined)
+  }
+
+  const handleDeleteTournament = async (id: string) => {
+    if (confirm('Are you sure you want to delete this tournament?')) {
+      try {
+        await TournamentManager.delete(id)
+        setTournaments(tournaments.filter(t => t.id !== id))
+      } catch (err) {
+        alert('Failed to delete tournament')
+      }
+    }
   }
 
   // Team handlers
-  const handleAddTeam = (data: TeamFormData) => {
-    const newTeam = TeamManager.add({
-      name: data.name,
-      location: data.location,
-      coach: data.coach,
-      playerCount: parseInt(data.playerCount),
-      established: data.established,
-    })
-    setTeams([...teams, newTeam])
+  const handleAddTeam = async (data: TeamFormData) => {
+    try {
+      const newTeam = await TeamManager.add({
+        name: data.name,
+        location: data.location,
+        coach: data.coach,
+        playerCount: parseInt(data.playerCount) || 0,
+        established: data.established,
+        logoUrl: data.logoUrl,
+      })
+      setTeams([...teams, newTeam])
+    } catch (err) {
+      alert('Failed to add team')
+    }
   }
 
-  const handleDeleteTeam = (id: string) => {
-    TeamManager.delete(id)
-    setTeams(teams.filter(t => t.id !== id))
+  const handleTeamSubmit = async (data: TeamFormData) => {
+    if (editingTeam) {
+      try {
+        await TeamManager.update(editingTeam.id, {
+          name: data.name,
+          location: data.location,
+          coach: data.coach,
+          established: data.established,
+          logoUrl: data.logoUrl,
+        })
+        setTeams(teams.map(t => t.id === editingTeam.id ? {
+          ...t,
+          name: data.name,
+          location: data.location,
+          coach: data.coach,
+          established: data.established,
+          logoUrl: data.logoUrl,
+        } : t))
+      } catch (err) {
+        alert('Failed to update team')
+      }
+    } else {
+      await handleAddTeam(data)
+    }
+    setShowTeamForm(false)
+    setEditingTeam(undefined)
+  }
+
+  const handleDeleteTeam = async (id: string) => {
+    if (confirm('Are you sure you want to delete this team?')) {
+      try {
+        await TeamManager.delete(id)
+        setTeams(teams.filter(t => t.id !== id))
+      } catch (err) {
+        alert('Failed to delete team')
+      }
+    }
   }
 
   // Player handlers
-  const handleAddPlayer = (data: PlayerFormData) => {
-    const newPlayer = PlayerManager.add({
-      name: data.name,
-      position: data.position,
-      team: data.team,
-      jerseyNumber: parseInt(data.jerseyNumber),
-      height: data.height,
-      weight: data.weight,
-    })
-    setPlayers([...players, newPlayer])
+  const handleAddPlayer = async (data: PlayerFormData) => {
+    try {
+      const newPlayer = await PlayerManager.add({
+        name: data.name,
+        position: data.position,
+        team: data.team,
+        jerseyNumber: parseInt(data.jerseyNumber),
+        height: data.height,
+        weight: data.weight,
+        photoUrl: data.photoUrl,
+      })
+      setPlayers([...players, newPlayer])
+    } catch (err) {
+      alert('Failed to add player')
+    }
   }
 
-  const handleDeletePlayer = (id: string) => {
-    PlayerManager.delete(id)
-    setPlayers(players.filter(p => p.id !== id))
+  const handlePlayerSubmit = async (data: PlayerFormData) => {
+    if (editingPlayer) {
+      try {
+        await PlayerManager.update(editingPlayer.id, {
+          name: data.name,
+          position: data.position,
+          team: data.team,
+          jerseyNumber: parseInt(data.jerseyNumber),
+          height: data.height,
+          weight: data.weight,
+          photoUrl: data.photoUrl,
+        })
+        setPlayers(players.map(p => p.id === editingPlayer.id ? {
+          ...p,
+          name: data.name,
+          position: data.position,
+          team: data.team,
+          jerseyNumber: parseInt(data.jerseyNumber),
+          height: data.height,
+          weight: data.weight,
+          photoUrl: data.photoUrl,
+        } : p))
+      } catch (err) {
+        alert('Failed to update player')
+      }
+    } else {
+      await handleAddPlayer(data)
+    }
+    setShowPlayerForm(false)
+    setEditingPlayer(undefined)
+  }
+
+  const handleDeletePlayer = async (id: string) => {
+    if (confirm('Are you sure you want to delete this player?')) {
+      try {
+        await PlayerManager.delete(id)
+        setPlayers(players.filter(p => p.id !== id))
+      } catch (err) {
+        alert('Failed to delete player')
+      }
+    }
+  }
+
+  if (FEATURE_FLAGS.USE_SUPABASE && isLoading) {
+    return (
+      <>
+        <Navbar />
+        <div className="flex items-center justify-center h-screen">
+          <p className="text-muted-foreground">Loading authorization...</p>
+        </div>
+        <Footer />
+      </>
+    )
+  }
+
+  // Not signed in → show the login form inline (no public login button anywhere).
+  if (FEATURE_FLAGS.USE_SUPABASE && !user) {
+    return (
+      <>
+        <Navbar />
+        <main className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-20">
+          <span className="kicker mb-4 justify-center">Restricted Area</span>
+          <h1 className="mb-8 text-center text-3xl font-bold">Admin Sign-In</h1>
+          <LoginCard title="Admin Access" subtitle="Sign in with an administrator account to continue." />
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  // Signed in but not an admin → access denied.
+  if (FEATURE_FLAGS.USE_SUPABASE && user!.role !== 'admin') {
+    return (
+      <>
+        <Navbar />
+        <main className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-20 text-center">
+          <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-full bg-destructive/15 text-destructive">
+            <ShieldAlert className="h-7 w-7" />
+          </div>
+          <h1 className="mb-3 text-3xl font-bold">Access Denied</h1>
+          <p className="mb-8 max-w-md text-muted-foreground">
+            Your account doesn’t have administrator permissions. If you believe this is a
+            mistake, contact a site administrator.
+          </p>
+          <div className="flex gap-3">
+            <Button asChild>
+              <Link href="/">Back to Home</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/dashboard">Go to Dashboard</Link>
+            </Button>
+          </div>
+        </main>
+        <Footer />
+      </>
+    )
   }
 
   if (!isLoaded) {
@@ -94,7 +318,7 @@ export default function AdminPage() {
       <>
         <Navbar />
         <div className="flex items-center justify-center h-screen">
-          <p className="text-muted-foreground">Loading...</p>
+          <p className="text-muted-foreground">Loading data...</p>
         </div>
         <Footer />
       </>
@@ -151,6 +375,16 @@ export default function AdminPage() {
                 }`}
               >
                 Players ({players.length})
+              </button>
+              <button
+                onClick={() => setActiveTab('site')}
+                className={`px-4 py-3 font-medium transition border-b-2 ${
+                  activeTab === 'site'
+                    ? 'border-accent text-accent'
+                    : 'border-transparent text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Site Images
               </button>
             </div>
 
@@ -295,6 +529,8 @@ export default function AdminPage() {
                 )}
               </div>
             )}
+
+            {activeTab === 'site' && <SiteSettingsManager />}
           </div>
         </section>
 
@@ -305,7 +541,7 @@ export default function AdminPage() {
               setShowTournamentForm(false)
               setEditingTournament(undefined)
             }}
-            onSubmit={handleAddTournament}
+            onSubmit={handleTournamentSubmit}
             initialData={editingTournament ? {
               name: editingTournament.name,
               startDate: editingTournament.startDate,
@@ -313,6 +549,7 @@ export default function AdminPage() {
               location: editingTournament.location,
               status: editingTournament.status,
               teamsCount: editingTournament.teamsCount.toString(),
+              imageUrl: editingTournament.imageUrl || '',
             } : undefined}
           />
         )}
@@ -323,13 +560,14 @@ export default function AdminPage() {
               setShowTeamForm(false)
               setEditingTeam(undefined)
             }}
-            onSubmit={handleAddTeam}
+            onSubmit={handleTeamSubmit}
             initialData={editingTeam ? {
               name: editingTeam.name,
               location: editingTeam.location,
               coach: editingTeam.coach,
               playerCount: editingTeam.playerCount.toString(),
               established: editingTeam.established,
+              logoUrl: editingTeam.logoUrl || '',
             } : undefined}
           />
         )}
@@ -340,7 +578,7 @@ export default function AdminPage() {
               setShowPlayerForm(false)
               setEditingPlayer(undefined)
             }}
-            onSubmit={handleAddPlayer}
+            onSubmit={handlePlayerSubmit}
             teams={teams.map(t => t.name)}
             initialData={editingPlayer ? {
               name: editingPlayer.name,
@@ -349,6 +587,7 @@ export default function AdminPage() {
               jerseyNumber: editingPlayer.jerseyNumber.toString(),
               height: editingPlayer.height,
               weight: editingPlayer.weight,
+              photoUrl: editingPlayer.photoUrl,
             } : undefined}
           />
         )}

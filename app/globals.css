@@ -4,39 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.98 0.001 0);
-  --foreground: oklch(0.15 0.01 280);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.01 280);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.01 280);
-  --primary: oklch(0.3 0.15 280);
-  --primary-foreground: oklch(0.95 0.01 0);
-  --secondary: oklch(0.55 0.18 40);
-  --secondary-foreground: oklch(0.98 0.001 0);
-  --muted: oklch(0.92 0.01 0);
-  --muted-foreground: oklch(0.45 0.02 280);
-  --accent: oklch(0.58 0.2 40);
-  --accent-foreground: oklch(0.98 0.001 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.01 0);
-  --input: oklch(0.96 0.01 0);
-  --ring: oklch(0.3 0.15 280);
-  --chart-1: oklch(0.3 0.15 280);
-  --chart-2: oklch(0.58 0.2 40);
-  --chart-3: oklch(0.4 0.1 200);
-  --chart-4: oklch(0.55 0.15 150);
-  --chart-5: oklch(0.65 0.12 70);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.98 0.001 0);
-  --sidebar-foreground: oklch(0.15 0.01 280);
-  --sidebar-primary: oklch(0.3 0.15 280);
-  --sidebar-primary-foreground: oklch(0.98 0.001 0);
-  --sidebar-accent: oklch(0.58 0.2 40);
-  --sidebar-accent-foreground: oklch(0.15 0.01 280);
-  --sidebar-border: oklch(0.9 0.01 0);
-  --sidebar-ring: oklch(0.3 0.15 280);
+  /* Bold sporty theme — deep navy base + electric orange accent.
+     This is the rendered theme (no dark-mode toggle is wired, so :root is what ships). */
+  --background: oklch(0.16 0.03 264);
+  --foreground: oklch(0.97 0.01 250);
+  --card: oklch(0.21 0.035 264);
+  --card-foreground: oklch(0.97 0.01 250);
+  --popover: oklch(0.21 0.035 264);
+  --popover-foreground: oklch(0.97 0.01 250);
+  --primary: oklch(0.22 0.04 264);
+  --primary-foreground: oklch(0.98 0.01 250);
+  --secondary: oklch(0.3 0.04 264);
+  --secondary-foreground: oklch(0.97 0.01 250);
+  --muted: oklch(0.26 0.03 264);
+  --muted-foreground: oklch(0.72 0.02 260);
+  --accent: oklch(0.72 0.19 45);
+  --accent-foreground: oklch(0.16 0.03 264);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.3 0.03 264);
+  --input: oklch(0.24 0.03 264);
+  --ring: oklch(0.72 0.19 45);
+  --chart-1: oklch(0.72 0.19 45);
+  --chart-2: oklch(0.62 0.16 230);
+  --chart-3: oklch(0.68 0.16 160);
+  --chart-4: oklch(0.7 0.15 90);
+  --chart-5: oklch(0.6 0.2 330);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.18 0.03 264);
+  --sidebar-foreground: oklch(0.97 0.01 250);
+  --sidebar-primary: oklch(0.72 0.19 45);
+  --sidebar-primary-foreground: oklch(0.16 0.03 264);
+  --sidebar-accent: oklch(0.72 0.19 45);
+  --sidebar-accent-foreground: oklch(0.16 0.03 264);
+  --sidebar-border: oklch(0.3 0.03 264);
+  --sidebar-ring: oklch(0.72 0.19 45);
 }
 
 .dark {
@@ -121,5 +123,56 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* --- Bold sporty helpers ----------------------------------------------- */
+
+/* Small uppercase accent label that sits above headings ("kicker"). */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.kicker::before {
+  content: '';
+  width: 1.75rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* Diagonal bottom edge for hero / banner sections. */
+.clip-angle-b {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+
+/* Subtle radial spotlight used behind dark sections. */
+.spotlight {
+  background-image: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    color-mix(in oklch, var(--accent) 16%, transparent),
+    transparent 70%
+  );
+}
+
+/* Animated count-up entrance for stat numbers (respects reduced motion). */
+@media (prefers-reduced-motion: no-preference) {
+  .rise-in {
+    animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -8,6 +8,7 @@ interface TeamCardProps {
   coach: string
   playerCount: number
   established: string
+  logoUrl?: string
 }
 
 export function TeamCard({
@@ -16,31 +17,53 @@ export function TeamCard({
   coach,
   playerCount,
   established,
+  logoUrl,
 }: TeamCardProps) {
-  return (
-    <Card className="p-6 hover:shadow-lg transition">
-      <h3 className="text-xl font-bold mb-4">{name}</h3>
+  const initials = name
+    .split(' ')
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase()
 
-      <div className="space-y-3 mb-4">
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <MapPin size={16} />
-          <span className="text-sm">{location}</span>
+  return (
+    <Card className="group overflow-hidden p-0 transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
+      {/* Header with logo */}
+      <div className="flex items-center gap-4 bg-gradient-to-r from-primary to-primary/80 p-6 text-primary-foreground">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent text-lg font-bold text-accent-foreground ring-2 ring-primary-foreground/30">
+          {logoUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={logoUrl} alt={name} className="h-full w-full object-cover" />
+          ) : (
+            initials
+          )}
         </div>
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Users size={16} />
-          <span className="text-sm">{playerCount} players</span>
-        </div>
-        <div className="text-muted-foreground text-sm">
-          <strong>Coach:</strong> {coach}
-        </div>
-        <div className="text-muted-foreground text-sm">
-          <strong>Est.:</strong> {established}
-        </div>
+        <h3 className="text-xl font-bold text-balance leading-tight">{name}</h3>
       </div>
 
-      <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-2 rounded-md font-medium transition text-sm">
-        View Roster
-      </button>
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-6">
+        <div className="space-y-3 mb-5 flex-1">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <MapPin size={16} className="text-accent shrink-0" />
+            <span className="text-sm">{location}</span>
+          </div>
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Users size={16} className="text-accent shrink-0" />
+            <span className="text-sm">{playerCount} players</span>
+          </div>
+          <div className="text-muted-foreground text-sm">
+            <strong>Coach:</strong> {coach}
+          </div>
+          <div className="text-muted-foreground text-sm">
+            <strong>Est.:</strong> {established}
+          </div>
+        </div>
+
+        <button className="w-full rounded-md bg-primary py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90">
+          View Roster
+        </button>
+      </div>
     </Card>
   )
 }

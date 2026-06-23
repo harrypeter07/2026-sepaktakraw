@@ -1,13 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import { Menu, X, LogOut } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { Menu, X, LogOut, LayoutDashboard } from 'lucide-react'
 import { useState } from 'react'
 import { useAuth } from '@/lib/auth-context'
+import { useSiteSettings } from '@/lib/site-settings'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { user, signOut } = useAuth()
+  const { img } = useSiteSettings()
+  const pathname = usePathname()
+  const logo = img('site.logo')
 
   const navLinks = [
     { label: 'About', href: '/about' },
@@ -17,15 +22,23 @@ export default function Navbar() {
     { label: 'News', href: '/news' },
   ]
 
+  const isActive = (href: string) =>
+    pathname === href || (href !== '/' && pathname?.startsWith(href))
+
   return (
     <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition">
-            <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-primary font-bold">SK</span>
-            </div>
+            {logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={logo} alt="MSA logo" className="h-9 w-9 rounded-lg object-cover shadow-sm" />
+            ) : (
+              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-accent-foreground font-bold">SK</span>
+              </div>
+            )}
             <span className="hidden sm:inline">MSA</span>
           </Link>
 
@@ -35,51 +48,40 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition ${
+                  isActive(link.href)
+                    ? 'bg-primary-foreground/15 text-primary-foreground'
+                    : 'text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-primary-foreground'
+                }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex gap-2 ml-4 border-l border-primary-foreground pl-4">
-              {user ? (
-                <>
-                  <Link
-                    href="/dashboard"
-                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
-                  >
-                    Dashboard
-                  </Link>
-                  <button
-                    onClick={() => signOut()}
-                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition flex items-center gap-1"
-                  >
-                    <LogOut size={16} />
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/auth/login"
-                    className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/auth/signup"
-                    className="px-3 py-2 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition"
-                  >
-                    Sign Up
-                  </Link>
-                </>
-              )}
-            </div>
+            {user && (
+              <div className="flex gap-2 ml-4 border-l border-primary-foreground/30 pl-4">
+                <Link
+                  href="/dashboard"
+                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition flex items-center gap-1.5"
+                >
+                  <LayoutDashboard size={16} />
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="px-3 py-2 rounded-md text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 transition flex items-center gap-1.5"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-primary-foreground hover:text-primary transition"
+            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-md hover:bg-primary-foreground/10 transition"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -87,56 +89,43 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2">
+          <div className="md:hidden pb-4 space-y-1">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
+                className={`block px-3 py-2 rounded-md text-sm font-medium transition ${
+                  isActive(link.href)
+                    ? 'bg-primary-foreground/15'
+                    : 'hover:bg-primary-foreground/10'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="border-t border-primary-foreground pt-2 mt-2 space-y-2">
-              {user ? (
-                <>
-                  <Link
-                    href="/dashboard"
-                    className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <button
-                    onClick={() => {
-                      signOut()
-                      setIsOpen(false)
-                    }}
-                    className="block w-full text-left px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
-                  >
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/auth/login"
-                    className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground hover:text-primary transition"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/auth/signup"
-                    className="block px-3 py-2 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:opacity-90 transition"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Sign Up
-                  </Link>
-                </>
-              )}
-            </div>
+            {user && (
+              <div className="border-t border-primary-foreground/20 pt-2 mt-2 space-y-1">
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <LayoutDashboard size={16} />
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => {
+                    signOut()
+                    setIsOpen(false)
+                  }}
+                  className="flex w-full items-center gap-2 px-3 py-2 rounded-md text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 transition"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

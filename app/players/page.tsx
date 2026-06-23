@@ -4,16 +4,17 @@ import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { PlayerCard } from '@/components/player-card'
-import { PlayerManager } from '@/lib/data-manager'
+import { PageHero } from '@/components/page-hero'
+import { PlayerManager, Player } from '@/lib/data-manager'
 
-const SAMPLE_PLAYERS = [
+const SAMPLE_PLAYERS: Player[] = [
   {
     id: '1',
     name: 'Rajesh Kumar',
     position: 'Spiker',
     team: 'Mumbai Strikers',
     jerseyNumber: 7,
-    height: '6&apos;2"',
+    height: `6'2"`,
     weight: '82 kg',
   },
   {
@@ -22,7 +23,7 @@ const SAMPLE_PLAYERS = [
     position: 'Setter',
     team: 'Pune Eagles',
     jerseyNumber: 3,
-    height: '5&apos;8"',
+    height: `5'8"`,
     weight: '65 kg',
   },
   {
@@ -31,7 +32,7 @@ const SAMPLE_PLAYERS = [
     position: 'Blocker',
     team: 'Nagpur Titans',
     jerseyNumber: 12,
-    height: '6&apos;3"',
+    height: `6'3"`,
     weight: '88 kg',
   },
   {
@@ -40,7 +41,7 @@ const SAMPLE_PLAYERS = [
     position: 'Libero',
     team: 'Thane Champions',
     jerseyNumber: 1,
-    height: '5&apos;6"',
+    height: `5'6"`,
     weight: '62 kg',
   },
   {
@@ -49,7 +50,7 @@ const SAMPLE_PLAYERS = [
     position: 'Spiker',
     team: 'Aurangabad Warriors',
     jerseyNumber: 8,
-    height: '6&apos;1"',
+    height: `6'1"`,
     weight: '80 kg',
   },
   {
@@ -58,7 +59,7 @@ const SAMPLE_PLAYERS = [
     position: 'Setter',
     team: 'Nashik Blazers',
     jerseyNumber: 2,
-    height: '5&apos;10"',
+    height: `5'10"`,
     weight: '70 kg',
   },
   {
@@ -67,7 +68,7 @@ const SAMPLE_PLAYERS = [
     position: 'Blocker',
     team: 'Mumbai Strikers',
     jerseyNumber: 11,
-    height: '5&apos;11"',
+    height: `5'11"`,
     weight: '75 kg',
   },
   {
@@ -76,7 +77,7 @@ const SAMPLE_PLAYERS = [
     position: 'Libero',
     team: 'Pune Eagles',
     jerseyNumber: 4,
-    height: '5&apos;9"',
+    height: `5'9"`,
     weight: '68 kg',
   },
   {
@@ -85,7 +86,7 @@ const SAMPLE_PLAYERS = [
     position: 'Spiker',
     team: 'Nagpur Titans',
     jerseyNumber: 5,
-    height: '5&apos;10"',
+    height: `5'10"`,
     weight: '72 kg',
   },
 ]
@@ -97,13 +98,21 @@ export default function PlayersPage() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const customPlayers = PlayerManager.getAll()
-    if (customPlayers.length > 0) {
-      setPlayers(customPlayers)
-    } else {
-      setPlayers(SAMPLE_PLAYERS)
+    const loadPlayers = async () => {
+      try {
+        const customPlayers = await PlayerManager.getAll()
+        if (customPlayers.length > 0) {
+          setPlayers(customPlayers)
+        } else {
+          setPlayers(SAMPLE_PLAYERS)
+        }
+      } catch (err) {
+        console.error('Error loading players:', err)
+      } finally {
+        setIsLoaded(true)
+      }
     }
-    setIsLoaded(true)
+    loadPlayers()
   }, [])
 
   const positions = ['Spiker', 'Setter', 'Blocker', 'Libero']
@@ -120,20 +129,16 @@ export default function PlayersPage() {
       <Navbar />
       <main className="flex flex-col min-h-screen">
         {/* Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-balance">
-              Players
-            </h1>
-            <p className="text-xl opacity-90 text-balance">
-              Discover elite Sepaktakraw athletes
-            </p>
-          </div>
-        </section>
+        <PageHero
+          imageKey="players.hero.image"
+          kicker="Elite Athletes"
+          title="Players"
+          subtitle="Discover elite Sepaktakraw athletes"
+        />
 
         {/* Filters */}
-        <section className="py-8 bg-card border-b">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-8 bg-card border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Filter by Position</label>
@@ -167,7 +172,7 @@ export default function PlayersPage() {
 
         {/* Players Grid */}
         <section className="py-16 sm:py-24 bg-background flex-1">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {filteredPlayers.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPlayers.map(player => (
