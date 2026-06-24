@@ -10,7 +10,7 @@ import { useSiteSettings } from '@/lib/site-settings'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { user, signOut } = useAuth()
-  const { img } = useSiteSettings()
+  const { img, txt } = useSiteSettings()
   const pathname = usePathname()
   const logo = img('site.logo')
 
@@ -20,6 +20,7 @@ export default function Navbar() {
     { label: 'Teams', href: '/teams' },
     { label: 'Players', href: '/players' },
     { label: 'News', href: '/news' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   const isActive = (href: string) =>
@@ -39,7 +40,7 @@ export default function Navbar() {
                 <span className="text-accent-foreground font-bold">SK</span>
               </div>
             )}
-            <span className="hidden sm:inline">MSA</span>
+            <span className="hidden sm:inline">{txt('site.navbar_brand', 'MSA')}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,7 +61,7 @@ export default function Navbar() {
             {user && (
               <div className="flex gap-2 ml-4 border-l border-primary-foreground/30 pl-4">
                 <Link
-                  href="/dashboard"
+                  href="/admin"
                   className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition flex items-center gap-1.5"
                 >
                   <LayoutDashboard size={16} />
@@ -107,7 +108,7 @@ export default function Navbar() {
             {user && (
               <div className="border-t border-primary-foreground/20 pt-2 mt-2 space-y-1">
                 <Link
-                  href="/dashboard"
+                  href="/admin"
                   className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition"
                   onClick={() => setIsOpen(false)}
                 >

@@ -204,3 +204,54 @@ export interface PaginatedResponse<T> {
   page_size: number;
   total_pages: number;
 }
+
+export type ContactCategory = 'general' | 'join_team' | 'tournament_inquiry' | 'sponsorship' | 'other';
+export type ContactStatus = 'pending' | 'read' | 'archived';
+
+export interface ContactResponse {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  category: ContactCategory;
+  subject: string;
+  message: string;
+  status: ContactStatus;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CreateContactRequest {
+  name: string;
+  email: string;
+  phone?: string;
+  category: ContactCategory;
+  subject: string;
+  message: string;
+}
+
+export interface FormField {
+  id: string;
+  label: string;
+  type: 'text' | 'number' | 'email' | 'textarea' | 'select';
+  required: boolean;
+  options?: string[];
+  placeholder?: string;
+}
+
+export interface FormSchema {
+  id: string;
+  title: string;
+  fields: FormField[];
+}
+
+export interface FormSubmission {
+  id: string;
+  form_id: string;
+  answers: Record<string, any>;
+  status: ContactStatus;
+  created_at: string;
+  updated_at: string;
+}
+
+

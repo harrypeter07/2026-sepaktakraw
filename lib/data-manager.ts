@@ -1,5 +1,6 @@
 import { FEATURE_FLAGS } from './feature-flags'
 import { supabase } from './supabase'
+import { ContactResponse, ContactStatus, FormSubmission } from './types'
 
 // Types
 export interface Tournament {
@@ -39,10 +40,218 @@ const TOURNAMENTS_KEY = 'msa_tournaments'
 const TEAMS_KEY = 'msa_teams'
 const PLAYERS_KEY = 'msa_players'
 
+const SAMPLE_TOURNAMENTS: Tournament[] = [
+  {
+    id: '1',
+    name: 'Maharashtra Premier League 2025',
+    startDate: 'Jan 15',
+    endDate: 'Feb 28',
+    location: 'Mumbai, Maharashtra',
+    status: 'ongoing',
+    teamsCount: 12,
+  },
+  {
+    id: '2',
+    name: 'University Championship',
+    startDate: 'Mar 1',
+    endDate: 'Mar 20',
+    location: 'Pune, Maharashtra',
+    status: 'upcoming',
+    teamsCount: 18,
+  },
+  {
+    id: '3',
+    name: 'Regional Cup 2024',
+    startDate: 'Oct 10',
+    endDate: 'Nov 15',
+    location: 'Nagpur, Maharashtra',
+    status: 'completed',
+    teamsCount: 16,
+  },
+  {
+    id: '4',
+    name: 'Youth Development Cup',
+    startDate: 'Apr 5',
+    endDate: 'Apr 25',
+    location: 'Aurangabad, Maharashtra',
+    status: 'upcoming',
+    teamsCount: 14,
+  },
+  {
+    id: '5',
+    name: 'Intercity Challenge',
+    startDate: 'May 1',
+    endDate: 'May 30',
+    location: 'Thane, Maharashtra',
+    status: 'upcoming',
+    teamsCount: 10,
+  },
+  {
+    id: '6',
+    name: 'Winter Championship 2024',
+    startDate: 'Dec 1',
+    endDate: 'Dec 20',
+    location: 'Mumbai, Maharashtra',
+    status: 'completed',
+    teamsCount: 20,
+  },
+]
+
+const SAMPLE_TEAMS: Team[] = [
+  {
+    id: '1',
+    name: 'Mumbai Strikers',
+    location: 'Mumbai',
+    coach: 'Rajesh Kumar',
+    playerCount: 14,
+    established: '2020',
+  },
+  {
+    id: '2',
+    name: 'Pune Eagles',
+    location: 'Pune',
+    coach: 'Priya Sharma',
+    playerCount: 16,
+    established: '2019',
+  },
+  {
+    id: '3',
+    name: 'Nagpur Titans',
+    location: 'Nagpur',
+    coach: 'Arun Desai',
+    playerCount: 15,
+    established: '2021',
+  },
+  {
+    id: '4',
+    name: 'Aurangabad Warriors',
+    location: 'Aurangabad',
+    coach: 'Vikram Singh',
+    playerCount: 13,
+    established: '2022',
+  },
+  {
+    id: '5',
+    name: 'Thane Champions',
+    location: 'Thane',
+    coach: 'Neha Patel',
+    playerCount: 14,
+    established: '2020',
+  },
+  {
+    id: '6',
+    name: 'Nashik Blazers',
+    location: 'Nashik',
+    coach: 'Arjun Verma',
+    playerCount: 12,
+    established: '2023',
+  },
+]
+
+const SAMPLE_PLAYERS: Player[] = [
+  {
+    id: '1',
+    name: 'Rajesh Kumar',
+    position: 'Spiker',
+    team: 'Mumbai Strikers',
+    jerseyNumber: 7,
+    height: `6'2"`,
+    weight: '82 kg',
+  },
+  {
+    id: '2',
+    name: 'Priya Sharma',
+    position: 'Setter',
+    team: 'Pune Eagles',
+    jerseyNumber: 3,
+    height: `5'8"`,
+    weight: '65 kg',
+  },
+  {
+    id: '3',
+    name: 'Arun Desai',
+    position: 'Blocker',
+    team: 'Nagpur Titans',
+    jerseyNumber: 12,
+    height: `6'3"`,
+    weight: '88 kg',
+  },
+  {
+    id: '4',
+    name: 'Neha Patel',
+    position: 'Libero',
+    team: 'Thane Champions',
+    jerseyNumber: 1,
+    height: `5'6"`,
+    weight: '62 kg',
+  },
+  {
+    id: '5',
+    name: 'Vikram Singh',
+    position: 'Spiker',
+    team: 'Aurangabad Warriors',
+    jerseyNumber: 8,
+    height: `6'1"`,
+    weight: '80 kg',
+  },
+  {
+    id: '6',
+    name: 'Arjun Verma',
+    position: 'Setter',
+    team: 'Nashik Blazers',
+    jerseyNumber: 2,
+    height: `5'10"`,
+    weight: '70 kg',
+  },
+  {
+    id: '7',
+    name: 'Sneha Gupta',
+    position: 'Blocker',
+    team: 'Mumbai Strikers',
+    jerseyNumber: 11,
+    height: `5'11"`,
+    weight: '75 kg',
+  },
+  {
+    id: '8',
+    name: 'Rohit Joshi',
+    position: 'Libero',
+    team: 'Pune Eagles',
+    jerseyNumber: 4,
+    height: `5'9"`,
+    weight: '68 kg',
+  },
+  {
+    id: '9',
+    name: 'Maya Nair',
+    position: 'Spiker',
+    team: 'Nagpur Titans',
+    jerseyNumber: 5,
+    height: `5'10"`,
+    weight: '72 kg',
+  },
+]
+
 // Helper for localStorage fallback
 const getLocal = <T>(key: string): T[] => {
   if (typeof window === 'undefined') return []
   const data = localStorage.getItem(key)
+  
+  if (!data) {
+    if (key === TOURNAMENTS_KEY) {
+      localStorage.setItem(key, JSON.stringify(SAMPLE_TOURNAMENTS))
+      return SAMPLE_TOURNAMENTS as any
+    }
+    if (key === TEAMS_KEY) {
+      localStorage.setItem(key, JSON.stringify(SAMPLE_TEAMS))
+      return SAMPLE_TEAMS as any
+    }
+    if (key === PLAYERS_KEY) {
+      localStorage.setItem(key, JSON.stringify(SAMPLE_PLAYERS))
+      return SAMPLE_PLAYERS as any
+    }
+  }
+  
   return data ? JSON.parse(data) : []
 }
 
@@ -512,3 +721,266 @@ export const PlayerManager = {
     return players.filter(p => p.team === team)
   },
 }
+
+// Contact Response Management
+const CONTACT_RESPONSES_KEY = 'msa_contact_responses'
+
+export const ContactResponseManager = {
+  getAll: async (): Promise<ContactResponse[]> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('contact_responses')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+        if (error) throw error
+
+        return (data || []).map((item: any) => ({
+          id: item.id,
+          name: item.name,
+          email: item.email,
+          phone: item.phone || '',
+          category: item.category,
+          subject: item.subject,
+          message: item.message,
+          status: item.status,
+          created_at: item.created_at,
+          updated_at: item.updated_at,
+        }))
+      } catch (err) {
+        console.error('Error fetching contact responses from Supabase, falling back to local storage:', err)
+      }
+    }
+
+    return getLocal<ContactResponse>(CONTACT_RESPONSES_KEY)
+  },
+
+  add: async (response: Omit<ContactResponse, 'id' | 'status' | 'created_at' | 'updated_at'>): Promise<ContactResponse> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('contact_responses')
+          .insert([
+            {
+              name: response.name,
+              email: response.email,
+              phone: response.phone || null,
+              category: response.category,
+              subject: response.subject,
+              message: response.message,
+              status: 'pending',
+            },
+          ])
+          .select()
+          .single()
+
+        if (error) throw error
+
+        return {
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          phone: data.phone || '',
+          category: data.category,
+          subject: data.subject,
+          message: data.message,
+          status: data.status,
+          created_at: data.created_at,
+          updated_at: data.updated_at,
+        }
+      } catch (err) {
+        console.error('Error adding contact response to Supabase:', err)
+        throw err
+      }
+    }
+
+    const responses = getLocal<ContactResponse>(CONTACT_RESPONSES_KEY)
+    const newResponse: ContactResponse = {
+      ...response,
+      id: Date.now().toString(),
+      status: 'pending',
+      phone: response.phone || null,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }
+    responses.push(newResponse)
+    setLocal(CONTACT_RESPONSES_KEY, responses)
+    return newResponse
+  },
+
+  updateStatus: async (id: string, status: ContactStatus): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase
+          .from('contact_responses')
+          .update({ status, updated_at: new Date().toISOString() })
+          .eq('id', id)
+
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error updating contact response status in Supabase:', err)
+        throw err
+      }
+    }
+
+    const responses = getLocal<ContactResponse>(CONTACT_RESPONSES_KEY)
+    const index = responses.findIndex(r => r.id === id)
+    if (index !== -1) {
+      responses[index] = { 
+        ...responses[index], 
+        status, 
+        updated_at: new Date().toISOString() 
+      }
+      setLocal(CONTACT_RESPONSES_KEY, responses)
+    }
+  },
+
+  delete: async (id: string): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase
+          .from('contact_responses')
+          .delete()
+          .eq('id', id)
+
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error deleting contact response from Supabase:', err)
+        throw err
+      }
+    }
+
+    const responses = getLocal<ContactResponse>(CONTACT_RESPONSES_KEY)
+    const filtered = responses.filter(r => r.id !== id)
+    setLocal(CONTACT_RESPONSES_KEY, filtered)
+  },
+}
+
+// Form Submission Management
+const FORM_SUBMISSIONS_KEY = 'msa_form_submissions'
+
+export const FormSubmissionManager = {
+  getAll: async (): Promise<FormSubmission[]> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('form_submissions')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+        if (error) throw error
+
+        return (data || []).map((item: any) => ({
+          id: item.id,
+          form_id: item.form_id,
+          answers: item.answers || {},
+          status: item.status,
+          created_at: item.created_at,
+          updated_at: item.updated_at,
+        }))
+      } catch (err) {
+        console.error('Error fetching form submissions from Supabase, falling back to local storage:', err)
+      }
+    }
+
+    return getLocal<FormSubmission>(FORM_SUBMISSIONS_KEY)
+  },
+
+  add: async (submission: Omit<FormSubmission, 'id' | 'status' | 'created_at' | 'updated_at'>): Promise<FormSubmission> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('form_submissions')
+          .insert([
+            {
+              form_id: submission.form_id,
+              answers: submission.answers || {},
+              status: 'pending',
+            },
+          ])
+          .select()
+          .single()
+
+        if (error) throw error
+
+        return {
+          id: data.id,
+          form_id: data.form_id,
+          answers: data.answers || {},
+          status: data.status,
+          created_at: data.created_at,
+          updated_at: data.updated_at,
+        }
+      } catch (err) {
+        console.error('Error adding form submission to Supabase:', err)
+        throw err
+      }
+    }
+
+    const submissions = getLocal<FormSubmission>(FORM_SUBMISSIONS_KEY)
+    const newSubmission: FormSubmission = {
+      ...submission,
+      id: Date.now().toString(),
+      status: 'pending',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }
+    submissions.push(newSubmission)
+    setLocal(FORM_SUBMISSIONS_KEY, submissions)
+    return newSubmission
+  },
+
+  updateStatus: async (id: string, status: ContactStatus): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase
+          .from('form_submissions')
+          .update({ status, updated_at: new Date().toISOString() })
+          .eq('id', id)
+
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error updating form submission status in Supabase:', err)
+        throw err
+      }
+    }
+
+    const submissions = getLocal<FormSubmission>(FORM_SUBMISSIONS_KEY)
+    const index = submissions.findIndex(s => s.id === id)
+    if (index !== -1) {
+      submissions[index] = { 
+        ...submissions[index], 
+        status, 
+        updated_at: new Date().toISOString() 
+      }
+      setLocal(FORM_SUBMISSIONS_KEY, submissions)
+    }
+  },
+
+  delete: async (id: string): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase
+          .from('form_submissions')
+          .delete()
+          .eq('id', id)
+
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error deleting form submission from Supabase:', err)
+        throw err
+      }
+    }
+
+    const submissions = getLocal<FormSubmission>(FORM_SUBMISSIONS_KEY)
+    const filtered = submissions.filter(s => s.id !== id)
+    setLocal(FORM_SUBMISSIONS_KEY, filtered)
+  },
+}
+
+

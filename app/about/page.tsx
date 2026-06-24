@@ -19,18 +19,18 @@ export default function AboutPage() {
         />
 
         {/* Mission & Vision */}
-        <section className="py-16 sm:py-24 bg-card">
+        <section className="py-16 sm:py-24 bg-card border-b border-border">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <Card className="p-8 border-2 border-primary">
-                <h2 className="text-3xl font-bold mb-4 text-primary">Our Mission</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <Card className="p-8 border border-border shadow-sm hover:shadow-md transition bg-background">
+                <h2 className="text-2xl font-bold mb-4 text-primary">Our Mission</h2>
+                <p className="text-muted-foreground leading-relaxed">
                   To promote, develop, and advance the sport of Sepaktakraw in Maharashtra by organizing competitive tournaments, developing world-class athletes, and building a thriving community of passionate players and fans. We are committed to excellence, fair play, and the growth of the sport at all levels.
                 </p>
               </Card>
-              <Card className="p-8 border-2 border-accent">
-                <h2 className="text-3xl font-bold mb-4 text-accent">Our Vision</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <Card className="p-8 border border-border shadow-sm hover:shadow-md transition bg-background">
+                <h2 className="text-2xl font-bold mb-4 text-accent">Our Vision</h2>
+                <p className="text-muted-foreground leading-relaxed">
                   To establish Maharashtra as a leading hub for Sepaktakraw in Asia, recognized for producing elite athletes and hosting premier international tournaments. We envision a thriving ecosystem where the sport continues to grow and inspire future generations.
                 </p>
               </Card>
@@ -41,7 +41,7 @@ export default function AboutPage() {
         {/* Values */}
         <section className="py-16 sm:py-24 bg-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-12 text-center text-balance">Our Core Values</h2>
+            <h2 className="text-3xl font-extrabold mb-12 text-center text-balance text-foreground">Our Core Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { title: 'Excellence', description: 'Pursuing the highest standards in all aspects of the sport' },
@@ -49,9 +49,9 @@ export default function AboutPage() {
                 { title: 'Community', description: 'Building strong connections between players, teams, and fans' },
                 { title: 'Innovation', description: 'Embracing new methods to develop athletes and improve the sport' },
               ].map((value) => (
-                <Card key={value.title} className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-primary">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                <Card key={value.title} className="p-6 border border-border bg-card shadow-sm hover:shadow-md transition">
+                  <h3 className="text-lg font-bold mb-3 text-primary">{value.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
                 </Card>
               ))}
             </div>

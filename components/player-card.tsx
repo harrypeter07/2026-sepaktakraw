@@ -21,11 +21,11 @@ export function PlayerCard({
   photoUrl,
 }: PlayerCardProps) {
   const positionColors: Record<string, string> = {
-    Spiker: 'bg-red-100 text-red-800',
-    Setter: 'bg-blue-100 text-blue-800',
-    Blocker: 'bg-green-100 text-green-800',
-    Libero: 'bg-purple-100 text-purple-800',
-    default: 'bg-gray-100 text-gray-800',
+    Spiker: 'bg-red-50 text-red-700 border border-red-200',
+    Setter: 'bg-blue-50 text-blue-700 border border-blue-200',
+    Blocker: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
+    Libero: 'bg-purple-50 text-purple-700 border border-purple-200',
+    default: 'bg-slate-50 text-slate-700 border border-slate-200',
   }
 
   const bgColor = positionColors[position] || positionColors.default
@@ -37,9 +37,9 @@ export function PlayerCard({
     .toUpperCase()
 
   return (
-    <Card className="group p-6 transition hover:shadow-xl hover:-translate-y-1">
+    <Card className="group p-6 transition hover:shadow-lg hover:-translate-y-1 border border-border bg-card">
       <div className="flex items-start gap-4 mb-4">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted text-lg font-bold text-muted-foreground ring-2 ring-border">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-secondary text-lg font-bold text-primary ring-2 ring-primary/20">
           {photoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={photoUrl} alt={name} className="h-full w-full object-cover" />
@@ -48,9 +48,9 @@ export function PlayerCard({
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="text-xl font-bold truncate">{name}</h3>
-          <p className="text-muted-foreground text-sm">#{jerseyNumber}</p>
-          <span className={`mt-2 inline-block rounded-full px-3 py-1 text-xs font-bold ${bgColor}`}>
+          <h3 className="text-xl font-bold truncate text-foreground">{name}</h3>
+          <p className="text-muted-foreground text-sm font-semibold">#{jerseyNumber}</p>
+          <span className={`mt-2 inline-block rounded-full px-3 py-0.5 text-xs font-semibold ${bgColor}`}>
             {position}
           </span>
         </div>
@@ -72,7 +72,7 @@ export function PlayerCard({
         )}
       </div>
 
-      <button className="w-full rounded-md bg-accent py-2 text-sm font-medium text-accent-foreground transition hover:bg-accent/90">
+      <button className="w-full rounded-md bg-primary py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/95 shadow-sm">
         View Profile
       </button>
     </Card>

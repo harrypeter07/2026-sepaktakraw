@@ -104,45 +104,45 @@ export default function TournamentsPage() {
         />
 
         {/* Filter */}
-        <section className="py-8 bg-card border-b border-border">
+        <section className="py-6 bg-card border-b border-border shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2.5">
               <button
                 onClick={() => setFilterStatus('all')}
-                className={`px-4 py-2 rounded-md font-medium transition ${
+                className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all border ${
                   filterStatus === 'all'
-                    ? 'bg-accent text-accent-foreground'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    ? 'bg-primary text-primary-foreground border-primary shadow-sm shadow-primary/10'
+                    : 'bg-background text-muted-foreground border-border hover:bg-secondary hover:text-foreground'
                 }`}
               >
                 All Tournaments
               </button>
               <button
                 onClick={() => setFilterStatus('upcoming')}
-                className={`px-4 py-2 rounded-md font-medium transition ${
+                className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all border ${
                   filterStatus === 'upcoming'
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-100'
+                    : 'bg-background text-muted-foreground border-border hover:bg-secondary hover:text-foreground'
                 }`}
               >
                 Upcoming
               </button>
               <button
                 onClick={() => setFilterStatus('ongoing')}
-                className={`px-4 py-2 rounded-md font-medium transition ${
+                className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all border ${
                   filterStatus === 'ongoing'
-                    ? 'bg-green-500 text-white'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm shadow-emerald-100'
+                    : 'bg-background text-muted-foreground border-border hover:bg-secondary hover:text-foreground'
                 }`}
               >
                 Ongoing
               </button>
               <button
                 onClick={() => setFilterStatus('completed')}
-                className={`px-4 py-2 rounded-md font-medium transition ${
+                className={`px-5 py-2.5 rounded-lg font-semibold text-sm transition-all border ${
                   filterStatus === 'completed'
-                    ? 'bg-gray-500 text-white'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                    ? 'bg-slate-600 text-white border-slate-600 shadow-sm shadow-slate-100'
+                    : 'bg-background text-muted-foreground border-border hover:bg-secondary hover:text-foreground'
                 }`}
               >
                 Completed

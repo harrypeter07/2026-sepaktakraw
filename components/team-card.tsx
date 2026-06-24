@@ -27,10 +27,10 @@ export function TeamCard({
     .toUpperCase()
 
   return (
-    <Card className="group overflow-hidden p-0 transition hover:shadow-xl hover:-translate-y-1 flex flex-col">
+    <Card className="group overflow-hidden p-0 transition hover:shadow-lg hover:-translate-y-1 flex flex-col border border-border bg-card">
       {/* Header with logo */}
-      <div className="flex items-center gap-4 bg-gradient-to-r from-primary to-primary/80 p-6 text-primary-foreground">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent text-lg font-bold text-accent-foreground ring-2 ring-primary-foreground/30">
+      <div className="flex items-center gap-4 bg-secondary/40 p-6 border-b border-border text-foreground">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary text-lg font-bold text-primary-foreground ring-2 ring-accent/20">
           {logoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={logoUrl} alt={name} className="h-full w-full object-cover" />
@@ -38,7 +38,7 @@ export function TeamCard({
             initials
           )}
         </div>
-        <h3 className="text-xl font-bold text-balance leading-tight">{name}</h3>
+        <h3 className="text-xl font-bold text-balance leading-tight text-primary">{name}</h3>
       </div>
 
       {/* Content */}
@@ -60,7 +60,7 @@ export function TeamCard({
           </div>
         </div>
 
-        <button className="w-full rounded-md bg-primary py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90">
+        <button className="w-full rounded-md bg-primary py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/95 shadow-sm">
           View Roster
         </button>
       </div>

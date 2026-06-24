@@ -104,6 +104,14 @@ export function SiteSettingsManager() {
                           className="max-w-md"
                         />
                       </div>
+                    ) : (d.key.includes('desc') || d.key.includes('subtitle') || (d.default.text && d.default.text.length > 50)) ? (
+                      <textarea
+                        placeholder={d.default.text}
+                        value={value.text ?? ''}
+                        onChange={(e) => update(d.key, { text: e.target.value })}
+                        rows={3}
+                        className="w-full max-w-md px-3 py-2 border border-input rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                      />
                     ) : (
                       <Input
                         placeholder={d.default.text}

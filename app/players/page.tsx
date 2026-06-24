@@ -6,6 +6,7 @@ import Footer from '@/components/footer'
 import { PlayerCard } from '@/components/player-card'
 import { PageHero } from '@/components/page-hero'
 import { PlayerManager, Player } from '@/lib/data-manager'
+import { Filter } from 'lucide-react'
 
 const SAMPLE_PLAYERS: Player[] = [
   {
@@ -137,15 +138,17 @@ export default function PlayersPage() {
         />
 
         {/* Filters */}
-        <section className="py-8 bg-card border-b border-border">
+        <section className="py-6 bg-card border-b border-border shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">Filter by Position</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                  <Filter size={14} /> Filter by Position
+                </label>
                 <select
                   value={filterPosition}
                   onChange={(e) => setFilterPosition(e.target.value)}
-                  className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full h-10 px-3 py-2 border border-input rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent"
                 >
                   <option value="all">All Positions</option>
                   {positions.map(position => (
@@ -153,12 +156,14 @@ export default function PlayersPage() {
                   ))}
                 </select>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Filter by Team</label>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                  <Filter size={14} /> Filter by Team
+                </label>
                 <select
                   value={filterTeam}
                   onChange={(e) => setFilterTeam(e.target.value)}
-                  className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+                  className="w-full h-10 px-3 py-2 border border-input rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-accent"
                 >
                   <option value="all">All Teams</option>
                   {teams.map(team => (

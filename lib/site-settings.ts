@@ -30,21 +30,81 @@ export interface SettingDescriptor {
 export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   // Global -----------------------------------------------------------------
   { key: 'site.logo', label: 'Site Logo', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
+  { key: 'site.navbar_brand', label: 'Navbar Brand Text', page: 'global', type: 'text', default: { text: 'MSA' } },
+  { 
+    key: 'site.custom_form_schema', 
+    label: 'Custom Form Schema (JSON)', 
+    page: 'global', 
+    type: 'text', 
+    default: { 
+      text: JSON.stringify({
+        id: 'contact',
+        title: 'Contact Form',
+        fields: [
+          { id: 'name', label: 'Full Name', type: 'text', required: true, placeholder: 'e.g. Rahul Sharma' },
+          { id: 'email', label: 'Email Address', type: 'email', required: true, placeholder: 'e.g. rahul@example.com' },
+          { id: 'phone', label: 'Phone Number', type: 'text', required: false, placeholder: 'e.g. +91 98765 43210' },
+          { id: 'category', label: 'Query Category', type: 'select', required: true, options: ['General Inquiry', 'Join a Team', 'Tournament Inquiry', 'Sponsorship Opportunity', 'Other'] },
+          { id: 'subject', label: 'Subject', type: 'text', required: true, placeholder: 'What is this regarding?' },
+          { id: 'message', label: 'Message', type: 'textarea', required: true, placeholder: 'Type your message here...' }
+        ]
+      }) 
+    } 
+  },
   { key: 'site.og_image', label: 'Social Share Image', page: 'global', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'site.footer_title', label: 'Footer Title', page: 'global', type: 'text', default: { text: 'Maharashtra Sepaktakraw' } },
+  { key: 'site.footer_desc', label: 'Footer Description', page: 'global', type: 'text', default: { text: 'Promoting excellence and growth in Sepaktakraw across Maharashtra through competitive tournaments and player development.' } },
+  { key: 'site.footer_contact_address', label: 'Footer Contact Address', page: 'global', type: 'text', default: { text: 'Maharashtra, India' } },
+  { key: 'site.footer_contact_phone', label: 'Footer Contact Phone', page: 'global', type: 'text', default: { text: '+91 (XXX) XXX-XXXX' } },
+  { key: 'site.footer_contact_email', label: 'Footer Contact Email', page: 'global', type: 'text', default: { text: 'info@msa.org.in' } },
+  { key: 'site.footer_copyright', label: 'Footer Copyright Text', page: 'global', type: 'text', default: { text: '2025 Maharashtra Sepaktakraw Association. All rights reserved.' } },
+  { key: 'site.footer_logo_1', label: 'Sponsor Logo 1', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
+  { key: 'site.footer_logo_2', label: 'Sponsor Logo 2', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
+  { key: 'site.footer_logo_3', label: 'Sponsor Logo 3', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
+  { key: 'site.footer_logo_4', label: 'Sponsor Logo 4', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
+  
   // Homepage ---------------------------------------------------------------
   { key: 'home.hero.image', label: 'Hero Background', page: 'home', type: 'image', shape: 'banner', default: { url: '/hero.jpg', alt: 'Sepaktakraw action' } },
   { key: 'home.hero.title', label: 'Hero Title', page: 'home', type: 'text', default: { text: 'Maharashtra Sepaktakraw' } },
   { key: 'home.hero.subtitle', label: 'Hero Subtitle', page: 'home', type: 'text', default: { text: 'Excellence in Asian Kick-Volleyball Sport' } },
+  { key: 'home.about.title', label: 'About Section Title', page: 'home', type: 'text', default: { text: 'What is Sepaktakraw?' } },
+  { key: 'home.about.desc_1', label: 'About Section Desc 1', page: 'home', type: 'text', default: { text: 'Sepaktakraw is a Southeast Asian team sport that fuses volleyball with martial arts. Players use their feet, knees, chest and head to send a rattan ball over a net — a spectacular display of agility, timing and precision.' } },
+  { key: 'home.about.desc_2', label: 'About Section Desc 2', page: 'home', type: 'text', default: { text: 'The Maharashtra Sepaktakraw Association promotes this dynamic sport, develops athletes and organises competitive tournaments across the region.' } },
   { key: 'home.about.image', label: 'About Section Image', page: 'home', type: 'image', shape: 'banner', default: { url: '/team.jpg', alt: 'Sepaktakraw team' } },
+  { key: 'home.focus_1.title', label: 'Focus 1 Title', page: 'home', type: 'text', default: { text: 'Tournaments' } },
+  { key: 'home.focus_1.desc', label: 'Focus 1 Description', page: 'home', type: 'text', default: { text: 'Competitive events showcasing player talent and team excellence across the state.' } },
+  { key: 'home.focus_2.title', label: 'Focus 2 Title', page: 'home', type: 'text', default: { text: 'Team Management' } },
+  { key: 'home.focus_2.desc', label: 'Focus 2 Description', page: 'home', type: 'text', default: { text: 'Supporting clubs and teams in player development, logistics and coordination.' } },
+  { key: 'home.focus_3.title', label: 'Focus 3 Title', page: 'home', type: 'text', default: { text: 'Player Development' } },
+  { key: 'home.focus_3.desc', label: 'Focus 3 Description', page: 'home', type: 'text', default: { text: 'Nurturing young talent and advancing athletic capabilities at every level.' } },
+  { key: 'home.focus_4.title', label: 'Focus 4 Title', page: 'home', type: 'text', default: { text: 'Community Growth' } },
+  { key: 'home.focus_4.desc', label: 'Focus 4 Description', page: 'home', type: 'text', default: { text: 'Building a thriving Sepaktakraw community across all of Maharashtra.' } },
+  { key: 'home.cta.title', label: 'CTA Section Title', page: 'home', type: 'text', default: { text: 'Ready to Join the Action?' } },
+  { key: 'home.cta.subtitle', label: 'CTA Section Subtitle', page: 'home', type: 'text', default: { text: 'Explore our tournaments, teams and players to stay connected with the sport.' } },
   { key: 'home.cta.image', label: 'CTA Background', page: 'home', type: 'image', shape: 'banner', default: { url: '' } },
+
   // About ------------------------------------------------------------------
   { key: 'about.hero.image', label: 'About Hero Background', page: 'about', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'about.hero.title', label: 'About Hero Title', page: 'about', type: 'text', default: { text: 'About Maharashtra Sepaktakraw Association' } },
+  { key: 'about.hero.subtitle', label: 'About Hero Subtitle', page: 'about', type: 'text', default: { text: 'Promoting excellence and growth in Southeast Asian kick-volleyball sport' } },
+
   // News -------------------------------------------------------------------
   { key: 'news.hero.image', label: 'News Hero Background', page: 'news', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'news.hero.title', label: 'News Hero Title', page: 'news', type: 'text', default: { text: 'Latest News' } },
+  { key: 'news.hero.subtitle', label: 'News Hero Subtitle', page: 'news', type: 'text', default: { text: 'Updates from Maharashtra Sepaktakraw Association' } },
+
   // Browse pages -----------------------------------------------------------
   { key: 'teams.hero.image', label: 'Teams Hero Background', page: 'teams', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'teams.hero.title', label: 'Teams Hero Title', page: 'teams', type: 'text', default: { text: 'Teams' } },
+  { key: 'teams.hero.subtitle', label: 'Teams Hero Subtitle', page: 'teams', type: 'text', default: { text: 'Meet the competitive teams across Maharashtra' } },
+
   { key: 'players.hero.image', label: 'Players Hero Background', page: 'players', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'players.hero.title', label: 'Players Hero Title', page: 'players', type: 'text', default: { text: 'Players' } },
+  { key: 'players.hero.subtitle', label: 'Players Hero Subtitle', page: 'players', type: 'text', default: { text: 'Discover elite Sepaktakraw athletes' } },
+
   { key: 'tournaments.hero.image', label: 'Tournaments Hero Background', page: 'tournaments', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'tournaments.hero.title', label: 'Tournaments Hero Title', page: 'tournaments', type: 'text', default: { text: 'Tournaments' } },
+  { key: 'tournaments.hero.subtitle', label: 'Tournaments Hero Subtitle', page: 'tournaments', type: 'text', default: { text: 'Explore upcoming, ongoing, and completed tournaments' } },
 ]
 
 // Render-time fallback map derived from the descriptors.

@@ -6,6 +6,7 @@ import { TeamCard } from '@/components/team-card'
 import { PageHero } from '@/components/page-hero'
 import { useState, useEffect } from 'react'
 import { TeamManager } from '@/lib/data-manager'
+import { Search } from 'lucide-react'
 
 const SAMPLE_TEAMS = [
   {
@@ -99,15 +100,20 @@ export default function TeamsPage() {
         />
 
         {/* Search */}
-        <section className="py-8 bg-card border-b border-border">
+        <section className="py-6 bg-card border-b border-border shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <input
-              type="text"
-              placeholder="Search teams by name or location..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent"
-            />
+            <div className="relative w-full max-w-2xl mx-auto">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-muted-foreground">
+                <Search size={20} />
+              </div>
+              <input
+                type="text"
+                placeholder="Search teams by name or location..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent text-sm transition-all shadow-sm"
+              />
+            </div>
           </div>
         </section>
 
