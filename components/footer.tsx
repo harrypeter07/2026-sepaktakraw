@@ -37,7 +37,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-              <img src="/icon.svg" alt="MSA logo" className="h-6 w-6 rounded-md object-contain filter brightness-0 invert" />
+              <img src="/msta-logo.png" alt="MSA logo" className="h-7 w-7 rounded-md object-contain" />
               {txt('site.footer_title', 'Maharashtra Sepaktakraw')}
             </h3>
             <p className="text-primary-foreground opacity-80 text-sm leading-relaxed text-balance">

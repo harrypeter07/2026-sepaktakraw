@@ -1,6 +1,6 @@
 {
   "site.logo": {
-    "url": "/icon.svg"
+    "url": "/msta-logo.png"
   },
   "site.navbar_brand": {
     "text": "MSA"
@@ -45,7 +45,7 @@
     "text": "image"
   },
   "home.hero.image": {
-    "url": "/hero.jpg",
+    "url": "/hero/hero-image.jpg",
     "alt": "Sepaktakraw Federation of India"
   },
   "home.hero.title": {
