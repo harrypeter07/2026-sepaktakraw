@@ -1,64 +1,46 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { PageHero } from '@/components/page-hero'
-import { Card } from '@/components/ui/card'
-import { Calendar } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, X, Newspaper } from 'lucide-react'
+import {
+  ArticleManager,
+  Article,
+  ARTICLE_CATEGORY_LABELS,
+  articleExcerpt,
+  articleReadTime,
+  articleDate,
+} from '@/lib/data-manager'
 
-const SAMPLE_NEWS = [
-  {
-    id: '1',
-    title: 'Mumbai Strikers Win Maharashtra Premier League',
-    date: 'Feb 28, 2025',
-    category: 'Tournament',
-    excerpt: 'In an exciting final match, Mumbai Strikers defeated Pune Eagles 3-1 to clinch the 2025 Maharashtra Premier League title.',
-  },
-  {
-    id: '2',
-    title: 'Youth Development Program Launches Successfully',
-    date: 'Feb 20, 2025',
-    category: 'Development',
-    excerpt: 'The MSA Youth Development Program kicks off with 50 young talents registered for training across six cities in Maharashtra.',
-  },
-  {
-    id: '3',
-    title: 'State Team Selected for National Championship',
-    date: 'Feb 10, 2025',
-    category: 'Selection',
-    excerpt: 'The Maharashtra state team has been selected for the upcoming National Sepaktakraw Championship. The team consists of 12 experienced players.',
-  },
-  {
-    id: '4',
-    title: 'New Training Facility Opens in Pune',
-    date: 'Jan 30, 2025',
-    category: 'Infrastructure',
-    excerpt: 'A state-of-the-art Sepaktakraw training facility has opened in Pune with three professional courts and world-class coaching staff.',
-  },
-  {
-    id: '5',
-    title: 'Player Interview: Rising Star Priya Sharma',
-    date: 'Jan 15, 2025',
-    category: 'Interview',
-    excerpt: 'We sit down with Priya Sharma, the talented setter from Pune Eagles, to discuss her journey in Sepaktakraw and future aspirations.',
-  },
-  {
-    id: '6',
-    title: 'University Championship Registration Opens',
-    date: 'Jan 5, 2025',
-    category: 'Event',
-    excerpt: 'Registration is now open for the University Championship scheduled in March. Teams from 15 universities have already registered.',
-  },
-]
+const CATEGORY_STYLES: Record<string, string> = {
+  news: 'bg-blue-600 text-white',
+  tournament: 'bg-emerald-600 text-white',
+  team: 'bg-purple-600 text-white',
+  player: 'bg-rose-600 text-white',
+  other: 'bg-slate-700 text-white',
+}
 
 export default function NewsPage() {
-  const categories = Array.from(new Set(SAMPLE_NEWS.map(n => n.category)))
+  const [articles, setArticles] = useState<Article[]>([])
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null)
+
+  useEffect(() => {
+    ArticleManager.getPublished()
+      .then(setArticles)
+      .catch(err => console.error('Error loading articles:', err))
+      .finally(() => setIsLoaded(true))
+  }, [])
+
+  const featured = articles[0]
+  const rest = articles.slice(1)
 
   return (
     <>
       <Navbar />
-      <main className="flex flex-col min-h-screen">
-        {/* Hero */}
+      <main className="flex flex-col min-h-screen bg-slate-50">
         <PageHero
           imageKey="news.hero.image"
           kicker="Latest"
@@ -66,37 +48,155 @@ export default function NewsPage() {
           subtitle="Stay informed with the latest from Maharashtra Sepaktakraw"
         />
 
-        {/* News List */}
-        <section className="py-16 sm:py-24 bg-background flex-1">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-6">
-              {SAMPLE_NEWS.map(news => (
-                <Card key={news.id} className="p-6 hover:shadow-lg transition">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2 text-balance">{news.title}</h3>
-                      <div className="flex flex-wrap gap-2 items-center">
-                        <span className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full">
-                          {news.category}
+        <section className="py-16 sm:py-24 flex-1">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            {!isLoaded ? (
+              <div className="flex flex-col items-center justify-center py-20 gap-4">
+                <span className="animate-spin rounded-full h-10 w-10 border-4 border-[#2563eb] border-t-transparent" />
+                <p className="text-muted-foreground text-sm font-semibold">Loading news…</p>
+              </div>
+            ) : articles.length === 0 ? (
+              <div className="text-center py-20 bg-white rounded-2xl border shadow-sm max-w-lg mx-auto">
+                <Newspaper className="h-12 w-12 text-slate-300 mx-auto mb-4" />
+                <p className="text-slate-600 text-lg font-bold">No news yet</p>
+                <p className="text-slate-400 text-sm mt-1">Published articles will appear here.</p>
+              </div>
+            ) : (
+              <>
+                {/* Featured Article */}
+                {featured && (
+                  <button
+                    onClick={() => setSelectedArticle(featured)}
+                    className="group w-full text-left block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 mb-10 bg-white"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-2">
+                      <div className="relative h-64 sm:h-80 lg:h-full overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#2563eb]">
+                        {featured.imageUrl && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={featured.imageUrl}
+                            alt={featured.title}
+                            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                        <span className={`absolute top-4 left-4 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider shadow-lg ${CATEGORY_STYLES[featured.category] || 'bg-slate-700 text-white'}`}>
+                          {ARTICLE_CATEGORY_LABELS[featured.category]}
                         </span>
-                        <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                          <Calendar size={14} />
-                          {news.date}
+                      </div>
+                      <div className="flex flex-col justify-center p-8 sm:p-10">
+                        <div className="flex items-center gap-3 text-xs text-slate-400 font-semibold mb-4">
+                          <Calendar size={13} /> {articleDate(featured)}
+                          <span className="text-slate-200">•</span>
+                          <Clock size={13} /> {articleReadTime(featured.content)}
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl font-black text-[#0A0F1E] leading-snug mb-4 group-hover:text-[#2563eb] transition">
+                          {featured.title}
+                        </h2>
+                        <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">{articleExcerpt(featured.content)}</p>
+                        <div className="flex items-center gap-2 text-[#2563eb] font-black text-sm">
+                          Read Full Article <ArrowRight size={15} />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {news.excerpt}
-                  </p>
-                  <button className="text-accent hover:text-accent/80 font-medium transition">
-                    Read More →
                   </button>
-                </Card>
-              ))}
-            </div>
+                )}
+
+                {/* Grid */}
+                {rest.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {rest.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => setSelectedArticle(item)}
+                        className="group text-left block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#2563eb]">
+                          {item.imageUrl && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={item.imageUrl}
+                              alt={item.title}
+                              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                          <span className={`absolute top-3 left-3 rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-wider shadow-md ${CATEGORY_STYLES[item.category] || 'bg-slate-700 text-white'}`}>
+                            {ARTICLE_CATEGORY_LABELS[item.category]}
+                          </span>
+                        </div>
+                        <div className="p-5">
+                          <div className="flex items-center gap-3 text-[11px] text-slate-400 font-semibold mb-3">
+                            <Calendar size={11} /> {articleDate(item)}
+                            <span className="text-slate-200">•</span>
+                            <Clock size={11} /> {articleReadTime(item.content)}
+                          </div>
+                          <h3 className="font-black text-[#0A0F1E] text-base leading-snug mb-3 group-hover:text-[#2563eb] transition line-clamp-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">{articleExcerpt(item.content)}</p>
+                          <div className="mt-4 flex items-center gap-1.5 text-[#2563eb] font-black text-xs">
+                            Read Article <ArrowRight size={12} />
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </section>
+
+        {/* Article Modal */}
+        {selectedArticle && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+            onClick={() => setSelectedArticle(null)}
+          >
+            <div
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative h-56 overflow-hidden rounded-t-2xl bg-gradient-to-br from-[#1e3a8a] to-[#2563eb]">
+                {selectedArticle.imageUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={selectedArticle.imageUrl} alt={selectedArticle.title} className="h-full w-full object-cover" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition"
+                  aria-label="Close"
+                >
+                  <X size={18} />
+                </button>
+                <span className={`absolute bottom-4 left-4 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider ${CATEGORY_STYLES[selectedArticle.category] || 'bg-slate-700 text-white'}`}>
+                  {ARTICLE_CATEGORY_LABELS[selectedArticle.category]}
+                </span>
+              </div>
+
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 text-xs text-slate-400 font-semibold mb-4">
+                  <Calendar size={13} /> {articleDate(selectedArticle)}
+                  <span className="text-slate-200">•</span>
+                  <Clock size={13} /> {articleReadTime(selectedArticle.content)}
+                </div>
+
+                <h2 className="text-2xl sm:text-3xl font-black text-[#0A0F1E] leading-snug mb-6">
+                  {selectedArticle.title}
+                </h2>
+
+                <div className="space-y-4 border-t border-slate-100 pt-6">
+                  {selectedArticle.content.split('\n\n').map((para, idx) => (
+                    <p key={idx} className="text-slate-600 text-sm leading-relaxed whitespace-pre-wrap">{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
       <Footer />
     </>

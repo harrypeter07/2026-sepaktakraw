@@ -4,9 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
-import { 
-  Trophy, Users, User, FileText, MessageSquare, Settings, 
-  Image, Menu, ShieldCheck, ChevronRight, LogOut, X 
+import {
+  Trophy, Users, User, FileText, MessageSquare, Settings,
+  Image, Menu, ShieldCheck, ChevronRight, LogOut, X, Newspaper
 } from 'lucide-react'
 
 export function AdminSidebar() {
@@ -18,9 +18,9 @@ export function AdminSidebar() {
     { id: 'tournaments', label: 'Tournaments', href: '/admin/tournaments', icon: Trophy },
     { id: 'teams', label: 'Teams', href: '/admin/teams', icon: Users },
     { id: 'players', label: 'Players', icon: User, href: '/admin/players' },
+    { id: 'news', label: 'News & Articles', icon: Newspaper, href: '/admin/news' },
     { id: 'forms', label: 'Form Builder', icon: FileText, href: '/admin/forms' },
     { id: 'responses', label: 'Form Responses', icon: MessageSquare, href: '/admin/responses' },
-    { id: 'site', label: 'Site Content', icon: Settings, href: '/admin/site' },
     { id: 'media', label: 'Media Gallery', icon: Image, href: '/admin/media' },
   ] as const
 

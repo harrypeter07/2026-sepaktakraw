@@ -42,6 +42,10 @@ export default function EditTournamentPage({ params }: { params: Promise<{ id: s
         status: data.status as any,
         teamsCount: parseInt(data.teamsCount),
         imageUrl: data.imageUrl,
+        description: data.description,
+        organizer: data.organizer,
+        prizePool: data.prizePool ? parseFloat(data.prizePool) : undefined,
+        format: data.format,
       })
       router.push('/admin/tournaments')
     } catch (err) {
@@ -77,6 +81,10 @@ export default function EditTournamentPage({ params }: { params: Promise<{ id: s
               status: tournament.status,
               teamsCount: tournament.teamsCount.toString(),
               imageUrl: tournament.imageUrl || '',
+              description: tournament.description || '',
+              organizer: tournament.organizer || '',
+              prizePool: tournament.prizePool != null ? tournament.prizePool.toString() : '',
+              format: tournament.format || 'league',
             }}
           />
         </div>

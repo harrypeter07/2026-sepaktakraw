@@ -3,6 +3,8 @@ import { supabase } from './supabase'
 import { ContactResponse, ContactStatus, FormSubmission } from './types'
 
 // Types
+export type TournamentFormat = 'league' | 'knockout' | 'group_stage'
+
 export interface Tournament {
   id: string
   name: string
@@ -12,6 +14,10 @@ export interface Tournament {
   status: 'upcoming' | 'ongoing' | 'completed'
   teamsCount: number
   imageUrl?: string
+  description?: string
+  organizer?: string
+  prizePool?: number
+  format?: TournamentFormat
 }
 
 export interface Team {
@@ -22,6 +28,19 @@ export interface Team {
   playerCount: number
   established: string
   logoUrl?: string
+}
+
+export type ArticleCategory = 'news' | 'tournament' | 'team' | 'player' | 'other'
+
+export interface Article {
+  id: string
+  title: string
+  content: string
+  category: ArticleCategory
+  imageUrl?: string
+  isPublished: boolean
+  publishedAt?: string | null
+  createdAt: string
 }
 
 export interface Player {
@@ -40,218 +59,11 @@ const TOURNAMENTS_KEY = 'msa_tournaments'
 const TEAMS_KEY = 'msa_teams'
 const PLAYERS_KEY = 'msa_players'
 
-const SAMPLE_TOURNAMENTS: Tournament[] = [
-  {
-    id: '1',
-    name: 'Maharashtra Premier League 2025',
-    startDate: 'Jan 15',
-    endDate: 'Feb 28',
-    location: 'Mumbai, Maharashtra',
-    status: 'ongoing',
-    teamsCount: 12,
-  },
-  {
-    id: '2',
-    name: 'University Championship',
-    startDate: 'Mar 1',
-    endDate: 'Mar 20',
-    location: 'Pune, Maharashtra',
-    status: 'upcoming',
-    teamsCount: 18,
-  },
-  {
-    id: '3',
-    name: 'Regional Cup 2024',
-    startDate: 'Oct 10',
-    endDate: 'Nov 15',
-    location: 'Nagpur, Maharashtra',
-    status: 'completed',
-    teamsCount: 16,
-  },
-  {
-    id: '4',
-    name: 'Youth Development Cup',
-    startDate: 'Apr 5',
-    endDate: 'Apr 25',
-    location: 'Aurangabad, Maharashtra',
-    status: 'upcoming',
-    teamsCount: 14,
-  },
-  {
-    id: '5',
-    name: 'Intercity Challenge',
-    startDate: 'May 1',
-    endDate: 'May 30',
-    location: 'Thane, Maharashtra',
-    status: 'upcoming',
-    teamsCount: 10,
-  },
-  {
-    id: '6',
-    name: 'Winter Championship 2024',
-    startDate: 'Dec 1',
-    endDate: 'Dec 20',
-    location: 'Mumbai, Maharashtra',
-    status: 'completed',
-    teamsCount: 20,
-  },
-]
-
-const SAMPLE_TEAMS: Team[] = [
-  {
-    id: '1',
-    name: 'Mumbai Strikers',
-    location: 'Mumbai',
-    coach: 'Rajesh Kumar',
-    playerCount: 14,
-    established: '2020',
-  },
-  {
-    id: '2',
-    name: 'Pune Eagles',
-    location: 'Pune',
-    coach: 'Priya Sharma',
-    playerCount: 16,
-    established: '2019',
-  },
-  {
-    id: '3',
-    name: 'Nagpur Titans',
-    location: 'Nagpur',
-    coach: 'Arun Desai',
-    playerCount: 15,
-    established: '2021',
-  },
-  {
-    id: '4',
-    name: 'Aurangabad Warriors',
-    location: 'Aurangabad',
-    coach: 'Vikram Singh',
-    playerCount: 13,
-    established: '2022',
-  },
-  {
-    id: '5',
-    name: 'Thane Champions',
-    location: 'Thane',
-    coach: 'Neha Patel',
-    playerCount: 14,
-    established: '2020',
-  },
-  {
-    id: '6',
-    name: 'Nashik Blazers',
-    location: 'Nashik',
-    coach: 'Arjun Verma',
-    playerCount: 12,
-    established: '2023',
-  },
-]
-
-const SAMPLE_PLAYERS: Player[] = [
-  {
-    id: '1',
-    name: 'Rajesh Kumar',
-    position: 'Spiker',
-    team: 'Mumbai Strikers',
-    jerseyNumber: 7,
-    height: `6'2"`,
-    weight: '82 kg',
-  },
-  {
-    id: '2',
-    name: 'Priya Sharma',
-    position: 'Setter',
-    team: 'Pune Eagles',
-    jerseyNumber: 3,
-    height: `5'8"`,
-    weight: '65 kg',
-  },
-  {
-    id: '3',
-    name: 'Arun Desai',
-    position: 'Blocker',
-    team: 'Nagpur Titans',
-    jerseyNumber: 12,
-    height: `6'3"`,
-    weight: '88 kg',
-  },
-  {
-    id: '4',
-    name: 'Neha Patel',
-    position: 'Libero',
-    team: 'Thane Champions',
-    jerseyNumber: 1,
-    height: `5'6"`,
-    weight: '62 kg',
-  },
-  {
-    id: '5',
-    name: 'Vikram Singh',
-    position: 'Spiker',
-    team: 'Aurangabad Warriors',
-    jerseyNumber: 8,
-    height: `6'1"`,
-    weight: '80 kg',
-  },
-  {
-    id: '6',
-    name: 'Arjun Verma',
-    position: 'Setter',
-    team: 'Nashik Blazers',
-    jerseyNumber: 2,
-    height: `5'10"`,
-    weight: '70 kg',
-  },
-  {
-    id: '7',
-    name: 'Sneha Gupta',
-    position: 'Blocker',
-    team: 'Mumbai Strikers',
-    jerseyNumber: 11,
-    height: `5'11"`,
-    weight: '75 kg',
-  },
-  {
-    id: '8',
-    name: 'Rohit Joshi',
-    position: 'Libero',
-    team: 'Pune Eagles',
-    jerseyNumber: 4,
-    height: `5'9"`,
-    weight: '68 kg',
-  },
-  {
-    id: '9',
-    name: 'Maya Nair',
-    position: 'Spiker',
-    team: 'Nagpur Titans',
-    jerseyNumber: 5,
-    height: `5'10"`,
-    weight: '72 kg',
-  },
-]
-
-// Helper for localStorage fallback
+// Helper for localStorage fallback. Returns whatever has been saved locally —
+// no seeded sample data, so empty really means empty (all content is DB-driven).
 const getLocal = <T>(key: string): T[] => {
   if (typeof window === 'undefined') return []
   const data = localStorage.getItem(key)
-  
-  if (!data) {
-    if (key === TOURNAMENTS_KEY) {
-      localStorage.setItem(key, JSON.stringify(SAMPLE_TOURNAMENTS))
-      return SAMPLE_TOURNAMENTS as any
-    }
-    if (key === TEAMS_KEY) {
-      localStorage.setItem(key, JSON.stringify(SAMPLE_TEAMS))
-      return SAMPLE_TEAMS as any
-    }
-    if (key === PLAYERS_KEY) {
-      localStorage.setItem(key, JSON.stringify(SAMPLE_PLAYERS))
-      return SAMPLE_PLAYERS as any
-    }
-  }
-  
   return data ? JSON.parse(data) : []
 }
 
@@ -282,6 +94,10 @@ export const TournamentManager = {
           status: item.status,
           teamsCount: item.max_teams || 0,
           imageUrl: item.image_url || '',
+          description: item.description || '',
+          organizer: item.organizer || '',
+          prizePool: item.total_prize_pool ?? undefined,
+          format: item.format || 'league',
         }))
       } catch (err) {
         console.error('Error fetching tournaments from Supabase, falling back to local storage:', err)
@@ -311,7 +127,10 @@ export const TournamentManager = {
               status: tournament.status,
               max_teams: tournament.teamsCount,
               created_by: user.id,
-              format: 'league', // Default required field
+              format: tournament.format || 'league',
+              description: tournament.description || null,
+              organizer: tournament.organizer || null,
+              total_prize_pool: tournament.prizePool ?? null,
               image_url: tournament.imageUrl || null,
             },
           ])
@@ -329,6 +148,10 @@ export const TournamentManager = {
           status: data.status,
           teamsCount: data.max_teams || 0,
           imageUrl: data.image_url || '',
+          description: data.description || '',
+          organizer: data.organizer || '',
+          prizePool: data.total_prize_pool ?? undefined,
+          format: data.format || 'league',
         }
       } catch (err) {
         console.error('Error adding tournament to Supabase:', err)
@@ -357,6 +180,10 @@ export const TournamentManager = {
         if (updates.status !== undefined) mappedUpdates.status = updates.status
         if (updates.teamsCount !== undefined) mappedUpdates.max_teams = updates.teamsCount
         if (updates.imageUrl !== undefined) mappedUpdates.image_url = updates.imageUrl || null
+        if (updates.description !== undefined) mappedUpdates.description = updates.description || null
+        if (updates.organizer !== undefined) mappedUpdates.organizer = updates.organizer || null
+        if (updates.prizePool !== undefined) mappedUpdates.total_prize_pool = updates.prizePool ?? null
+        if (updates.format !== undefined) mappedUpdates.format = updates.format
 
         const { error } = await supabase
           .from('tournaments')
@@ -981,6 +808,189 @@ export const FormSubmissionManager = {
     const filtered = submissions.filter(s => s.id !== id)
     setLocal(FORM_SUBMISSIONS_KEY, filtered)
   },
+}
+
+// News / Article Management (backed by the `articles` table)
+const ARTICLES_KEY = 'msa_articles'
+
+const mapArticleRow = (item: any): Article => ({
+  id: item.id,
+  title: item.title,
+  content: item.content,
+  category: item.category || 'news',
+  imageUrl: item.featured_image_url || '',
+  isPublished: !!item.is_published,
+  publishedAt: item.published_at,
+  createdAt: item.created_at,
+})
+
+export const ArticleManager = {
+  // All articles (admin view).
+  getAll: async (): Promise<Article[]> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('articles')
+          .select('*')
+          .order('created_at', { ascending: false })
+
+        if (error) throw error
+        return (data || []).map(mapArticleRow)
+      } catch (err) {
+        console.error('Error fetching articles from Supabase, falling back to local storage:', err)
+      }
+    }
+    return getLocal<Article>(ARTICLES_KEY)
+  },
+
+  // Only published articles, newest first (public view).
+  getPublished: async (): Promise<Article[]> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('articles')
+          .select('*')
+          .eq('is_published', true)
+          .order('published_at', { ascending: false, nullsFirst: false })
+
+        if (error) throw error
+        return (data || []).map(mapArticleRow)
+      } catch (err) {
+        console.error('Error fetching published articles from Supabase, falling back to local storage:', err)
+      }
+    }
+    return getLocal<Article>(ARTICLES_KEY).filter(a => a.isPublished)
+  },
+
+  add: async (article: Omit<Article, 'id' | 'createdAt'>): Promise<Article> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser()
+        if (!user) throw new Error('Unauthenticated')
+
+        const { data, error } = await supabase
+          .from('articles')
+          .insert([
+            {
+              title: article.title,
+              content: article.content,
+              category: article.category,
+              featured_image_url: article.imageUrl || null,
+              is_published: article.isPublished,
+              published_at: article.isPublished
+                ? article.publishedAt || new Date().toISOString()
+                : null,
+              author_id: user.id,
+            },
+          ])
+          .select()
+          .single()
+
+        if (error) throw error
+        return mapArticleRow(data)
+      } catch (err) {
+        console.error('Error adding article to Supabase:', err)
+        throw err
+      }
+    }
+
+    const articles = getLocal<Article>(ARTICLES_KEY)
+    const newArticle: Article = {
+      ...article,
+      id: Date.now().toString(),
+      publishedAt: article.isPublished ? new Date().toISOString() : null,
+      createdAt: new Date().toISOString(),
+    }
+    articles.unshift(newArticle)
+    setLocal(ARTICLES_KEY, articles)
+    return newArticle
+  },
+
+  update: async (id: string, updates: Partial<Omit<Article, 'id' | 'createdAt'>>): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const mapped: any = {}
+        if (updates.title !== undefined) mapped.title = updates.title
+        if (updates.content !== undefined) mapped.content = updates.content
+        if (updates.category !== undefined) mapped.category = updates.category
+        if (updates.imageUrl !== undefined) mapped.featured_image_url = updates.imageUrl || null
+        if (updates.isPublished !== undefined) {
+          mapped.is_published = updates.isPublished
+          // Stamp a publish date the first time it goes live.
+          mapped.published_at = updates.isPublished
+            ? updates.publishedAt || new Date().toISOString()
+            : null
+        }
+        mapped.updated_at = new Date().toISOString()
+
+        const { error } = await supabase.from('articles').update(mapped).eq('id', id)
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error updating article in Supabase:', err)
+        throw err
+      }
+    }
+
+    const articles = getLocal<Article>(ARTICLES_KEY)
+    const index = articles.findIndex(a => a.id === id)
+    if (index !== -1) {
+      const next = { ...articles[index], ...updates }
+      if (updates.isPublished !== undefined) {
+        next.publishedAt = updates.isPublished
+          ? articles[index].publishedAt || new Date().toISOString()
+          : null
+      }
+      articles[index] = next
+      setLocal(ARTICLES_KEY, articles)
+    }
+  },
+
+  delete: async (id: string): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase.from('articles').delete().eq('id', id)
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error deleting article from Supabase:', err)
+        throw err
+      }
+    }
+
+    const articles = getLocal<Article>(ARTICLES_KEY)
+    setLocal(ARTICLES_KEY, articles.filter(a => a.id !== id))
+  },
+}
+
+// Shared helpers for rendering articles on public pages.
+export const ARTICLE_CATEGORY_LABELS: Record<ArticleCategory, string> = {
+  news: 'News',
+  tournament: 'Tournament',
+  team: 'Team',
+  player: 'Player',
+  other: 'Update',
+}
+
+export const articleExcerpt = (content: string, max = 160): string => {
+  const clean = content.replace(/\s+/g, ' ').trim()
+  return clean.length > max ? `${clean.slice(0, max).trimEnd()}…` : clean
+}
+
+export const articleReadTime = (content: string): string => {
+  const words = content.trim().split(/\s+/).filter(Boolean).length
+  return `${Math.max(1, Math.round(words / 200))} min read`
+}
+
+export const articleDate = (article: Article): string => {
+  const iso = article.publishedAt || article.createdAt
+  if (!iso) return ''
+  const d = new Date(iso)
+  return isNaN(d.getTime())
+    ? ''
+    : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
 

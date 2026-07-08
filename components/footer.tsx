@@ -36,7 +36,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-lg font-bold mb-4">{txt('site.footer_title', 'Maharashtra Sepaktakraw')}</h3>
+            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <img src="/icon.svg" alt="MSA logo" className="h-6 w-6 rounded-md object-contain filter brightness-0 invert" />
+              {txt('site.footer_title', 'Maharashtra Sepaktakraw')}
+            </h3>
             <p className="text-primary-foreground opacity-80 text-sm leading-relaxed text-balance">
               {txt('site.footer_desc', 'Promoting excellence and growth in Sepaktakraw across Maharashtra through competitive tournaments and player development.')}
             </p>
@@ -50,6 +53,7 @@ export default function Footer() {
               <li><Link href="/tournaments" className="opacity-80 hover:opacity-100 transition">Tournaments</Link></li>
               <li><Link href="/teams" className="opacity-80 hover:opacity-100 transition">Teams</Link></li>
               <li><Link href="/players" className="opacity-80 hover:opacity-100 transition">Players</Link></li>
+              <li><Link href="/districts" className="opacity-80 hover:opacity-100 transition">Districts</Link></li>
               <li><Link href="/news" className="opacity-80 hover:opacity-100 transition">News</Link></li>
               <li><Link href="/contact" className="opacity-80 hover:opacity-100 transition">Contact Us</Link></li>
             </ul>

@@ -1,4 +1,10 @@
-import { Card } from '@/components/ui/card'
+const POSITION_STYLES: Record<string, { badge: string; bg: string }> = {
+  Spiker:  { badge: 'bg-red-600 text-white',     bg: 'from-red-900 to-red-700' },
+  Setter:  { badge: 'bg-blue-600 text-white',    bg: 'from-blue-900 to-blue-700' },
+  Blocker: { badge: 'bg-emerald-600 text-white', bg: 'from-emerald-900 to-emerald-700' },
+  Libero:  { badge: 'bg-purple-600 text-white',  bg: 'from-purple-900 to-purple-700' },
+  default: { badge: 'bg-slate-600 text-white',   bg: 'from-slate-800 to-slate-600' },
+}
 
 interface PlayerCardProps {
   id: string
@@ -9,9 +15,11 @@ interface PlayerCardProps {
   height?: string
   weight?: string
   photoUrl?: string
+  onViewProfile?: () => void
 }
 
 export function PlayerCard({
+  id,
   name,
   position,
   team,
@@ -19,16 +27,13 @@ export function PlayerCard({
   height,
   weight,
   photoUrl,
+  onViewProfile,
 }: PlayerCardProps) {
-  const positionColors: Record<string, string> = {
-    Spiker: 'bg-red-50 text-red-700 border border-red-200',
-    Setter: 'bg-blue-50 text-blue-700 border border-blue-200',
-    Blocker: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-    Libero: 'bg-purple-50 text-purple-700 border border-purple-200',
-    default: 'bg-slate-50 text-slate-700 border border-slate-200',
-  }
+  const style = POSITION_STYLES[position] || POSITION_STYLES.default
+  // Per-record photo is set from the admin panel; absent one, a branded
+  // gradient + initials avatar renders (no hardcoded stock imagery).
+  const displayImage = photoUrl
 
-  const bgColor = positionColors[position] || positionColors.default
   const initials = name
     .split(' ')
     .map((w) => w[0])
@@ -37,44 +42,65 @@ export function PlayerCard({
     .toUpperCase()
 
   return (
-    <Card className="group p-6 transition hover:shadow-lg hover:-translate-y-1 border border-border bg-card">
-      <div className="flex items-start gap-4 mb-4">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-secondary text-lg font-bold text-primary ring-2 ring-primary/20">
-          {photoUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={photoUrl} alt={name} className="h-full w-full object-cover" />
-          ) : (
-            initials
+    <div className="group overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col">
+      {/* Photo area */}
+      <div className={`relative h-52 w-full overflow-hidden bg-gradient-to-br ${style.bg} flex-shrink-0`}>
+        {displayImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={displayImage}
+            alt={name}
+            className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="text-5xl font-black text-white/30">{initials}</span>
+          </div>
+        )}
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+        {/* Jersey number badge */}
+        <div className="absolute top-3 left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white font-black text-lg shadow-lg">
+          {jerseyNumber}
+        </div>
+
+        {/* Position badge */}
+        <span className={`absolute top-3 right-3 rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-wider shadow-lg ${style.badge}`}>
+          {position}
+        </span>
+
+        {/* Name on photo */}
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="text-white font-black text-base leading-tight drop-shadow-lg">{name}</h3>
+          <p className="text-white/70 text-xs font-semibold mt-0.5">{team}</p>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-5">
+        <div className="grid grid-cols-2 gap-3 mb-5 flex-1">
+          {height && (
+            <div className="text-center rounded-xl bg-slate-50 py-3">
+              <div className="text-base font-black text-[#1e3a8a]">{height}</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Height</div>
+            </div>
+          )}
+          {weight && (
+            <div className="text-center rounded-xl bg-slate-50 py-3">
+              <div className="text-base font-black text-[#1e3a8a]">{weight}</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Weight</div>
+            </div>
           )}
         </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="text-xl font-bold truncate text-foreground">{name}</h3>
-          <p className="text-muted-foreground text-sm font-semibold">#{jerseyNumber}</p>
-          <span className={`mt-2 inline-block rounded-full px-3 py-0.5 text-xs font-semibold ${bgColor}`}>
-            {position}
-          </span>
-        </div>
-      </div>
 
-      <div className="space-y-2 mb-4">
-        <div className="text-muted-foreground text-sm">
-          <strong>Team:</strong> {team}
-        </div>
-        {height && (
-          <div className="text-muted-foreground text-sm">
-            <strong>Height:</strong> {height}
-          </div>
-        )}
-        {weight && (
-          <div className="text-muted-foreground text-sm">
-            <strong>Weight:</strong> {weight}
-          </div>
-        )}
+        <button
+          onClick={onViewProfile}
+          className="w-full rounded-xl bg-[#1e3a8a] py-3 text-sm font-bold text-white hover:bg-[#2563eb] transition-colors shadow-sm cursor-pointer"
+        >
+          View Profile
+        </button>
       </div>
-
-      <button className="w-full rounded-md bg-primary py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/95 shadow-sm">
-        View Profile
-      </button>
-    </Card>
+    </div>
   )
 }

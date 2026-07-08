@@ -3,73 +3,72 @@
 import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { PageHero } from '@/components/page-hero'
 import { useSiteSettings } from '@/lib/site-settings'
 import { FormSubmissionManager } from '@/lib/data-manager'
 import { FormSchema, FormField } from '@/lib/types'
 import { Button } from '@/components/ui/button'
-import { Check, Mail, Phone, MapPin, Send, AlertCircle } from 'lucide-react'
+import { Check, Mail, Phone, MapPin, Send, AlertCircle, ArrowRight } from 'lucide-react'
+
+// Builds the initial answer map for a schema (first option for selects, else empty).
+function initialDataFor(schema: FormSchema): Record<string, string> {
+  const data: Record<string, string> = {}
+  schema.fields.forEach((field) => {
+    data[field.id] =
+      field.type === 'select' && field.options && field.options.length > 0
+        ? field.options[0]
+        : ''
+  })
+  return data
+}
+
+const FALLBACK_SCHEMA: FormSchema = {
+  id: 'contact',
+  title: 'Send a Message',
+  fields: [
+    { id: 'name', label: 'Full Name', type: 'text', required: true, placeholder: 'e.g. Rahul Sharma' },
+    { id: 'email', label: 'Email Address', type: 'email', required: true, placeholder: 'e.g. rahul@example.com' },
+    { id: 'phone', label: 'Phone Number', type: 'text', required: false, placeholder: 'e.g. +91 98765 43210' },
+    { id: 'category', label: 'Query Category', type: 'select', required: true, options: ['General Inquiry', 'Join a Team', 'Tournament Inquiry', 'Sponsorship Opportunity', 'Other'] },
+    { id: 'subject', label: 'Subject', type: 'text', required: true, placeholder: 'What is this regarding?' },
+    { id: 'message', label: 'Message', type: 'textarea', required: true, placeholder: 'Type your message here...' },
+  ],
+}
 
 export default function ContactPage() {
-  const { txt, isLoaded } = useSiteSettings()
+  // Pull the raw settings object (stable reference once loaded) instead of the
+  // `txt` helper — `txt` is re-created on every render, and depending on it in
+  // the effect below caused an infinite setState→render→setState loop.
+  const { settings, isLoaded, txt } = useSiteSettings()
   const [schema, setSchema] = useState<FormSchema | null>(null)
-  const [formData, setFormData] = useState<Record<string, any>>({})
+  const [formData, setFormData] = useState<Record<string, string>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  // Hydrate custom form schema from site settings
+  // Hydrate the custom form schema from site settings once they have loaded.
   useEffect(() => {
-    if (isLoaded) {
+    if (!isLoaded) return
+
+    const rawSchema = settings['site.custom_form_schema']?.text
+    let next = FALLBACK_SCHEMA
+    if (rawSchema) {
       try {
-        const rawSchema = txt('site.custom_form_schema')
-        if (rawSchema) {
-          const parsed = JSON.parse(rawSchema)
-          if (parsed && parsed.fields) {
-            setSchema(parsed)
-            // Initialize form data
-            const initialData: Record<string, any> = {}
-            parsed.fields.forEach((field: FormField) => {
-              initialData[field.id] = field.type === 'select' && field.options && field.options.length > 0
-                ? field.options[0]
-                : ''
-            })
-            setFormData(initialData)
-            return
-          }
-        }
+        const parsed = JSON.parse(rawSchema)
+        if (parsed && Array.isArray(parsed.fields)) next = parsed
       } catch (err) {
         console.error('Failed to parse form schema, using fallback.', err)
       }
-
-      // Default fallback contact schema
-      const fallbackSchema: FormSchema = {
-        id: 'contact',
-        title: 'Contact Form',
-        fields: [
-          { id: 'name', label: 'Full Name', type: 'text', required: true, placeholder: 'e.g. Rahul Sharma' },
-          { id: 'email', label: 'Email Address', type: 'email', required: true, placeholder: 'e.g. rahul@example.com' },
-          { id: 'phone', label: 'Phone Number', type: 'text', required: false, placeholder: 'e.g. +91 98765 43210' },
-          { id: 'category', label: 'Query Category', type: 'select', required: true, options: ['General Inquiry', 'Join a Team', 'Tournament Inquiry', 'Sponsorship Opportunity', 'Other'] },
-          { id: 'subject', label: 'Subject', type: 'text', required: true, placeholder: 'What is this regarding?' },
-          { id: 'message', label: 'Message', type: 'textarea', required: true, placeholder: 'Type your message here...' }
-        ]
-      }
-      setSchema(fallbackSchema)
-      const initialData: Record<string, any> = {}
-      fallbackSchema.fields.forEach((field) => {
-        initialData[field.id] = field.type === 'select' && field.options && field.options.length > 0
-          ? field.options[0]
-          : ''
-      })
-      setFormData(initialData)
     }
-  }, [isLoaded, txt])
+
+    setSchema(next)
+    setFormData(initialDataFor(next))
+  }, [isLoaded, settings])
 
   const handleInputChange = (fieldId: string, value: string) => {
-    setFormData(prev => ({ ...prev, [fieldId]: value }))
-    // Clear field error on typing
+    setFormData((prev) => ({ ...prev, [fieldId]: value }))
     if (errors[fieldId]) {
-      setErrors(prev => {
+      setErrors((prev) => {
         const next = { ...prev }
         delete next[fieldId]
         return next
@@ -81,15 +80,12 @@ export default function ContactPage() {
     if (!schema) return false
     const newErrors: Record<string, string> = {}
 
-    schema.fields.forEach(field => {
+    schema.fields.forEach((field) => {
       const val = formData[field.id]?.toString().trim()
-      
-      // Required check
+
       if (field.required && !val) {
         newErrors[field.id] = `${field.label} is required.`
       }
-
-      // Format check
       if (val) {
         if (field.type === 'email' && !/\S+@\S+\.\S+/.test(val)) {
           newErrors[field.id] = 'Please enter a valid email address.'
@@ -112,17 +108,10 @@ export default function ContactPage() {
     try {
       await FormSubmissionManager.add({
         form_id: schema.id || 'contact',
-        answers: formData
+        answers: formData,
       })
       setSubmitSuccess(true)
-      // Reset form data
-      const resetData: Record<string, any> = {}
-      schema.fields.forEach(field => {
-        resetData[field.id] = field.type === 'select' && field.options && field.options.length > 0
-          ? field.options[0]
-          : ''
-      })
-      setFormData(resetData)
+      setFormData(initialDataFor(schema))
     } catch (err) {
       console.error('Submission failed:', err)
       setErrors({ _form: 'Something went wrong. Please try again later.' })
@@ -131,143 +120,134 @@ export default function ContactPage() {
     }
   }
 
+  const contactCards = [
+    { icon: MapPin, label: 'Address', value: txt('site.footer_contact_address', 'Maharashtra, India') },
+    { icon: Phone, label: 'Phone', value: txt('site.footer_contact_phone', '+91 (XXX) XXX-XXXX') },
+    { icon: Mail, label: 'Email', value: txt('site.footer_contact_email', 'info@msa.org.in') },
+  ]
+
   return (
     <>
       <Navbar />
-      <main className="flex flex-col min-h-screen bg-slate-50/50">
-        {/* Page Hero */}
-        <section className="bg-primary text-primary-foreground py-16 sm:py-24 border-b border-primary/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-              Contact Us
-            </h1>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-              Get in touch with the Maharashtra Sepaktakraw Association. We are here to answer your queries and welcome collaborations.
-            </p>
-          </div>
-        </section>
+      <main className="flex flex-col min-h-screen bg-white">
+        <PageHero
+          imageKey="contact.hero.image"
+          kicker="Get Involved"
+          title="Get in Touch"
+          subtitle="Questions, partnerships, or want to join a team? The Maharashtra Sepaktakraw Association is here."
+        />
 
-        {/* Content Section */}
         <section className="py-16 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              
-              {/* Contact Info Sidebar */}
-              <div className="lg:col-span-4 flex flex-col justify-between space-y-8">
-                <div className="space-y-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Connect With Us</h2>
-                    <p className="text-muted-foreground">
-                      Reach out directly, visit our regional offices, or send us a message through the form.
-                    </p>
-                  </div>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-                  <div className="space-y-4">
-                    {/* Address */}
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white border shadow-sm">
-                      <div className="p-2.5 rounded-lg bg-blue-50 text-blue-600">
-                        <MapPin size={20} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-800">Address</h3>
-                        <p className="text-sm text-muted-foreground mt-0.5">
-                          {txt('site.footer_contact_address', 'Maharashtra, India')}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white border shadow-sm">
-                      <div className="p-2.5 rounded-lg bg-blue-50 text-blue-600">
-                        <Phone size={20} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-800">Phone</h3>
-                        <p className="text-sm text-muted-foreground mt-0.5">
-                          {txt('site.footer_contact_phone', '+91 (XXX) XXX-XXXX')}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Email */}
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-white border shadow-sm">
-                      <div className="p-2.5 rounded-lg bg-blue-50 text-blue-600">
-                        <Mail size={20} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-800">Email</h3>
-                        <p className="text-sm text-muted-foreground mt-0.5">
-                          {txt('site.footer_contact_email', 'info@msa.org.in')}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Subtext info */}
-                <div className="hidden lg:block p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/50 border border-blue-100">
-                  <h4 className="font-semibold text-blue-900 mb-1">Regional Office Hours</h4>
-                  <p className="text-xs text-blue-800/80 leading-relaxed">
-                    Monday – Saturday: 10:00 AM – 6:00 PM IST<br />
-                    Sundays & Holidays: Closed
+              {/* ─── Contact info rail ─── */}
+              <aside className="lg:col-span-4 space-y-6">
+                <div>
+                  <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">Reach Us</span>
+                  <h2 className="mt-2 text-3xl font-black uppercase tracking-tight text-[#0A0F1E] leading-tight">
+                    Let's Talk<br />Sepaktakraw
+                  </h2>
+                  <p className="mt-3 text-sm text-slate-500 leading-relaxed">
+                    Reach out directly or send a message through the form. We respond to every genuine enquiry.
                   </p>
                 </div>
-              </div>
 
-              {/* Form Container */}
+                <div className="space-y-3">
+                  {contactCards.map(({ icon: Icon, label, value }) => (
+                    <div
+                      key={label}
+                      className="group flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-blue-200 hover:shadow-md"
+                    >
+                      <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#2563eb] transition group-hover:bg-[#2563eb] group-hover:text-white">
+                        <Icon size={18} />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-wider text-slate-400">{label}</p>
+                        <p className="mt-0.5 text-sm font-semibold text-[#0A0F1E] break-words">{value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Office hours — dark brand block */}
+                <div className="relative overflow-hidden rounded-2xl bg-[#060C1A] p-6">
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.08)_1px,transparent_1px)] bg-[size:32px_32px]" />
+                  <div className="relative">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-[#38bdf8]">Office Hours</h4>
+                    <p className="mt-3 text-sm font-medium text-white/70 leading-relaxed">
+                      Monday – Saturday<br />
+                      <span className="font-black text-white">10:00 AM – 6:00 PM IST</span><br />
+                      <span className="text-white/40">Sundays &amp; holidays: closed</span>
+                    </p>
+                  </div>
+                </div>
+              </aside>
+
+              {/* ─── Form ─── */}
               <div className="lg:col-span-8">
-                <div className="bg-white rounded-2xl border shadow-sm p-6 sm:p-10">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-6">
-                    {schema?.title || 'Send a Message'}
-                  </h2>
+                <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 sm:p-9">
+                  <div className="mb-7 flex items-center justify-between border-b border-slate-100 pb-5">
+                    <h2 className="text-2xl font-black uppercase tracking-tight text-[#0A0F1E]">
+                      {schema?.title || 'Send a Message'}
+                    </h2>
+                    <div className="hidden sm:block h-1 w-16 rounded-full bg-gradient-to-r from-[#2563eb] to-[#38bdf8]" />
+                  </div>
 
                   {submitSuccess ? (
-                    <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-8 text-center">
-                      <div className="inline-flex p-3 rounded-full bg-emerald-100 text-emerald-600 mb-4 animate-bounce">
+                    <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-8 text-center">
+                      <div className="mb-4 inline-flex rounded-full bg-emerald-100 p-3 text-emerald-600">
                         <Check size={32} />
                       </div>
-                      <h3 className="text-xl font-bold text-emerald-900 mb-2">Message Sent Successfully!</h3>
-                      <p className="text-emerald-800/80 max-w-md mx-auto mb-6">
-                        Thank you for contacting us. We have received your query and our team will get back to you as soon as possible.
+                      <h3 className="text-xl font-black uppercase tracking-tight text-emerald-900">Message Sent</h3>
+                      <p className="mx-auto mt-2 mb-6 max-w-md text-sm text-emerald-800/80 leading-relaxed">
+                        Thanks for reaching out. Our team has received your message and will get back to you shortly.
                       </p>
-                      <Button 
+                      <Button
                         onClick={() => setSubmitSuccess(false)}
-                        className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                        className="rounded-full bg-emerald-600 font-black uppercase tracking-wider text-white hover:bg-emerald-700"
                       >
-                        Send Another Message
+                        Send Another
                       </Button>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
                       {errors._form && (
-                        <div className="flex items-center gap-3 p-4 rounded-lg bg-red-50 border border-red-100 text-red-700">
+                        <div className="flex items-center gap-3 rounded-xl border border-red-100 bg-red-50 p-4 text-red-700">
                           <AlertCircle size={20} className="shrink-0" />
-                          <p className="text-sm font-medium">{errors._form}</p>
+                          <p className="text-sm font-semibold">{errors._form}</p>
                         </div>
                       )}
 
                       {!schema ? (
-                        <div className="space-y-4 py-8 text-center text-muted-foreground">
-                          <p>Loading form fields...</p>
+                        <div className="space-y-3 py-10 text-center">
+                          <span className="mx-auto block h-8 w-8 animate-spin rounded-full border-2 border-slate-200 border-t-[#2563eb]" />
+                          <p className="text-sm font-semibold text-slate-400">Loading form…</p>
                         </div>
                       ) : (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                           {schema.fields.map((field) => {
-                            const isFullWidth = field.type === 'textarea' || field.id === 'subject' || field.id === 'message'
+                            const isFullWidth =
+                              field.type === 'textarea' || field.id === 'subject' || field.id === 'message'
                             const errorMsg = errors[field.id]
+                            const base =
+                              'flex w-full rounded-xl border bg-white px-3.5 text-sm shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-[#2563eb]/40 focus:border-[#2563eb] placeholder:text-slate-400 font-medium'
+                            const borderCls = errorMsg
+                              ? 'border-red-400 focus:ring-red-500/30 focus:border-red-500'
+                              : 'border-slate-200'
 
                             return (
-                              <div 
-                                key={field.id} 
-                                className={`flex flex-col space-y-1.5 ${isFullWidth ? 'sm:col-span-2' : ''}`}
+                              <div
+                                key={field.id}
+                                className={`flex flex-col gap-1.5 ${isFullWidth ? 'sm:col-span-2' : ''}`}
                               >
-                                <label 
-                                  htmlFor={field.id} 
-                                  className="text-sm font-medium text-slate-700 flex items-center gap-1"
+                                <label
+                                  htmlFor={field.id}
+                                  className="flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-slate-600"
                                 >
                                   {field.label}
                                   {field.required && (
-                                    <span className="text-red-500 font-bold" aria-hidden="true">*</span>
+                                    <span className="text-red-500" aria-hidden="true">*</span>
                                   )}
                                 </label>
 
@@ -278,20 +258,16 @@ export default function ContactPage() {
                                     placeholder={field.placeholder || ''}
                                     value={formData[field.id] || ''}
                                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                                    className={`flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 ${
-                                      errorMsg ? 'border-red-500 focus-visible:ring-red-500' : 'focus:border-blue-500'
-                                    }`}
+                                    className={`${base} py-2.5 ${borderCls}`}
                                   />
                                 ) : field.type === 'select' ? (
                                   <select
                                     id={field.id}
                                     value={formData[field.id] || ''}
                                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                                    className={`flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 ${
-                                      errorMsg ? 'border-red-500 focus-visible:ring-red-500' : 'focus:border-blue-500'
-                                    }`}
+                                    className={`${base} h-11 py-2 ${borderCls}`}
                                   >
-                                    {field.options?.map(opt => (
+                                    {field.options?.map((opt) => (
                                       <option key={opt} value={opt}>{opt}</option>
                                     ))}
                                   </select>
@@ -302,14 +278,12 @@ export default function ContactPage() {
                                     placeholder={field.placeholder || ''}
                                     value={formData[field.id] || ''}
                                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                                    className={`flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 ${
-                                      errorMsg ? 'border-red-500 focus-visible:ring-red-500' : 'focus:border-blue-500'
-                                    }`}
+                                    className={`${base} h-11 py-2 ${borderCls}`}
                                   />
                                 )}
 
                                 {errorMsg && (
-                                  <p className="text-xs font-semibold text-red-500 flex items-center gap-1 mt-1">
+                                  <p className="mt-0.5 flex items-center gap-1 text-xs font-semibold text-red-500">
                                     <AlertCircle size={12} />
                                     {errorMsg}
                                   </p>
@@ -320,21 +294,20 @@ export default function ContactPage() {
                         </div>
                       )}
 
-                      <div className="pt-4 border-t flex justify-end">
+                      <div className="flex justify-end border-t border-slate-100 pt-5">
                         <Button
                           type="submit"
                           disabled={isSubmitting || !schema}
-                          className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 h-10 transition-all flex items-center gap-2"
+                          className="inline-flex h-11 items-center gap-2 rounded-full bg-[#2563eb] px-7 font-black uppercase tracking-wider text-white shadow-lg shadow-blue-600/20 transition-all hover:bg-blue-500 hover:scale-[1.02] active:scale-95"
                         >
                           {isSubmitting ? (
                             <>
-                              <span className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
-                              Sending...
+                              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                              Sending…
                             </>
                           ) : (
                             <>
-                              <Send size={16} />
-                              Send Message
+                              Send Message <ArrowRight size={16} />
                             </>
                           )}
                         </Button>
@@ -343,7 +316,6 @@ export default function ContactPage() {
                   )}
                 </div>
               </div>
-
             </div>
           </div>
         </section>

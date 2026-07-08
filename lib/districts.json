@@ -1,0 +1,182 @@
+[
+  {
+    "id": "akola",
+    "name": "Akola District Sepaktakraw Association",
+    "district": "Akola",
+    "logo": "/logos/akola.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "akola@msa.org.in"
+  },
+  {
+    "id": "amravati",
+    "name": "Housi Amravati District Sepaktakraw Association",
+    "district": "Amravati",
+    "logo": "/logos/amravati.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "amravati@msa.org.in"
+  },
+  {
+    "id": "beed",
+    "name": "Beed District Sepaktakaraw Association",
+    "district": "Beed",
+    "logo": "/logos/beed.png",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "beed@msa.org.in"
+  },
+  {
+    "id": "bhandara",
+    "name": "Vedant Sepak Takraw Association Bhandara",
+    "district": "Bhandara",
+    "logo": "/logos/bhandara.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "bhandara@msa.org.in"
+  },
+  {
+    "id": "chhatrapati-sambhajinagar",
+    "name": "Jilha Shahar Sepak Takraw Association",
+    "district": "Chhatrapati Sambhaji Nagar",
+    "logo": "/logos/chhatrapati-sambhajinagar.jpeg",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "csn@msa.org.in"
+  },
+  {
+    "id": "gondia",
+    "name": "Gondia District Sepak Takraw Association",
+    "district": "Gondia",
+    "logo": "/logos/gondia.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "gondia@msa.org.in"
+  },
+  {
+    "id": "jalgaon",
+    "name": "Jalgaon District Sepak Takraw Association",
+    "district": "Jalgaon",
+    "logo": "/logos/jalgaon.jpeg",
+    "status": "Active",
+    "region": "Khandesh",
+    "email": "jalgaon@msa.org.in"
+  },
+  {
+    "id": "jalna",
+    "name": "Sepak Takraw Association Jalna",
+    "district": "Jalna",
+    "logo": "/logos/jalna.png",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "jalna@msa.org.in"
+  },
+  {
+    "id": "kolhapur",
+    "name": "Amateur Kolhapur District Sepak Takraw Association",
+    "district": "Kolhapur",
+    "logo": "/logos/kolhapur.jpeg",
+    "status": "Active",
+    "region": "Western Maharashtra",
+    "email": "kolhapur@msa.org.in"
+  },
+  {
+    "id": "latur",
+    "name": "Latur District Sepak Takraw Association",
+    "district": "Latur",
+    "logo": "/logos/latur.jpeg",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "latur@msa.org.in"
+  },
+  {
+    "id": "mumbai-suburban",
+    "name": "Sepak Takraw Association Mumbai Suburban",
+    "district": "Mumbai Suburban",
+    "logo": "/logos/mumbai-suburban.jpeg",
+    "status": "Active",
+    "region": "Konkan",
+    "email": "mumbai.suburban@msa.org.in"
+  },
+  {
+    "id": "nagpur",
+    "name": "Nagpur District Sepaktakraw Association",
+    "district": "Nagpur",
+    "logo": "/logos/nagpur.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "nagpur@msa.org.in"
+  },
+  {
+    "id": "nanded",
+    "name": "Nanded District Sepak Takraw Association",
+    "district": "Nanded",
+    "logo": "/logos/nanded.jpeg",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "nanded@msa.org.in"
+  },
+  {
+    "id": "nashik",
+    "name": "Sepaktakraw Association of Nashik",
+    "district": "Nashik",
+    "logo": "/logos/nashik.png",
+    "status": "Active",
+    "region": "Khandesh",
+    "email": "nashik@msa.org.in"
+  },
+  {
+    "id": "parbhani",
+    "name": "Sepak Takraw Association of Parbhani",
+    "district": "Parbhani",
+    "logo": "/logos/parbhani.jpeg",
+    "status": "Active",
+    "region": "Marathwada",
+    "email": "parbhani@msa.org.in"
+  },
+  {
+    "id": "pune",
+    "name": "The Pune District Sepak Takraw Association",
+    "district": "Pune",
+    "logo": "/logos/pune.jpeg",
+    "status": "Active",
+    "region": "Western Maharashtra",
+    "email": "pune@msa.org.in"
+  },
+  {
+    "id": "solapur",
+    "name": "Solapur District Sepak Takraw Association",
+    "district": "Solapur",
+    "logo": "/logos/solapur.png",
+    "status": "Active",
+    "region": "Western Maharashtra",
+    "email": "solapur@msa.org.in"
+  },
+  {
+    "id": "wardha",
+    "name": "New Sepak Takraw Association - Wardha",
+    "district": "Wardha",
+    "logo": "/logos/wardha.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "wardha@msa.org.in"
+  },
+  {
+    "id": "washim",
+    "name": "The Washim District Sepaktakraw Association",
+    "district": "Washim",
+    "logo": "/logos/washim.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "washim@msa.org.in"
+  },
+  {
+    "id": "yavatmal",
+    "name": "Sepak Takraw Krida Association Yavatmal",
+    "district": "Yavatmal",
+    "logo": "/logos/yavatmal.jpeg",
+    "status": "Active",
+    "region": "Vidarbha",
+    "email": "yavatmal@msa.org.in"
+  }
+]

@@ -3,52 +3,54 @@
 import { useSiteSettings } from '@/lib/site-settings'
 
 interface PageHeroProps {
-  /** site_settings key for the optional background image, e.g. 'teams.hero.image'. */
   imageKey?: string
   kicker?: string
   title: string
   subtitle?: string
 }
 
-/**
- * Shared interior-page hero. Renders the admin-configured background image for
- * `imageKey` (from site_settings) with a navy gradient overlay, falling back to
- * a solid primary band when no image is set.
- */
 export function PageHero({ imageKey, kicker, title, subtitle }: PageHeroProps) {
   const { img, txt, alt } = useSiteSettings()
-  
+
   const prefix = imageKey && imageKey.includes('.') ? imageKey.substring(0, imageKey.lastIndexOf('.')) : ''
   const titleKey = prefix ? `${prefix}.title` : ''
   const subtitleKey = prefix ? `${prefix}.subtitle` : ''
 
-  const bg = imageKey ? img(imageKey) : ''
+  // Background image is admin-editable per page. When none is set, the section
+  // falls back to a branded dark gradient — no hardcoded stock imagery.
+  const displayImage = imageKey ? img(imageKey) : ''
   const displayTitle = titleKey ? txt(titleKey, title) : title
   const displaySubtitle = subtitleKey ? txt(subtitleKey, subtitle) : subtitle
 
   return (
-    <section className="relative overflow-hidden bg-primary text-primary-foreground clip-angle-b border-b border-border">
-      {bg ? (
-        <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={bg}
-            alt={alt(imageKey!, '')}
-            className="absolute inset-0 -z-20 h-full w-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary via-primary/80 to-primary/50" />
-        </>
+    <section className="relative overflow-hidden bg-[#060C1A] text-white min-h-[44vh] flex items-end">
+      {displayImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={displayImage}
+          alt={imageKey ? alt(imageKey, '') : 'Section banner'}
+          className="absolute inset-0 -z-20 h-full w-full object-cover"
+        />
       ) : (
-        <div className="absolute inset-0 -z-10 spotlight" />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(rgba(37,99,235,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.10)_1px,transparent_1px)] bg-[size:48px_48px]" />
       )}
+      {/* Left-heavy overlay — image visible on right */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#060C1A] via-[#060C1A]/80 to-[#060C1A]/40" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#060C1A] via-transparent to-[#060C1A]/50" />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-        {kicker && <span className="kicker mb-5">{kicker}</span>}
-        <h1 className="text-4xl font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl text-white">
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        {kicker && (
+          <span className="text-[#38bdf8] text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">
+            {kicker}
+          </span>
+        )}
+        <h1 className="text-4xl font-black uppercase leading-tight tracking-tighter text-white sm:text-5xl lg:text-6xl max-w-3xl">
           {displayTitle}
         </h1>
         {displaySubtitle && (
-          <p className="mt-5 max-w-2xl text-lg text-balance opacity-90 sm:text-xl text-slate-100">{displaySubtitle}</p>
+          <p className="mt-5 max-w-2xl text-base sm:text-lg text-white/55 font-medium leading-relaxed">
+            {displaySubtitle}
+          </p>
         )}
       </div>
     </section>

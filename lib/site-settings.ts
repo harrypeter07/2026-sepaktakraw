@@ -1,8 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { FEATURE_FLAGS } from './feature-flags'
-import { supabase } from './supabase'
+import siteContent from './site-content.json'
 
 // A single site setting value. Image keys use `url` (+ optional `alt`/`caption`);
 // text keys use `text`. JSONB in the DB lets one row carry either shape.
@@ -15,15 +13,13 @@ export interface SettingValue {
 
 export type SiteSettings = Record<string, SettingValue>
 
-// Metadata describing every editable setting. Drives the admin UI grouping and
-// labels, and provides the render-time fallback so pages work before the
-// `site_settings` table (migration 005) is applied or populated.
 export interface SettingDescriptor {
   key: string
   label: string
   page: string // group: 'home' | 'about' | 'news' | 'teams' | 'players' | 'tournaments' | 'global'
   type: 'image' | 'text'
   shape?: 'avatar' | 'banner' // for image settings, hints the upload preview shape
+  options?: string[] // when set, the admin renders a <select> of these values (stored in `text`)
   default: SettingValue
 }
 
@@ -64,7 +60,8 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   { key: 'site.footer_logo_4', label: 'Sponsor Logo 4', page: 'global', type: 'image', shape: 'avatar', default: { url: '' } },
   
   // Homepage ---------------------------------------------------------------
-  { key: 'home.hero.image', label: 'Hero Background', page: 'home', type: 'image', shape: 'banner', default: { url: '/hero.jpg', alt: 'Sepaktakraw action' } },
+  { key: 'home.hero.media_type', label: 'Hero Media Type (video or image)', page: 'home', type: 'text', options: ['video', 'image'], default: { text: 'video' } },
+  { key: 'home.hero.image', label: 'Hero Image (used when media type is "image")', page: 'home', type: 'image', shape: 'banner', default: { url: '/hero/hero-image.jpg', alt: 'Sepaktakraw Federation of India' } },
   { key: 'home.hero.title', label: 'Hero Title', page: 'home', type: 'text', default: { text: 'Maharashtra Sepaktakraw' } },
   { key: 'home.hero.subtitle', label: 'Hero Subtitle', page: 'home', type: 'text', default: { text: 'Excellence in Asian Kick-Volleyball Sport' } },
   { key: 'home.about.title', label: 'About Section Title', page: 'home', type: 'text', default: { text: 'What is Sepaktakraw?' } },
@@ -87,6 +84,40 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   { key: 'about.hero.image', label: 'About Hero Background', page: 'about', type: 'image', shape: 'banner', default: { url: '' } },
   { key: 'about.hero.title', label: 'About Hero Title', page: 'about', type: 'text', default: { text: 'About Maharashtra Sepaktakraw Association' } },
   { key: 'about.hero.subtitle', label: 'About Hero Subtitle', page: 'about', type: 'text', default: { text: 'Promoting excellence and growth in Southeast Asian kick-volleyball sport' } },
+  { key: 'about.mission.text', label: 'Mission Statement', page: 'about', type: 'text', default: { text: 'To promote, develop, and advance the sport of Sepaktakraw in Maharashtra by organizing competitive tournaments, developing world-class athletes, and building a thriving community of passionate players and fans. We are committed to excellence, fair play, and the growth of the sport at all levels.' } },
+  { key: 'about.vision.text', label: 'Vision Statement', page: 'about', type: 'text', default: { text: 'To establish Maharashtra as a leading hub for Sepaktakraw in Asia, recognized for producing elite athletes and hosting premier international tournaments. We envision a thriving ecosystem where the sport continues to grow and inspire future generations.' } },
+  { key: 'about.fact_1.stat', label: 'Sport Fact 1 — Value', page: 'about', type: 'text', default: { text: '3' } },
+  { key: 'about.fact_1.label', label: 'Sport Fact 1 — Label', page: 'about', type: 'text', default: { text: 'Players per team (Regu)' } },
+  { key: 'about.fact_1.sub', label: 'Sport Fact 1 — Caption', page: 'about', type: 'text', default: { text: 'Core competitive format' } },
+  { key: 'about.fact_2.stat', label: 'Sport Fact 2 — Value', page: 'about', type: 'text', default: { text: '1.52m' } },
+  { key: 'about.fact_2.label', label: 'Sport Fact 2 — Label', page: 'about', type: 'text', default: { text: 'Net height (Men)' } },
+  { key: 'about.fact_2.sub', label: 'Sport Fact 2 — Caption', page: 'about', type: 'text', default: { text: 'International standard' } },
+  { key: 'about.fact_3.stat', label: 'Sport Fact 3 — Value', page: 'about', type: 'text', default: { text: '1965' } },
+  { key: 'about.fact_3.label', label: 'Sport Fact 3 — Label', page: 'about', type: 'text', default: { text: 'SEA Games debut' } },
+  { key: 'about.fact_3.sub', label: 'Sport Fact 3 — Caption', page: 'about', type: 'text', default: { text: 'Southeast Asian Games' } },
+  { key: 'about.fact_4.stat', label: 'Sport Fact 4 — Value', page: 'about', type: 'text', default: { text: '65+' } },
+  { key: 'about.fact_4.label', label: 'Sport Fact 4 — Label', page: 'about', type: 'text', default: { text: 'Countries' } },
+  { key: 'about.fact_4.sub', label: 'Sport Fact 4 — Caption', page: 'about', type: 'text', default: { text: 'Play Sepaktakraw globally' } },
+  { key: 'about.value_1.title', label: 'Core Value 1 — Title', page: 'about', type: 'text', default: { text: 'Excellence' } },
+  { key: 'about.value_1.desc', label: 'Core Value 1 — Description', page: 'about', type: 'text', default: { text: 'Pursuing the highest standards in athlete training, league administration, and team competition.' } },
+  { key: 'about.value_2.title', label: 'Core Value 2 — Title', page: 'about', type: 'text', default: { text: 'Integrity' } },
+  { key: 'about.value_2.desc', label: 'Core Value 2 — Description', page: 'about', type: 'text', default: { text: 'Upholding honesty, respect, and fair play across all tournaments and selection trials.' } },
+  { key: 'about.value_3.title', label: 'Core Value 3 — Title', page: 'about', type: 'text', default: { text: 'Community' } },
+  { key: 'about.value_3.desc', label: 'Core Value 3 — Description', page: 'about', type: 'text', default: { text: 'Building strong connections between players, regional clubs, fans, and school programs.' } },
+  { key: 'about.value_4.title', label: 'Core Value 4 — Title', page: 'about', type: 'text', default: { text: 'Innovation' } },
+  { key: 'about.value_4.desc', label: 'Core Value 4 — Description', page: 'about', type: 'text', default: { text: 'Embracing modern coaching methodologies, facility design, and grassroots talent scouting.' } },
+  { key: 'about.milestone_1.year', label: 'Milestone 1 — Era Tag', page: 'about', type: 'text', default: { text: 'Founded' } },
+  { key: 'about.milestone_1.title', label: 'Milestone 1 — Title', page: 'about', type: 'text', default: { text: 'Official Governing Body' } },
+  { key: 'about.milestone_1.desc', label: 'Milestone 1 — Description', page: 'about', type: 'text', default: { text: 'Established as the official governing body for Sepaktakraw in Maharashtra, dedicated to promoting the sport and developing local talent from grassroots levels.' } },
+  { key: 'about.milestone_2.year', label: 'Milestone 2 — Era Tag', page: 'about', type: 'text', default: { text: 'Growth Phase' } },
+  { key: 'about.milestone_2.title', label: 'Milestone 2 — Title', page: 'about', type: 'text', default: { text: 'Tournament Expansion & Clubs' } },
+  { key: 'about.milestone_2.desc', label: 'Milestone 2 — Description', page: 'about', type: 'text', default: { text: 'Expanded regional tournaments, supported college championships, and registered more teams across the region through active sports council coordination.' } },
+  { key: 'about.milestone_3.year', label: 'Milestone 3 — Era Tag', page: 'about', type: 'text', default: { text: 'Excellence Era' } },
+  { key: 'about.milestone_3.title', label: 'Milestone 3 — Title', page: 'about', type: 'text', default: { text: 'National Podium Success' } },
+  { key: 'about.milestone_3.desc', label: 'Milestone 3 — Description', page: 'about', type: 'text', default: { text: 'Developed world-class athletes, established high-performance training centers in Pune, and secured competitive medal placement in National Championships.' } },
+  { key: 'about.milestone_1.image', label: 'About Milestone 1 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1547153760-18fc86324498?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
+  { key: 'about.milestone_2.image', label: 'About Milestone 2 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1565608438257-17f2b0773838?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
+  { key: 'about.milestone_3.image', label: 'About Milestone 3 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
 
   // News -------------------------------------------------------------------
   { key: 'news.hero.image', label: 'News Hero Background', page: 'news', type: 'image', shape: 'banner', default: { url: '' } },
@@ -97,17 +128,19 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   { key: 'teams.hero.image', label: 'Teams Hero Background', page: 'teams', type: 'image', shape: 'banner', default: { url: '' } },
   { key: 'teams.hero.title', label: 'Teams Hero Title', page: 'teams', type: 'text', default: { text: 'Teams' } },
   { key: 'teams.hero.subtitle', label: 'Teams Hero Subtitle', page: 'teams', type: 'text', default: { text: 'Meet the competitive teams across Maharashtra' } },
-
   { key: 'players.hero.image', label: 'Players Hero Background', page: 'players', type: 'image', shape: 'banner', default: { url: '' } },
   { key: 'players.hero.title', label: 'Players Hero Title', page: 'players', type: 'text', default: { text: 'Players' } },
   { key: 'players.hero.subtitle', label: 'Players Hero Subtitle', page: 'players', type: 'text', default: { text: 'Discover elite Sepaktakraw athletes' } },
-
   { key: 'tournaments.hero.image', label: 'Tournaments Hero Background', page: 'tournaments', type: 'image', shape: 'banner', default: { url: '' } },
   { key: 'tournaments.hero.title', label: 'Tournaments Hero Title', page: 'tournaments', type: 'text', default: { text: 'Tournaments' } },
   { key: 'tournaments.hero.subtitle', label: 'Tournaments Hero Subtitle', page: 'tournaments', type: 'text', default: { text: 'Explore upcoming, ongoing, and completed tournaments' } },
+
+  // Contact ----------------------------------------------------------------
+  { key: 'contact.hero.image', label: 'Contact Hero Background', page: 'contact', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1552674605-db5fecabfe68?w=1600&h=700&fit=crop&q=80', alt: 'Sepaktakraw action' } },
+  { key: 'contact.hero.title', label: 'Contact Hero Title', page: 'contact', type: 'text', default: { text: 'Get in Touch' } },
+  { key: 'contact.hero.subtitle', label: 'Contact Hero Subtitle', page: 'contact', type: 'text', default: { text: 'Questions, partnerships, or want to join a team? The Maharashtra Sepaktakraw Association is here.' } }
 ]
 
-// Render-time fallback map derived from the descriptors.
 export const SETTINGS_DEFAULTS: SiteSettings = SETTING_DESCRIPTORS.reduce(
   (acc, d) => {
     acc[d.key] = d.default
@@ -117,25 +150,8 @@ export const SETTINGS_DEFAULTS: SiteSettings = SETTING_DESCRIPTORS.reduce(
 )
 
 export const SettingsManager = {
-  // Returns defaults merged with any DB overrides. Never throws — on any
-  // failure it falls back to the static defaults so pages always render.
   getAll: async (): Promise<SiteSettings> => {
-    if (FEATURE_FLAGS.USE_SUPABASE) {
-      try {
-        const { data, error } = await supabase
-          .from('site_settings')
-          .select('key, value')
-        if (error) throw error
-        const fromDb: SiteSettings = {}
-        for (const row of data ?? []) {
-          fromDb[row.key as string] = (row.value ?? {}) as SettingValue
-        }
-        return { ...SETTINGS_DEFAULTS, ...fromDb }
-      } catch (err) {
-        console.error('site_settings fetch failed, using defaults:', err)
-      }
-    }
-    return { ...SETTINGS_DEFAULTS }
+    return { ...SETTINGS_DEFAULTS, ...(siteContent as SiteSettings) }
   },
 
   get: async (key: string): Promise<SettingValue> => {
@@ -143,52 +159,17 @@ export const SettingsManager = {
     return all[key] ?? {}
   },
 
-  // Admin-only (enforced by RLS). Upserts so the first edit creates the row
-  // even if the migration seed wasn't run. Throws on auth/RLS failure so the
-  // caller can surface it.
-  set: async (key: string, value: SettingValue): Promise<void> => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-    if (!user) throw new Error('You must be signed in to change site settings.')
-
-    const { error } = await supabase.from('site_settings').upsert(
-      {
-        key,
-        value,
-        updated_by: user.id,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'key' },
-    )
-    if (error) throw error
+  set: async (_key: string, _value: SettingValue): Promise<void> => {
+    throw new Error('Site settings are now statically configured in the codebase via JSON.')
   },
 }
 
-// Client hook for public pages. Seeds state with defaults so first paint never
-// flashes empty, then hydrates with DB values.
 export function useSiteSettings() {
-  const [settings, setSettings] = useState<SiteSettings>(SETTINGS_DEFAULTS)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const settings = { ...SETTINGS_DEFAULTS, ...(siteContent as SiteSettings) }
 
-  useEffect(() => {
-    let active = true
-    SettingsManager.getAll()
-      .then((s) => {
-        if (active) setSettings(s)
-      })
-      .finally(() => {
-        if (active) setIsLoaded(true)
-      })
-    return () => {
-      active = false
-    }
-  }, [])
-
-  // url with a caller-supplied fallback baked in
   const img = (key: string, fallback = '') => settings[key]?.url || fallback
   const alt = (key: string, fallback = '') => settings[key]?.alt || fallback
   const txt = (key: string, fallback = '') => settings[key]?.text || fallback
 
-  return { settings, isLoaded, img, alt, txt }
+  return { settings, isLoaded: true, img, alt, txt }
 }

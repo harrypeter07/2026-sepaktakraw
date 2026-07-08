@@ -1,0 +1,259 @@
+{
+  "site.logo": {
+    "url": "/icon.svg"
+  },
+  "site.navbar_brand": {
+    "text": "MSA"
+  },
+  "site.custom_form_schema": {
+    "text": "{\"id\":\"contact\",\"title\":\"Contact Form\",\"fields\":[{\"id\":\"name\",\"label\":\"Full Name\",\"type\":\"text\",\"required\":true,\"placeholder\":\"e.g. Rahul Sharma\"},{\"id\":\"email\",\"label\":\"Email Address\",\"type\":\"email\",\"required\":true,\"placeholder\":\"e.g. rahul@example.com\"},{\"id\":\"phone\",\"label\":\"Phone Number\",\"type\":\"text\",\"required\":false,\"placeholder\":\"e.g. +91 98765 43210\"},{\"id\":\"category\",\"label\":\"Query Category\",\"type\":\"select\",\"required\":true,\"options\":[\"General Inquiry\",\"Join a Team\",\"Tournament Inquiry\",\"Sponsorship Opportunity\",\"Other\"]},{\"id\":\"subject\",\"label\":\"Subject\",\"type\":\"text\",\"required\":true,\"placeholder\":\"What is this regarding?\"},{\"id\":\"message\",\"label\":\"Message\",\"type\":\"textarea\",\"required\":true,\"placeholder\":\"Type your message here...\"}]}"
+  },
+  "site.og_image": {
+    "url": ""
+  },
+  "site.footer_title": {
+    "text": "Maharashtra Sepaktakraw"
+  },
+  "site.footer_desc": {
+    "text": "Promoting excellence and growth in Sepaktakraw across Maharashtra through competitive tournaments and player development."
+  },
+  "site.footer_contact_address": {
+    "text": "Maharashtra, India"
+  },
+  "site.footer_contact_phone": {
+    "text": "+91 (XXX) XXX-XXXX"
+  },
+  "site.footer_contact_email": {
+    "text": "info@msa.org.in"
+  },
+  "site.footer_copyright": {
+    "text": "2025 Maharashtra Sepaktakraw Association. All rights reserved."
+  },
+  "site.footer_logo_1": {
+    "url": ""
+  },
+  "site.footer_logo_2": {
+    "url": ""
+  },
+  "site.footer_logo_3": {
+    "url": ""
+  },
+  "site.footer_logo_4": {
+    "url": ""
+  },
+  "home.hero.media_type": {
+    "text": "image"
+  },
+  "home.hero.image": {
+    "url": "/hero.jpg",
+    "alt": "Sepaktakraw Federation of India"
+  },
+  "home.hero.title": {
+    "text": "Maharashtra Sepaktakraw"
+  },
+  "home.hero.subtitle": {
+    "text": "Excellence in Asian Kick-Volleyball Sport"
+  },
+  "home.about.title": {
+    "text": "What is Sepaktakraw?"
+  },
+  "home.about.desc_1": {
+    "text": "Sepaktakraw is a Southeast Asian team sport that fuses volleyball with martial arts. Players use their feet, knees, chest and head to send a rattan ball over a net — a spectacular display of agility, timing and precision."
+  },
+  "home.about.desc_2": {
+    "text": "The Maharashtra Sepaktakraw Association promotes this dynamic sport, develops athletes and organises competitive tournaments across the region."
+  },
+  "home.about.image": {
+    "url": "/team.jpg",
+    "alt": "Sepaktakraw team"
+  },
+  "home.focus_1.title": {
+    "text": "Tournaments"
+  },
+  "home.focus_1.desc": {
+    "text": "Competitive events showcasing player talent and team excellence across the state."
+  },
+  "home.focus_2.title": {
+    "text": "Team Management"
+  },
+  "home.focus_2.desc": {
+    "text": "Supporting clubs and teams in player development, logistics and coordination."
+  },
+  "home.focus_3.title": {
+    "text": "Player Development"
+  },
+  "home.focus_3.desc": {
+    "text": "Nurturing young talent and advancing athletic capabilities at every level."
+  },
+  "home.focus_4.title": {
+    "text": "Community Growth"
+  },
+  "home.focus_4.desc": {
+    "text": "Building a thriving Sepaktakraw community across all of Maharashtra."
+  },
+  "home.cta.title": {
+    "text": "Ready to Join the Action?"
+  },
+  "home.cta.subtitle": {
+    "text": "Explore our tournaments, teams and players to stay connected with the sport."
+  },
+  "home.cta.image": {
+    "url": ""
+  },
+  "about.hero.image": {
+    "url": ""
+  },
+  "about.hero.title": {
+    "text": "About Maharashtra Sepaktakraw Association"
+  },
+  "about.hero.subtitle": {
+    "text": "Promoting excellence and growth in Southeast Asian kick-volleyball sport"
+  },
+  "about.mission.text": {
+    "text": "To promote, develop, and advance the sport of Sepaktakraw in Maharashtra by organizing competitive tournaments, developing world-class athletes, and building a thriving community of passionate players and fans. We are committed to excellence, fair play, and the growth of the sport at all levels."
+  },
+  "about.vision.text": {
+    "text": "To establish Maharashtra as a leading hub for Sepaktakraw in Asia, recognized for producing elite athletes and hosting premier international tournaments. We envision a thriving ecosystem where the sport continues to grow and inspire future generations."
+  },
+  "about.fact_1.stat": {
+    "text": "3"
+  },
+  "about.fact_1.label": {
+    "text": "Players per team (Regu)"
+  },
+  "about.fact_1.sub": {
+    "text": "Core competitive format"
+  },
+  "about.fact_2.stat": {
+    "text": "1.52m"
+  },
+  "about.fact_2.label": {
+    "text": "Net height (Men)"
+  },
+  "about.fact_2.sub": {
+    "text": "International standard"
+  },
+  "about.fact_3.stat": {
+    "text": "1965"
+  },
+  "about.fact_3.label": {
+    "text": "SEA Games debut"
+  },
+  "about.fact_3.sub": {
+    "text": "Southeast Asian Games"
+  },
+  "about.fact_4.stat": {
+    "text": "65+"
+  },
+  "about.fact_4.label": {
+    "text": "Countries"
+  },
+  "about.fact_4.sub": {
+    "text": "Play Sepaktakraw globally"
+  },
+  "about.value_1.title": {
+    "text": "Excellence"
+  },
+  "about.value_1.desc": {
+    "text": "Pursuing the highest standards in athlete training, league administration, and team competition."
+  },
+  "about.value_2.title": {
+    "text": "Integrity"
+  },
+  "about.value_2.desc": {
+    "text": "Upholding honesty, respect, and fair play across all tournaments and selection trials."
+  },
+  "about.value_3.title": {
+    "text": "Community"
+  },
+  "about.value_3.desc": {
+    "text": "Building strong connections between players, regional clubs, fans, and school programs."
+  },
+  "about.value_4.title": {
+    "text": "Innovation"
+  },
+  "about.value_4.desc": {
+    "text": "Embracing modern coaching methodologies, facility design, and grassroots talent scouting."
+  },
+  "about.milestone_1.year": {
+    "text": "Founded"
+  },
+  "about.milestone_1.title": {
+    "text": "Official Governing Body"
+  },
+  "about.milestone_1.desc": {
+    "text": "Established as the official governing body for Sepaktakraw in Maharashtra, dedicated to promoting the sport and developing local talent from grassroots levels."
+  },
+  "about.milestone_1.image": {
+    "url": "https://images.unsplash.com/photo-1547153760-18fc86324498?w=500&h=360&fit=crop&q=80"
+  },
+  "about.milestone_2.year": {
+    "text": "Growth Phase"
+  },
+  "about.milestone_2.title": {
+    "text": "Tournament Expansion & Clubs"
+  },
+  "about.milestone_2.desc": {
+    "text": "Expanded regional tournaments, supported college championships, and registered more teams across the region through active sports council coordination."
+  },
+  "about.milestone_2.image": {
+    "url": "https://images.unsplash.com/photo-1565608438257-17f2b0773838?w=500&h=360&fit=crop&q=80"
+  },
+  "about.milestone_3.year": {
+    "text": "Excellence Era"
+  },
+  "about.milestone_3.title": {
+    "text": "National Podium Success"
+  },
+  "about.milestone_3.desc": {
+    "text": "Developed world-class athletes, established high-performance training centers in Pune, and secured competitive medal placement in National Championships."
+  },
+  "about.milestone_3.image": {
+    "url": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&h=360&fit=crop&q=80"
+  },
+  "news.hero.image": {
+    "url": ""
+  },
+  "news.hero.title": {
+    "text": "Latest News"
+  },
+  "news.hero.subtitle": {
+    "text": "Updates from Maharashtra Sepaktakraw Association"
+  },
+  "teams.hero.image": {
+    "url": ""
+  },
+  "teams.hero.title": {
+    "text": "Teams"
+  },
+  "teams.hero.subtitle": {
+    "text": "Meet the competitive teams across Maharashtra"
+  },
+  "players.hero.image": {
+    "url": ""
+  },
+  "players.hero.title": {
+    "text": "Players"
+  },
+  "players.hero.subtitle": {
+    "text": "Discover elite Sepaktakraw athletes"
+  },
+  "tournaments.hero.image": {
+    "url": ""
+  },
+  "tournaments.hero.title": {
+    "text": "Tournaments"
+  },
+  "tournaments.hero.subtitle": {
+    "text": "Explore upcoming, ongoing, and completed tournaments"
+  },
+  "contact.hero.image": {
+    "url": "https://images.unsplash.com/photo-1552674605-db5fecabfe68?w=1600&h=700&fit=crop&q=80"
+  },
+  "contact.hero.title": {
+    "text": "Get in Touch"
+  },
+  "contact.hero.subtitle": {
+    "text": "Questions, partnerships, or want to join a team? The Maharashtra Sepaktakraw Association is here."
+  }
+}

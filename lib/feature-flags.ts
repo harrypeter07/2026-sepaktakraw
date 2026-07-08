@@ -2,7 +2,7 @@
 // Allows gradual rollout and fallback to localStorage if needed
 
 export const FEATURE_FLAGS = {
-  // Use Supabase as primary data source
+  // Use Supabase as primary data source for dynamic entities (tournaments, teams, players, responses)
   USE_SUPABASE: process.env.NEXT_PUBLIC_USE_SUPABASE === 'true',
 
   // Enable real-time features
@@ -16,7 +16,8 @@ export const FEATURE_FLAGS = {
 };
 
 export function isFeatureEnabled(flag: keyof typeof FEATURE_FLAGS): boolean {
-  return FEATURE_FLAGS[flag];
+  const val = FEATURE_FLAGS[flag];
+  return !!val;
 }
 
 // Migration state
@@ -28,7 +29,7 @@ export interface MigrationState {
 }
 
 export function getMigrationState(): MigrationState {
-  const env = process.env.NODE_ENV;
+  const env = typeof process !== 'undefined' ? process.env.NODE_ENV : 'development';
   const useSupabase = FEATURE_FLAGS.USE_SUPABASE;
 
   return {

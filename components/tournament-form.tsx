@@ -20,6 +20,10 @@ export interface TournamentFormData {
   status: 'upcoming' | 'ongoing' | 'completed'
   teamsCount: string
   imageUrl?: string
+  description?: string
+  organizer?: string
+  prizePool?: string
+  format?: 'league' | 'knockout' | 'group_stage'
 }
 
 export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFormProps) {
@@ -32,6 +36,10 @@ export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFor
       status: 'upcoming',
       teamsCount: '',
       imageUrl: '',
+      description: '',
+      organizer: '',
+      prizePool: '',
+      format: 'league',
     }
   )
 
@@ -137,6 +145,53 @@ export function TournamentForm({ onClose, onSubmit, initialData }: TournamentFor
                 required
               />
             </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium mb-2">Format</label>
+              <select
+                value={formData.format}
+                onChange={(e) => setFormData({ ...formData, format: e.target.value as any })}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+              >
+                <option value="league">League</option>
+                <option value="knockout">Knockout</option>
+                <option value="group_stage">Group Stage</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Prize Pool (₹)</label>
+              <input
+                type="number"
+                placeholder="e.g., 500000"
+                value={formData.prizePool}
+                onChange={(e) => setFormData({ ...formData, prizePool: e.target.value })}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-2">Organizer</label>
+            <input
+              type="text"
+              placeholder="e.g., Maharashtra Sepaktakraw Association"
+              value={formData.organizer}
+              onChange={(e) => setFormData({ ...formData, organizer: e.target.value })}
+              className="w-full px-3 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-2">Description</label>
+            <textarea
+              rows={4}
+              placeholder="Tournament overview shown in the detail dialog…"
+              value={formData.description}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              className="w-full px-3 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-accent"
+            />
           </div>
 
           <div className="flex gap-3 justify-end pt-4">

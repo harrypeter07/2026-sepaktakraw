@@ -10,7 +10,7 @@ import { useSiteSettings } from '@/lib/site-settings'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { user, signOut } = useAuth()
-  const { img, txt } = useSiteSettings()
+  const { img, txt, isLoaded } = useSiteSettings()
   const pathname = usePathname()
   const logo = img('site.logo')
 
@@ -19,6 +19,7 @@ export default function Navbar() {
     { label: 'Tournaments', href: '/tournaments' },
     { label: 'Teams', href: '/teams' },
     { label: 'Players', href: '/players' },
+    { label: 'Districts', href: '/districts' },
     { label: 'News', href: '/news' },
     { label: 'Contact', href: '/contact' },
   ]
@@ -32,15 +33,23 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition">
-            {logo ? (
+            {!isLoaded ? (
+              <div className="w-9 h-9 bg-primary-foreground/15 rounded-lg animate-pulse" />
+            ) : logo ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={logo} alt="MSA logo" className="h-9 w-9 rounded-lg object-cover shadow-sm" />
+              <img src={logo} alt="MSA logo" className="h-9 w-9 rounded-lg object-cover shadow-sm animate-in fade-in duration-300" />
             ) : (
               <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm">
                 <span className="text-accent-foreground font-bold">SK</span>
               </div>
             )}
-            <span className="hidden sm:inline">{txt('site.navbar_brand', 'MSA')}</span>
+            <span className="hidden sm:inline">
+              {!isLoaded ? (
+                <div className="h-5 w-16 bg-primary-foreground/15 rounded animate-pulse inline-block align-middle" />
+              ) : (
+                txt('site.navbar_brand', 'MSA')
+              )}
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

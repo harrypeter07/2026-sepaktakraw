@@ -17,6 +17,10 @@ export default function NewTournamentPage() {
         status: data.status as any,
         teamsCount: parseInt(data.teamsCount),
         imageUrl: data.imageUrl,
+        description: data.description,
+        organizer: data.organizer,
+        prizePool: data.prizePool ? parseFloat(data.prizePool) : undefined,
+        format: data.format,
       })
       router.push('/admin/tournaments')
     } catch (err) {

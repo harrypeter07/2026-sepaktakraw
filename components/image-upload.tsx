@@ -48,16 +48,23 @@ export function ImageUpload({
         const ext = file.name.split('.').pop()?.toLowerCase() || 'png'
         const path = `${folder}/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
 
-        const { error: uploadError } = await supabase.storage
+        // Wrap storage upload with a 20-second timeout
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Storage upload timed out after 20s. Check your network or connection.')), 20000)
+        )
+
+        const uploadPromise = supabase.storage
           .from('media')
           .upload(path, file, { cacheControl: '3600', upsert: false })
 
-        if (uploadError) throw uploadError
+        const result: any = await Promise.race([uploadPromise, timeoutPromise])
+
+        if (result && result.error) throw result.error
 
         const { data } = supabase.storage.from('media').getPublicUrl(path)
         onChange(data.publicUrl)
       } else {
-        // Fallback: read file locally as Base64 Data URL
+        // Local mode: read file locally as Base64 Data URL
         const reader = new FileReader()
         reader.onload = (e) => {
           if (e.target?.result) {
@@ -67,18 +74,8 @@ export function ImageUpload({
         reader.readAsDataURL(file)
       }
     } catch (err: any) {
-      console.warn('Supabase storage upload failed, falling back to local Base64 URL:', err)
-      try {
-        const reader = new FileReader()
-        reader.onload = (e) => {
-          if (e.target?.result) {
-            onChange(e.target.result as string)
-          }
-        }
-        reader.readAsDataURL(file)
-      } catch (fallbackErr) {
-        setError(err?.message || 'Upload failed. Please try again.')
-      }
+      console.error('Upload failed:', err)
+      setError(err?.message || 'Upload failed. Please try again.')
     } finally {
       setIsUploading(false)
     }

@@ -1,4 +1,3 @@
-import { Card } from '@/components/ui/card'
 import { Trophy, MapPin, Calendar } from 'lucide-react'
 
 interface TournamentCardProps {
@@ -10,9 +9,17 @@ interface TournamentCardProps {
   status: 'upcoming' | 'ongoing' | 'completed'
   teamsCount: number
   imageUrl?: string
+  onViewDetails?: () => void
+}
+
+const STATUS_STYLES = {
+  upcoming: 'bg-blue-600 text-white',
+  ongoing: 'bg-emerald-500 text-white',
+  completed: 'bg-slate-700 text-white',
 }
 
 export function TournamentCard({
+  id,
   name,
   startDate,
   endDate,
@@ -20,61 +27,66 @@ export function TournamentCard({
   status,
   teamsCount,
   imageUrl,
+  onViewDetails,
 }: TournamentCardProps) {
-  const statusColors = {
-    upcoming: 'bg-blue-50 text-blue-700 border border-blue-200',
-    ongoing: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-    completed: 'bg-slate-100 text-slate-600 border border-slate-200',
-  }
+  // Per-record image is set from the admin panel; absent one, the branded
+  // gradient banner (with the title overlaid) renders — no hardcoded imagery.
+  const displayImage = imageUrl
 
   return (
-    <Card className="group overflow-hidden p-0 transition hover:shadow-lg hover:-translate-y-1 flex flex-col border border-border bg-card">
-      {/* Banner */}
-      <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-primary to-accent">
-        {imageUrl ? (
+    <div className="group overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col">
+      {/* Image Banner */}
+      <div className="relative h-52 w-full overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] flex-shrink-0">
+        {displayImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={imageUrl}
+            src={displayImage}
             alt={name}
-            className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
-            <Trophy className="h-12 w-12 text-primary-foreground/70" />
-          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
         )}
-        <span
-          className={`absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-bold uppercase shadow-sm ${statusColors[status]}`}
-        >
+        {/* Dark overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        {/* Status badge */}
+        <span className={`absolute top-3 right-3 rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-wider shadow-lg ${STATUS_STYLES[status]}`}>
           {status}
         </span>
+
+        {/* Title on image */}
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="text-white font-black text-lg leading-tight line-clamp-2 drop-shadow-lg">
+            {name}
+          </h3>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-xl font-bold text-balance mb-4">{name}</h3>
-
-        <div className="space-y-3 mb-5 flex-1">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Calendar size={16} className="text-accent shrink-0" />
-            <span className="text-sm">
-              {startDate} to {endDate}
-            </span>
+      <div className="flex flex-1 flex-col p-5">
+        <div className="space-y-2.5 mb-5 flex-1">
+          <div className="flex items-center gap-2.5 text-slate-500 text-sm">
+            <Calendar size={14} className="text-[#2563eb] shrink-0" />
+            <span>{startDate} — {endDate}</span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <MapPin size={16} className="text-accent shrink-0" />
-            <span className="text-sm">{location}</span>
+          <div className="flex items-center gap-2.5 text-slate-500 text-sm">
+            <MapPin size={14} className="text-[#2563eb] shrink-0" />
+            <span className="truncate">{location}</span>
           </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Trophy size={16} className="text-accent shrink-0" />
-            <span className="text-sm">{teamsCount} teams participating</span>
+          <div className="flex items-center gap-2.5 text-slate-500 text-sm">
+            <Trophy size={14} className="text-[#2563eb] shrink-0" />
+            <span className="font-semibold text-slate-700">{teamsCount} teams participating</span>
           </div>
         </div>
 
-        <button className="w-full rounded-md bg-primary py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/95 shadow-sm">
+        <button
+          onClick={onViewDetails}
+          className="w-full rounded-xl bg-[#1e3a8a] py-3 text-sm font-bold text-white hover:bg-[#2563eb] transition-colors shadow-sm cursor-pointer"
+        >
           View Details
         </button>
       </div>
-    </Card>
+    </div>
   )
 }
