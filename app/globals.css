@@ -4,40 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Premium Sporty Light Theme — Crisp white background with elegant navy/royal blue accents. */
-  --background: oklch(0.99 0.005 240); /* #f8fafc */
-  --foreground: oklch(0.19 0.03 240); /* #0f172a */
-  --card: oklch(1.0 0 0); /* #ffffff */
-  --card-foreground: oklch(0.19 0.03 240);
+  /* Premium Sporty Light Theme — Crisp warm white background with MSTA logo-derived deep black and vibrant orange accents. */
+  --background: oklch(0.98 0.003 80); /* Soft warm white/cream */
+  --foreground: oklch(0.12 0.01 240); /* Deep slate-black */
+  --card: oklch(1.0 0 0); /* Pure White */
+  --card-foreground: oklch(0.12 0.01 240);
   --popover: oklch(1.0 0 0);
-  --popover-foreground: oklch(0.19 0.03 240);
-  --primary: oklch(0.28 0.09 250); /* #1e3a8a - Deep Royal Navy */
+  --popover-foreground: oklch(0.12 0.01 240);
+  --primary: oklch(0.12 0.01 240); /* Deep slate-black (logo border) */
   --primary-foreground: oklch(1.0 0 0);
-  --secondary: oklch(0.96 0.015 245); /* #eff6ff - Soft Ice Blue */
-  --secondary-foreground: oklch(0.28 0.09 250);
-  --muted: oklch(0.97 0.01 240); /* #f1f5f9 */
-  --muted-foreground: oklch(0.55 0.02 240); /* #64748b */
-  --accent: oklch(0.55 0.20 250); /* #2563eb - Electric Cobalt */
+  --secondary: oklch(1.0 0 0); /* Pure White as requested */
+  --secondary-foreground: oklch(0.12 0.01 240);
+  --muted: oklch(0.96 0.005 80); /* Soft muted light cream */
+  --muted-foreground: oklch(0.45 0.01 240);
+  --accent: oklch(0.68 0.18 42); /* Vibrant MSTA Orange */
   --accent-foreground: oklch(1.0 0 0);
   --destructive: oklch(0.57 0.20 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.91 0.015 240); /* #e2e8f0 */
-  --input: oklch(0.91 0.015 240);
-  --ring: oklch(0.55 0.20 250);
-  --chart-1: oklch(0.55 0.20 250);
-  --chart-2: oklch(0.28 0.09 250);
+  --border: oklch(0.90 0.005 80); /* Soft warm border */
+  --input: oklch(0.90 0.005 80);
+  --ring: oklch(0.68 0.18 42);
+  --chart-1: oklch(0.68 0.18 42);
+  --chart-2: oklch(0.12 0.01 240);
   --chart-3: oklch(0.40 0.15 200);
   --chart-4: oklch(0.45 0.12 150);
   --chart-5: oklch(0.50 0.10 100);
   --radius: 0.75rem;
   --sidebar: oklch(1.0 0 0);
-  --sidebar-foreground: oklch(0.19 0.03 240);
-  --sidebar-primary: oklch(0.28 0.09 250);
+  --sidebar-foreground: oklch(0.12 0.01 240);
+  --sidebar-primary: oklch(0.12 0.01 240);
   --sidebar-primary-foreground: oklch(1.0 0 0);
-  --sidebar-accent: oklch(0.96 0.015 245);
-  --sidebar-accent-foreground: oklch(0.28 0.09 250);
-  --sidebar-border: oklch(0.91 0.015 240);
-  --sidebar-ring: oklch(0.55 0.20 250);
+  --sidebar-accent: oklch(0.96 0.005 80);
+  --sidebar-accent-foreground: oklch(0.12 0.01 240);
+  --sidebar-border: oklch(0.90 0.005 80);
+  --sidebar-ring: oklch(0.68 0.18 42);
 }
 
 .dark {

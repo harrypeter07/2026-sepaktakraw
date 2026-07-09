@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { PageHero } from '@/components/page-hero'
@@ -98,9 +99,9 @@ export default function DistrictsPage() {
             {filteredDistricts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {filteredDistricts.map(district => (
-                  <div
+                  <Link
                     key={district.id}
-                    onClick={() => setSelectedDistrict(district)}
+                    href={`/districts/${district.id}`}
                     className="group cursor-pointer bg-white border border-slate-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between"
                   >
                     <div className="p-6 text-center flex flex-col items-center flex-grow">
@@ -130,7 +131,7 @@ export default function DistrictsPage() {
                         {district.status}
                       </Badge>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             ) : (

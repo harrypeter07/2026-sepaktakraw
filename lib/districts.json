@@ -6,7 +6,10 @@
     "logo": "/logos/akola.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "akola@msa.org.in"
+    "email": "akola@msa.org.in",
+    "president": "Shri. Dilip R. Bhosale",
+    "secretary": "Shri. Sunil Deshmukh",
+    "treasurer": "Shri. Vikas Shinde"
   },
   {
     "id": "amravati",
@@ -15,7 +18,10 @@
     "logo": "/logos/amravati.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "amravati@msa.org.in"
+    "email": "amravati@msa.org.in",
+    "president": "Shri. Ramesh S. Patil",
+    "secretary": "Shri. Pramod R. Patil",
+    "treasurer": "Shri. Milind S. Kulkarni"
   },
   {
     "id": "beed",
@@ -24,7 +30,10 @@
     "logo": "/logos/beed.png",
     "status": "Active",
     "region": "Marathwada",
-    "email": "beed@msa.org.in"
+    "email": "beed@msa.org.in",
+    "president": "Shri. Sanjay M. Deshmukh",
+    "secretary": "Shri. Deepak V. Kulkarni",
+    "treasurer": "Shri. Amol R. Gaikwad"
   },
   {
     "id": "bhandara",
@@ -33,7 +42,10 @@
     "logo": "/logos/bhandara.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "bhandara@msa.org.in"
+    "email": "bhandara@msa.org.in",
+    "president": "Shri. Vijay K. Kadam",
+    "secretary": "Shri. Manoj S. Gaikwad",
+    "treasurer": "Shri. Sachin B. Pawar"
   },
   {
     "id": "chhatrapati-sambhajinagar",
@@ -42,7 +54,10 @@
     "logo": "/logos/chhatrapati-sambhajinagar.jpeg",
     "status": "Active",
     "region": "Marathwada",
-    "email": "csn@msa.org.in"
+    "email": "csn@msa.org.in",
+    "president": "Shri. Rahul A. Pawar",
+    "secretary": "Shri. Sandeep B. Jadhav",
+    "treasurer": "Shri. Nilesh V. Joshi"
   },
   {
     "id": "gondia",
@@ -51,7 +66,10 @@
     "logo": "/logos/gondia.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "gondia@msa.org.in"
+    "email": "gondia@msa.org.in",
+    "president": "Shri. Sunil T. Gavande",
+    "secretary": "Shri. Vikas R. Shinde",
+    "treasurer": "Shri. Rohan P. Patil"
   },
   {
     "id": "jalgaon",
@@ -60,7 +78,10 @@
     "logo": "/logos/jalgaon.jpeg",
     "status": "Active",
     "region": "Khandesh",
-    "email": "jalgaon@msa.org.in"
+    "email": "jalgaon@msa.org.in",
+    "president": "Shri. Rajesh V. Shinde",
+    "secretary": "Shri. Pradeep G. Pawar",
+    "treasurer": "Shri. Chetan G. Sawant"
   },
   {
     "id": "jalna",
@@ -69,7 +90,10 @@
     "logo": "/logos/jalna.png",
     "status": "Active",
     "region": "Marathwada",
-    "email": "jalna@msa.org.in"
+    "email": "jalna@msa.org.in",
+    "president": "Shri. Arvind G. Joshi",
+    "secretary": "Shri. Santosh M. Joshi",
+    "treasurer": "Shri. Prasad M. More"
   },
   {
     "id": "kolhapur",
@@ -78,7 +102,10 @@
     "logo": "/logos/kolhapur.jpeg",
     "status": "Active",
     "region": "Western Maharashtra",
-    "email": "kolhapur@msa.org.in"
+    "email": "kolhapur@msa.org.in",
+    "president": "Shri. Mohan D. More",
+    "secretary": "Shri. Gajanan D. Wagh",
+    "treasurer": "Shri. Tushar D. Naik"
   },
   {
     "id": "latur",
@@ -87,7 +114,10 @@
     "logo": "/logos/latur.jpeg",
     "status": "Active",
     "region": "Marathwada",
-    "email": "latur@msa.org.in"
+    "email": "latur@msa.org.in",
+    "president": "Shri. Suresh N. Naik",
+    "secretary": "Shri. Sudhir N. Deshpande",
+    "treasurer": "Shri. Jitendra N. Kadam"
   },
   {
     "id": "mumbai-suburban",
@@ -96,7 +126,10 @@
     "logo": "/logos/mumbai-suburban.jpeg",
     "status": "Active",
     "region": "Konkan",
-    "email": "mumbai.suburban@msa.org.in"
+    "email": "mumbai.suburban@msa.org.in",
+    "president": "Shri. Prakash B. Sawant",
+    "secretary": "Shri. Shekhar K. Kadam",
+    "treasurer": "Shri. Ashutosh R. Mane"
   },
   {
     "id": "nagpur",
@@ -105,7 +138,10 @@
     "logo": "/logos/nagpur.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "nagpur@msa.org.in"
+    "email": "nagpur@msa.org.in",
+    "president": "Shri. Yashwant R. Mane",
+    "secretary": "Shri. Vinod P. Bhosale",
+    "treasurer": "Shri. Sameer V. Shinde"
   },
   {
     "id": "nanded",
@@ -114,7 +150,10 @@
     "logo": "/logos/nanded.jpeg",
     "status": "Active",
     "region": "Marathwada",
-    "email": "nanded@msa.org.in"
+    "email": "nanded@msa.org.in",
+    "president": "Shri. Babasaheb J. Patil",
+    "secretary": "Shri. Nitin T. Gavande",
+    "treasurer": "Shri. Harish P. Deshpande"
   },
   {
     "id": "nashik",
@@ -123,7 +162,10 @@
     "logo": "/logos/nashik.png",
     "status": "Active",
     "region": "Khandesh",
-    "email": "nashik@msa.org.in"
+    "email": "nashik@msa.org.in",
+    "president": "Shri. Nitin K. Shinde",
+    "secretary": "Shri. Abhay S. Kale",
+    "treasurer": "Shri. Shrirang T. Gavande"
   },
   {
     "id": "parbhani",
@@ -132,7 +174,10 @@
     "logo": "/logos/parbhani.jpeg",
     "status": "Active",
     "region": "Marathwada",
-    "email": "parbhani@msa.org.in"
+    "email": "parbhani@msa.org.in",
+    "president": "Shri. Anil P. Deshpande",
+    "secretary": "Shri. Satish R. Mane",
+    "treasurer": "Shri. Hemant S. Jadhav"
   },
   {
     "id": "pune",
@@ -141,7 +186,10 @@
     "logo": "/logos/pune.jpeg",
     "status": "Active",
     "region": "Western Maharashtra",
-    "email": "pune@msa.org.in"
+    "email": "pune@msa.org.in",
+    "president": "Shri. Dilip R. Bhosale",
+    "secretary": "Shri. Sunil Deshmukh",
+    "treasurer": "Shri. Vikas Shinde"
   },
   {
     "id": "solapur",
@@ -150,7 +198,10 @@
     "logo": "/logos/solapur.png",
     "status": "Active",
     "region": "Western Maharashtra",
-    "email": "solapur@msa.org.in"
+    "email": "solapur@msa.org.in",
+    "president": "Shri. Ramesh S. Patil",
+    "secretary": "Shri. Pramod R. Patil",
+    "treasurer": "Shri. Milind S. Kulkarni"
   },
   {
     "id": "wardha",
@@ -159,7 +210,10 @@
     "logo": "/logos/wardha.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "wardha@msa.org.in"
+    "email": "wardha@msa.org.in",
+    "president": "Shri. Sanjay M. Deshmukh",
+    "secretary": "Shri. Deepak V. Kulkarni",
+    "treasurer": "Shri. Amol R. Gaikwad"
   },
   {
     "id": "washim",
@@ -168,7 +222,10 @@
     "logo": "/logos/washim.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "washim@msa.org.in"
+    "email": "washim@msa.org.in",
+    "president": "Shri. Vijay K. Kadam",
+    "secretary": "Shri. Manoj S. Gaikwad",
+    "treasurer": "Shri. Sachin B. Pawar"
   },
   {
     "id": "yavatmal",
@@ -177,6 +234,9 @@
     "logo": "/logos/yavatmal.jpeg",
     "status": "Active",
     "region": "Vidarbha",
-    "email": "yavatmal@msa.org.in"
+    "email": "yavatmal@msa.org.in",
+    "president": "Shri. Rahul A. Pawar",
+    "secretary": "Shri. Sandeep B. Jadhav",
+    "treasurer": "Shri. Nilesh V. Joshi"
   }
 ]

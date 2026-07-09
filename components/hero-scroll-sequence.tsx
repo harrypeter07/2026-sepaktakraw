@@ -74,14 +74,14 @@ export function HeroScrollSequence({
           loop={true}
           preload="auto"
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={kind === 'image' ? imageSrc || FALLBACK_IMAGE : POSTER_END}
           alt={title}
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       )}
 
