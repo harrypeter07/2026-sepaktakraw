@@ -28,26 +28,26 @@ export default function Navbar() {
     pathname === href || (href !== '/' && pathname?.startsWith(href))
 
   return (
-    <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
+    <nav className="sticky top-0 z-50 bg-white text-foreground border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition">
+          {/* Logo & Brand */}
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition">
             {!isLoaded ? (
-              <div className="w-9 h-9 bg-primary-foreground/15 rounded-lg animate-pulse" />
+              <div className="w-10 h-10 bg-slate-100 rounded-full animate-pulse" />
             ) : logo ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={logo} alt="MSA logo" className="h-9 w-9 rounded-lg object-cover shadow-sm animate-in fade-in duration-300" />
+              <img src={logo} alt="MSTA logo" className="h-10 w-10 rounded-full object-contain shadow-sm border border-border animate-in fade-in duration-300" />
             ) : (
-              <div className="w-9 h-9 bg-accent rounded-lg flex items-center justify-center shadow-sm">
-                <span className="text-accent-foreground font-bold">SK</span>
+              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-sm">
+                <span className="text-accent-foreground font-bold text-sm">MS</span>
               </div>
             )}
-            <span className="hidden sm:inline">
+            <span className="text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-wider text-foreground leading-tight max-w-[150px] sm:max-w-none">
               {!isLoaded ? (
-                <div className="h-5 w-16 bg-primary-foreground/15 rounded animate-pulse inline-block align-middle" />
+                <div className="h-4 w-40 bg-slate-100 rounded animate-pulse" />
               ) : (
-                txt('site.navbar_brand', 'MSA')
+                txt('site.navbar_brand', 'Maharashtra Sepak Takraw Association')
               )}
             </span>
           </Link>
@@ -58,29 +58,29 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition ${
+                className={`px-3 py-2 rounded-md text-xs lg:text-sm font-extrabold uppercase tracking-wider transition ${
                   isActive(link.href)
-                    ? 'bg-primary-foreground/15 text-primary-foreground'
-                    : 'text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-primary-foreground'
+                    ? 'bg-accent/10 text-accent'
+                    : 'text-muted-foreground hover:bg-slate-100 hover:text-foreground'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             {user && (
-              <div className="flex gap-2 ml-4 border-l border-primary-foreground/30 pl-4">
+              <div className="flex gap-2 ml-4 border-l border-border pl-4">
                 <Link
                   href="/admin"
-                  className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition flex items-center gap-1.5"
+                  className="px-3 py-2 rounded-md text-xs lg:text-sm font-extrabold uppercase tracking-wider text-muted-foreground hover:bg-slate-100 hover:text-foreground transition flex items-center gap-1.5"
                 >
-                  <LayoutDashboard size={16} />
+                  <LayoutDashboard size={15} />
                   Dashboard
                 </Link>
                 <button
                   onClick={() => signOut()}
-                  className="px-3 py-2 rounded-md text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 transition flex items-center gap-1.5"
+                  className="px-3 py-2 rounded-md text-xs lg:text-sm font-extrabold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent/90 transition flex items-center gap-1.5"
                 >
-                  <LogOut size={16} />
+                  <LogOut size={15} />
                   Logout
                 </button>
               </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
-            className="md:hidden p-2 rounded-md hover:bg-primary-foreground/10 transition"
+            className="md:hidden p-2 rounded-md text-foreground hover:bg-slate-100 transition"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -104,10 +104,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition ${
+                className={`block px-3 py-2 rounded-md text-sm font-extrabold uppercase tracking-wider transition ${
                   isActive(link.href)
-                    ? 'bg-primary-foreground/15'
-                    : 'hover:bg-primary-foreground/10'
+                    ? 'bg-accent/10 text-accent'
+                    : 'text-muted-foreground hover:bg-slate-100 hover:text-foreground'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -115,10 +115,10 @@ export default function Navbar() {
               </Link>
             ))}
             {user && (
-              <div className="border-t border-primary-foreground/20 pt-2 mt-2 space-y-1">
+              <div className="border-t border-border pt-2 mt-2 space-y-1">
                 <Link
                   href="/admin"
-                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-extrabold uppercase tracking-wider text-muted-foreground hover:bg-slate-100 hover:text-foreground transition"
                   onClick={() => setIsOpen(false)}
                 >
                   <LayoutDashboard size={16} />
@@ -129,7 +129,7 @@ export default function Navbar() {
                     signOut()
                     setIsOpen(false)
                   }}
-                  className="flex w-full items-center gap-2 px-3 py-2 rounded-md text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 transition"
+                  className="flex w-full items-center gap-2 px-3 py-2 rounded-md text-sm font-extrabold uppercase tracking-wider bg-accent text-accent-foreground hover:bg-accent/90 transition"
                 >
                   <LogOut size={16} />
                   Logout

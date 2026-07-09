@@ -89,7 +89,7 @@ export default function Home() {
         />
 
         {/* ─── GALLERY STRIP ─── */}
-        <section className="bg-[#060C1A] py-10 border-y border-white/5">
+        <section className="bg-[#1b3c73] py-10 border-y border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between">
             <div>
               <span className="text-[#38bdf8] text-[10px] font-black uppercase tracking-[0.3em]">Action Gallery</span>
@@ -136,7 +136,7 @@ export default function Home() {
         </section>
 
         {/* ─── STATS BAND ─── */}
-        <section className="bg-[#060C1A] py-16 sm:py-20 border-b border-white/5">
+        <section className="bg-[#1b3c73] py-16 sm:py-20 border-b border-white/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-3 gap-6 sm:gap-16 text-center">
               {[
@@ -170,7 +170,7 @@ export default function Home() {
                     alt={alt('home.about.image', 'Sepaktakraw team training')}
                     className="h-full w-full object-cover transition duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#060C1A]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1b3c73]/40 to-transparent" />
                   {/* Floating stat badge */}
                   <div className="absolute bottom-5 left-5 bg-[#2563eb] text-white rounded-xl px-5 py-3 shadow-xl">
                     <div className="text-2xl font-black leading-none">35+</div>

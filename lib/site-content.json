@@ -3,7 +3,7 @@
     "url": "/msta-logo.png"
   },
   "site.navbar_brand": {
-    "text": "MSA"
+    "text": "Maharashtra Sepak Takraw Association"
   },
   "site.custom_form_schema": {
     "text": "{\"id\":\"contact\",\"title\":\"Contact Form\",\"fields\":[{\"id\":\"name\",\"label\":\"Full Name\",\"type\":\"text\",\"required\":true,\"placeholder\":\"e.g. Rahul Sharma\"},{\"id\":\"email\",\"label\":\"Email Address\",\"type\":\"email\",\"required\":true,\"placeholder\":\"e.g. rahul@example.com\"},{\"id\":\"phone\",\"label\":\"Phone Number\",\"type\":\"text\",\"required\":false,\"placeholder\":\"e.g. +91 98765 43210\"},{\"id\":\"category\",\"label\":\"Query Category\",\"type\":\"select\",\"required\":true,\"options\":[\"General Inquiry\",\"Join a Team\",\"Tournament Inquiry\",\"Sponsorship Opportunity\",\"Other\"]},{\"id\":\"subject\",\"label\":\"Subject\",\"type\":\"text\",\"required\":true,\"placeholder\":\"What is this regarding?\"},{\"id\":\"message\",\"label\":\"Message\",\"type\":\"textarea\",\"required\":true,\"placeholder\":\"Type your message here...\"}]}"
@@ -255,5 +255,32 @@
   },
   "contact.hero.subtitle": {
     "text": "Questions, partnerships, or want to join a team? The Maharashtra Sepaktakraw Association is here."
+  },
+  "home.gallery_1": {
+    "url": "/hero/gallery_1.jpg"
+  },
+  "home.gallery_2": {
+    "url": "/hero/gallery_2.jpg"
+  },
+  "home.gallery_3": {
+    "url": "/hero/gallery_3.jpg"
+  },
+  "home.gallery_4": {
+    "url": "/hero.jpg"
+  },
+  "home.gallery_5": {
+    "url": "/team.jpg"
+  },
+  "home.gallery_6": {
+    "url": "/hero/gallery_1.jpg"
+  },
+  "home.gallery_7": {
+    "url": "/hero/gallery_2.jpg"
+  },
+  "home.gallery_8": {
+    "url": "/hero/gallery_3.jpg"
+  },
+  "home.gallery_9": {
+    "url": "/hero.jpg"
   }
 }
