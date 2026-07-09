@@ -298,7 +298,7 @@ export default function Home() {
         )}
 
         {/* ─── CTA ─── */}
-        <section className="relative overflow-hidden bg-[#060C1A] py-20 sm:py-28">
+        <section className="relative overflow-hidden bg-[#1b3c73] py-20 sm:py-28">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(37,99,235,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-64 w-96 bg-[#2563eb]/10 blur-[80px] rounded-full -z-10" />
 

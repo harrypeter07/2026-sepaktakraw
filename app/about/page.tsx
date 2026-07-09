@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* Mission */}
-              <div className="relative overflow-hidden rounded-2xl bg-[#060C1A] p-8 sm:p-10 flex flex-col">
+              <div className="relative overflow-hidden rounded-2xl bg-[#1b3c73] p-8 sm:p-10 flex flex-col">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.08)_1px,transparent_1px)] bg-[size:40px_40px]" />
                 <div className="relative">
                   <div className="h-12 w-12 bg-[#2563eb]/20 rounded-xl flex items-center justify-center text-[#38bdf8] mb-6">
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </section>
 
         {/* ─── SPORT FACTS BAND ─── */}
-        <section className="bg-[#060C1A] py-14 sm:py-18 border-y border-white/5">
+        <section className="bg-[#1b3c73] py-14 sm:py-18 border-y border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
               {SPORT_FACTS.map((key) => (
@@ -137,7 +137,7 @@ export default function AboutPage() {
                       alt={alt(m.imageKey, txt(`${m.key}.title`))}
                       className="h-64 sm:h-72 w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#060C1A]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1b3c73]/50 to-transparent" />
                     <span className="absolute top-4 left-4 bg-[#2563eb] text-white text-xs font-black uppercase tracking-wider px-3 py-1.5 rounded-full">
                       {txt(`${m.key}.year`)}
                     </span>
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </section>
 
         {/* ─── PHOTO GALLERY ─── */}
-        <section className="bg-[#060C1A] py-16 sm:py-20">
+        <section className="bg-[#1b3c73] py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
             <span className="text-[#38bdf8] text-[10px] font-black uppercase tracking-[0.3em]">Gallery</span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">THE SPORT IN PICTURES</h2>
