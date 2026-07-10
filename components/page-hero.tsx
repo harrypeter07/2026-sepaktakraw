@@ -23,7 +23,7 @@ export function PageHero({ imageKey, kicker, title, subtitle }: PageHeroProps) {
   const displaySubtitle = subtitleKey ? txt(subtitleKey, subtitle) : subtitle
 
   return (
-    <section className="relative overflow-hidden bg-[#1b3c73] text-white min-h-[44vh] flex items-end">
+    <section className="relative overflow-hidden bg-[#1d4ed8] text-white min-h-[44vh] flex items-end">
       {displayImage ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -35,8 +35,8 @@ export function PageHero({ imageKey, kicker, title, subtitle }: PageHeroProps) {
         <div className="absolute inset-0 -z-20 bg-[linear-gradient(rgba(37,99,235,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.10)_1px,transparent_1px)] bg-[size:48px_48px]" />
       )}
       {/* Left-heavy overlay — image visible on right */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1b3c73] via-[#1b3c73]/80 to-[#1b3c73]/40" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1b3c73] via-transparent to-[#1b3c73]/50" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1d4ed8] via-[#1d4ed8]/80 to-[#1d4ed8]/40" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1d4ed8] via-transparent to-[#1d4ed8]/50" />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         {kicker && (

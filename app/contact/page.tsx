@@ -171,10 +171,10 @@ export default function ContactPage() {
                 </div>
 
                 {/* Office hours — dark brand block */}
-                <div className="relative overflow-hidden rounded-2xl bg-[#1b3c73] p-6">
+                <div className="relative overflow-hidden rounded-2xl bg-[#1d4ed8] p-6">
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.08)_1px,transparent_1px)] bg-[size:32px_32px]" />
                   <div className="relative">
-                    <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-[#38bdf8]">Office Hours</h4>
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-[#93c5fd]">Office Hours</h4>
                     <p className="mt-3 text-sm font-medium text-white/70 leading-relaxed">
                       Monday – Saturday<br />
                       <span className="font-black text-white">10:00 AM – 6:00 PM IST</span><br />

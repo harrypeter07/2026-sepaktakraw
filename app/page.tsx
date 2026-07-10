@@ -27,6 +27,18 @@ const GALLERY_IMAGES = [
   { key: 'home.gallery_9', alt: 'Youth players' },
 ]
 
+const GALLERY_FALLBACKS = [
+  'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1526676023771-7050228b90a8?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517438476312-10d79c077509?w=600&auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1502224562085-639556652f33?w=600&auto=format&fit=crop&q=80',
+]
+
 // Titles/descriptions come from site settings (home.focus_*); only the icon is fixed.
 const FOCUS_AREAS = [
   { icon: Trophy, key: 'home.focus_1' },
@@ -89,23 +101,23 @@ export default function Home() {
         />
 
         {/* ─── GALLERY STRIP ─── */}
-        <section className="bg-[#1b3c73] py-10 border-y border-white/5">
+        <section className="bg-[#1d4ed8] py-10 border-y border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between">
             <div>
-              <span className="text-[#38bdf8] text-[10px] font-black uppercase tracking-[0.3em]">Action Gallery</span>
+              <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">Action Gallery</span>
               <h2 className="text-white text-2xl sm:text-3xl font-black uppercase mt-1 tracking-tight">THE SPORT IN MOTION</h2>
             </div>
             <div className="flex gap-2 mb-0.5">
               <button
                 onClick={() => scrollGallery('left')}
-                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/50 hover:text-white transition"
+                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/55 hover:text-white transition"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={() => scrollGallery('right')}
-                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/50 hover:text-white transition"
+                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/55 hover:text-white transition"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={18} />
@@ -117,26 +129,32 @@ export default function Home() {
             ref={galleryRef}
             className="flex gap-3 overflow-x-auto no-scrollbar px-4 sm:px-6 lg:px-8 pb-1"
           >
-            {GALLERY_IMAGES.map((item, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-48 sm:w-60 h-64 sm:h-76 overflow-hidden rounded-xl relative group cursor-pointer"
-                style={{ height: '18rem' }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img(item.key)}
-                  alt={alt(item.key, item.alt)}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
-              </div>
-            ))}
+            {GALLERY_IMAGES.map((item, i) => {
+              const fallback = GALLERY_FALLBACKS[i % GALLERY_FALLBACKS.length]
+              return (
+                <div
+                  key={i}
+                  className="flex-shrink-0 w-48 sm:w-60 h-64 sm:h-76 overflow-hidden rounded-xl relative group cursor-pointer"
+                  style={{ height: '18rem' }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img(item.key) || fallback}
+                    alt={alt(item.key, item.alt)}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = fallback
+                    }}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+                </div>
+              )
+            })}
           </div>
         </section>
 
         {/* ─── STATS BAND ─── */}
-        <section className="bg-[#1b3c73] py-16 sm:py-20 border-b border-white/5">
+        <section className="bg-[#1d4ed8] py-16 sm:py-20 border-b border-white/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-3 gap-6 sm:gap-16 text-center">
               {[
@@ -146,7 +164,7 @@ export default function Home() {
               ].map((s) => (
                 <div key={s.label} className="rise-in">
                   <div className="text-[clamp(2.5rem,8vw,5rem)] font-black text-white tracking-tighter leading-none">
-                    {s.value}<span className="text-[#2563eb]">+</span>
+                    {s.value}<span className="text-[#93c5fd]">+</span>
                   </div>
                   <div className="mt-3 text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] text-white/35">
                     {s.label}
@@ -170,7 +188,7 @@ export default function Home() {
                     alt={alt('home.about.image', 'Sepaktakraw team training')}
                     className="h-full w-full object-cover transition duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1b3c73]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1d4ed8]/40 to-transparent" />
                   {/* Floating stat badge */}
                   <div className="absolute bottom-5 left-5 bg-[#2563eb] text-white rounded-xl px-5 py-3 shadow-xl">
                     <div className="text-2xl font-black leading-none">35+</div>
@@ -298,7 +316,7 @@ export default function Home() {
         )}
 
         {/* ─── CTA ─── */}
-        <section className="relative overflow-hidden bg-[#1b3c73] py-20 sm:py-28">
+        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-28">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(37,99,235,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-64 w-96 bg-[#2563eb]/10 blur-[80px] rounded-full -z-10" />
 

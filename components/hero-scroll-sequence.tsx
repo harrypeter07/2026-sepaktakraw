@@ -62,7 +62,7 @@ export function HeroScrollSequence({
   }, [kind])
 
   return (
-    <section className="relative flex min-h-[90vh] overflow-hidden bg-[#1b3c73]">
+    <section className="relative flex min-h-[90vh] overflow-hidden bg-[#1d4ed8]">
       {kind === 'video' ? (
         <video
           ref={videoRef}
@@ -85,9 +85,9 @@ export function HeroScrollSequence({
         />
       )}
 
-      {/* Subtle vignettes for legibility against the dark stage */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1b3c73] via-transparent to-[#1b3c73]/30" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1b3c73]/60 via-transparent to-transparent" />
+      {/* Subtle vignettes for legibility against the blue stage */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-transparent to-[#1d4ed8]/30" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1d4ed8]/60 via-transparent to-transparent" />
 
       <h1 className="sr-only">{title}</h1>
 
