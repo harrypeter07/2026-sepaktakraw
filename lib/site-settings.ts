@@ -115,28 +115,28 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   { key: 'about.milestone_3.year', label: 'Milestone 3 — Era Tag', page: 'about', type: 'text', default: { text: 'Excellence Era' } },
   { key: 'about.milestone_3.title', label: 'Milestone 3 — Title', page: 'about', type: 'text', default: { text: 'National Podium Success' } },
   { key: 'about.milestone_3.desc', label: 'Milestone 3 — Description', page: 'about', type: 'text', default: { text: 'Developed world-class athletes, established high-performance training centers in Pune, and secured competitive medal placement in National Championships.' } },
-  { key: 'about.milestone_1.image', label: 'About Milestone 1 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1547153760-18fc86324498?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
-  { key: 'about.milestone_2.image', label: 'About Milestone 2 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1565608438257-17f2b0773838?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
-  { key: 'about.milestone_3.image', label: 'About Milestone 3 Image', page: 'about', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&h=360&fit=crop&q=80', alt: 'Milestone image' } },
+  { key: 'about.milestone_1.image', label: 'About Milestone 1 Image', page: 'about', type: 'image', shape: 'banner', default: { url: '/hero/milestone_1.jpg', alt: 'Milestone image' } },
+  { key: 'about.milestone_2.image', label: 'About Milestone 2 Image', page: 'about', type: 'image', shape: 'banner', default: { url: '/hero/milestone_2.jpg', alt: 'Milestone image' } },
+  { key: 'about.milestone_3.image', label: 'About Milestone 3 Image', page: 'about', type: 'image', shape: 'banner', default: { url: '/hero/milestone_3.jpg', alt: 'Milestone image' } },
 
   // News -------------------------------------------------------------------
-  { key: 'news.hero.image', label: 'News Hero Background', page: 'news', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'news.hero.image', label: 'News Hero Background', page: 'news', type: 'image', shape: 'banner', default: { url: '/hero/news_hero.jpg' } },
   { key: 'news.hero.title', label: 'News Hero Title', page: 'news', type: 'text', default: { text: 'Latest News' } },
   { key: 'news.hero.subtitle', label: 'News Hero Subtitle', page: 'news', type: 'text', default: { text: 'Updates from Maharashtra Sepaktakraw Association' } },
 
   // Browse pages -----------------------------------------------------------
-  { key: 'teams.hero.image', label: 'Teams Hero Background', page: 'teams', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'teams.hero.image', label: 'Teams Hero Background', page: 'teams', type: 'image', shape: 'banner', default: { url: '/hero/teams_hero.jpg' } },
   { key: 'teams.hero.title', label: 'Teams Hero Title', page: 'teams', type: 'text', default: { text: 'Teams' } },
   { key: 'teams.hero.subtitle', label: 'Teams Hero Subtitle', page: 'teams', type: 'text', default: { text: 'Meet the competitive teams across Maharashtra' } },
-  { key: 'players.hero.image', label: 'Players Hero Background', page: 'players', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'players.hero.image', label: 'Players Hero Background', page: 'players', type: 'image', shape: 'banner', default: { url: '/hero/players_hero.jpg' } },
   { key: 'players.hero.title', label: 'Players Hero Title', page: 'players', type: 'text', default: { text: 'Players' } },
   { key: 'players.hero.subtitle', label: 'Players Hero Subtitle', page: 'players', type: 'text', default: { text: 'Discover elite Sepaktakraw athletes' } },
-  { key: 'tournaments.hero.image', label: 'Tournaments Hero Background', page: 'tournaments', type: 'image', shape: 'banner', default: { url: '' } },
+  { key: 'tournaments.hero.image', label: 'Tournaments Hero Background', page: 'tournaments', type: 'image', shape: 'banner', default: { url: '/hero/tournaments_hero.jpg' } },
   { key: 'tournaments.hero.title', label: 'Tournaments Hero Title', page: 'tournaments', type: 'text', default: { text: 'Tournaments' } },
   { key: 'tournaments.hero.subtitle', label: 'Tournaments Hero Subtitle', page: 'tournaments', type: 'text', default: { text: 'Explore upcoming, ongoing, and completed tournaments' } },
 
   // Contact ----------------------------------------------------------------
-  { key: 'contact.hero.image', label: 'Contact Hero Background', page: 'contact', type: 'image', shape: 'banner', default: { url: 'https://images.unsplash.com/photo-1552674605-db5fecabfe68?w=1600&h=700&fit=crop&q=80', alt: 'Sepaktakraw action' } },
+  { key: 'contact.hero.image', label: 'Contact Hero Background', page: 'contact', type: 'image', shape: 'banner', default: { url: '/hero/contact_hero.jpg', alt: 'Sepaktakraw action' } },
   { key: 'contact.hero.title', label: 'Contact Hero Title', page: 'contact', type: 'text', default: { text: 'Get in Touch' } },
   { key: 'contact.hero.subtitle', label: 'Contact Hero Subtitle', page: 'contact', type: 'text', default: { text: 'Questions, partnerships, or want to join a team? The Maharashtra Sepaktakraw Association is here.' } }
 ]

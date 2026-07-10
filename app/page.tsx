@@ -28,15 +28,15 @@ const GALLERY_IMAGES = [
 ]
 
 const GALLERY_FALLBACKS = [
-  'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1526676023771-7050228b90a8?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1517438476312-10d79c077509?w=600&auto=format&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1502224562085-639556652f33?w=600&auto=format&fit=crop&q=80',
+  '/hero/gallery_1.jpg',
+  '/hero/gallery_2.jpg',
+  '/hero/gallery_3.jpg',
+  '/hero/gallery_4.jpg',
+  '/hero/gallery_5.jpg',
+  '/hero/gallery_6.jpg',
+  '/hero/gallery_7.jpg',
+  '/hero.jpg',
+  '/team.jpg',
 ]
 
 // Titles/descriptions come from site settings (home.focus_*); only the icon is fixed.
