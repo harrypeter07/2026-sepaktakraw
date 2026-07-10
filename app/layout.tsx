@@ -67,6 +67,58 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-background">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "SportsOrganization",
+                  "@id": "https://maharashtrasepaktakraw.org/#organization",
+                  "name": "Maharashtra Sepak Takraw Association",
+                  "alternateName": "MSTA",
+                  "url": "https://maharashtrasepaktakraw.org",
+                  "logo": "https://maharashtrasepaktakraw.org/msta-logo.png",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "general info",
+                    "email": "maharashtrasepaktakraw@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi", "mr"]
+                  },
+                  "sameAs": [
+                    "https://www.instagram.com/sepaktakraw_maharashtra"
+                  ]
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  "@id": "https://maharashtrasepaktakraw.org/#navigation",
+                  "name": [
+                    "About Us",
+                    "Tournaments",
+                    "Teams",
+                    "Players",
+                    "Districts",
+                    "News & Updates",
+                    "Contact Us"
+                  ],
+                  "url": [
+                    "https://maharashtrasepaktakraw.org/about",
+                    "https://maharashtrasepaktakraw.org/tournaments",
+                    "https://maharashtrasepaktakraw.org/teams",
+                    "https://maharashtrasepaktakraw.org/players",
+                    "https://maharashtrasepaktakraw.org/districts",
+                    "https://maharashtrasepaktakraw.org/news",
+                    "https://maharashtrasepaktakraw.org/contact"
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <AuthProvider>
           {children}

@@ -1,6 +1,7 @@
 import 'server-only';
 import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -13,10 +14,26 @@ const url: string = supabaseUrl;
 const anonKey: string = supabaseAnonKey;
 
 // Server-side authenticated client for Route Handlers / Server Components.
-// In Next.js 15+/16 `cookies()` is async and MUST be awaited — the previous
-// synchronous `cookies().getAll()` returned a Promise with no `getAll`, so the
-// server never saw the user's session.
+// Supports both Cookie-based browser sessions and Bearer token API authorizations.
 export async function getServerSupabaseClient() {
+  const headerStore = await headers();
+  const authHeader = headerStore.get('authorization');
+
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.substring(7);
+    return createClient(url, anonKey, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+      global: {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    });
+  }
+
   const cookieStore = await cookies();
 
   return createServerClient(url, anonKey, {
@@ -31,7 +48,7 @@ export async function getServerSupabaseClient() {
           );
         } catch {
           // `setAll` was called from a Server Component, where cookies are
-          // read-only. Safe to ignore — middleware refreshes the session.
+          // read-only. Safe to ignore.
         }
       },
     },
