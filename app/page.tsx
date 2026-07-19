@@ -315,29 +315,34 @@ export default function Home() {
         </section>
         )}
 
-        {/* ─── CTA ─── */}
-        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-28">
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(37,99,235,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.06)_1px,transparent_1px)] bg-[size:56px_56px]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-64 w-96 bg-[#2563eb]/10 blur-[80px] rounded-full -z-10" />
+        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-28 text-white">
+          {/* Background image overlay */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero/tournaments_hero.jpg"
+            alt="CTA Background"
+            className="absolute inset-0 h-full w-full object-cover opacity-20 select-none pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-[#1d4ed8]/85 to-[#1d4ed8]/45 -z-10" />
 
-          <div className="reveal mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <span className="text-[#38bdf8] text-[10px] font-black uppercase tracking-[0.3em]">Get Involved</span>
+          <div className="reveal mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8 relative z-10">
+            <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">Get Involved</span>
             <h2 className="mt-4 text-4xl sm:text-6xl font-black uppercase leading-tight text-white tracking-tight">
               {txt('home.cta.title', 'READY TO JOIN THE ACTION?')}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-base text-white/45 font-medium">
+            <p className="mx-auto mt-6 max-w-xl text-base text-white/80 font-medium">
               {txt('home.cta.subtitle', 'Explore our tournaments, teams and players to stay connected with the sport.')}
             </p>
             <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/tournaments"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2563eb] px-8 py-4 text-sm font-black text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-black text-[#1d4ed8] shadow-xl hover:bg-slate-100 transition-all hover:scale-105 active:scale-95"
               >
                 Browse Tournaments
               </Link>
               <Link
                 href="/teams"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-8 py-4 text-sm font-black text-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-sm font-black text-white hover:bg-white/20 transition-all"
               >
                 <MapPin size={16} /> Meet the Teams
               </Link>

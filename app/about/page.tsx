@@ -177,26 +177,34 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ─── CTA ─── */}
-        <section className="bg-white py-16 sm:py-20 border-t border-slate-100">
-          <div className="max-w-3xl mx-auto px-4 text-center sm:px-6">
-            <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">Join Us</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-black uppercase text-[#0A0F1E] tracking-tight">
+        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-24 text-white">
+          {/* Background image overlay */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero/about_hero.jpg"
+            alt="CTA Background"
+            className="absolute inset-0 h-full w-full object-cover opacity-20 select-none pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-[#1d4ed8]/85 to-[#1d4ed8]/45 -z-10" />
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4 text-center sm:px-6">
+            <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">Join Us</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
               BE PART OF THE MOVEMENT
             </h2>
-            <p className="mt-5 text-slate-500 text-base leading-relaxed">
+            <p className="mt-5 text-white/80 text-base leading-relaxed">
               Whether you are a player, coach, or fan — there is a place for you in the Maharashtra Sepaktakraw community.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1e3a8a] px-7 py-3.5 text-sm font-black text-white hover:bg-[#2563eb] transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-black text-[#1d4ed8] hover:bg-slate-100 transition-all shadow-lg"
               >
                 Get in Touch <ArrowRight size={16} />
               </Link>
               <Link
                 href="/tournaments"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-7 py-3.5 text-sm font-black text-[#0A0F1E] hover:border-blue-300 hover:text-[#2563eb] transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-black text-white hover:bg-white/20 transition-all"
               >
                 View Tournaments
               </Link>

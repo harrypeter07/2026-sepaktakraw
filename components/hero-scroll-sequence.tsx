@@ -63,44 +63,58 @@ export function HeroScrollSequence({
 
   return (
     <section className="relative flex min-h-[90vh] overflow-hidden bg-[#1d4ed8]">
-      {kind === 'video' ? (
-        <video
-          ref={videoRef}
-          src={VIDEO_SRC}
-          poster={POSTER}
-          autoPlay
-          muted={true}
-          playsInline
-          loop={true}
-          preload="auto"
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      ) : (
-        // eslint-disable-next-line @next/next/no-img-element
+      {/* Mobile media container (portrait-optimized) */}
+      <div className="absolute inset-0 block md:hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={kind === 'image' ? imageSrc || FALLBACK_IMAGE : POSTER_END}
+          src="/hero/hero_mobile.jpg"
           alt={title}
           className="absolute inset-0 h-full w-full object-cover"
         />
-      )}
+      </div>
+
+      {/* Desktop media container (landscape-optimized) */}
+      <div className="absolute inset-0 hidden md:block">
+        {kind === 'video' ? (
+          <video
+            ref={videoRef}
+            src={VIDEO_SRC}
+            poster={POSTER}
+            autoPlay
+            muted={true}
+            playsInline
+            loop={true}
+            preload="auto"
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={kind === 'image' ? imageSrc || FALLBACK_IMAGE : POSTER_END}
+            alt={title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
+      </div>
 
       {/* Subtle vignettes for legibility against the blue stage */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-transparent to-[#1d4ed8]/30" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1d4ed8]/60 via-transparent to-transparent" />
-
-      <h1 className="sr-only">{title}</h1>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-transparent to-[#1d4ed8]/40" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1d4ed8]/75 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl flex-col justify-end px-4 pb-16 pt-32 sm:px-6 lg:px-8">
-        <span className="mb-5 block text-[#38bdf8] text-[10px] sm:text-xs font-black uppercase tracking-[0.3em]">
+        <span className="mb-5 block text-[#93c5fd] text-[10px] sm:text-xs font-black uppercase tracking-[0.3em]">
           {kicker}
         </span>
-        <div className="max-w-xl">
-          <p className="text-base sm:text-lg font-medium leading-relaxed text-white/70">{subtitle}</p>
+        <div className="max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight mb-5 leading-none">
+            {title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed text-white/80 max-w-xl">{subtitle}</p>
           <div className="mt-7 flex flex-wrap gap-4">
             <Link
               href={primaryCta.href}
-              className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-7 py-3.5 text-sm font-black text-white shadow-lg shadow-blue-600/30 transition-all hover:bg-blue-500 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-black text-[#1d4ed8] hover:bg-slate-100 transition-all shadow-lg"
             >
               {primaryCta.label} <ArrowRight size={16} />
             </Link>
