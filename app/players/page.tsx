@@ -28,6 +28,8 @@ export default function PlayersPage() {
   const [registrySearch, setRegistrySearch] = useState('')
   const [registryDivision, setRegistryDivision] = useState('all')
   const [registryDistrict, setRegistryDistrict] = useState('all')
+  const [registryPage, setRegistryPage] = useState(1)
+  const registryPageSize = 20
 
   useEffect(() => {
     const loadPlayers = async () => {
@@ -65,6 +67,13 @@ export default function PlayersPage() {
     const matchesDist = registryDistrict === 'all' || p.district === registryDistrict
     return matchesSearch && matchesDiv && matchesDist
   })
+
+  const totalRegistryPages = Math.ceil(filteredRegistry.length / registryPageSize) || 1
+  const safeRegistryPage = Math.min(Math.max(1, registryPage), totalRegistryPages)
+  const paginatedRegistry = filteredRegistry.slice(
+    (safeRegistryPage - 1) * registryPageSize,
+    safeRegistryPage * registryPageSize
+  )
 
   // Guide about player position responsibilities
   const getPositionDescription = (pos: string) => {
@@ -255,7 +264,10 @@ export default function PlayersPage() {
                       type="text"
                       placeholder="Search player name, URN ID, or district..."
                       value={registrySearch}
-                      onChange={(e) => setRegistrySearch(e.target.value)}
+                      onChange={(e) => {
+                        setRegistrySearch(e.target.value)
+                        setRegistryPage(1)
+                      }}
                       className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-blue-600"
                     />
                   </div>
@@ -266,7 +278,10 @@ export default function PlayersPage() {
                       <span>Division:</span>
                       <select
                         value={registryDivision}
-                        onChange={(e) => setRegistryDivision(e.target.value)}
+                        onChange={(e) => {
+                          setRegistryDivision(e.target.value)
+                          setRegistryPage(1)
+                        }}
                         className="h-9 px-3 border border-slate-200 rounded-lg text-xs font-semibold bg-white text-slate-800 focus:outline-none"
                       >
                         {registryDivisions.map(div => (
@@ -282,7 +297,10 @@ export default function PlayersPage() {
                       <span>District:</span>
                       <select
                         value={registryDistrict}
-                        onChange={(e) => setRegistryDistrict(e.target.value)}
+                        onChange={(e) => {
+                          setRegistryDistrict(e.target.value)
+                          setRegistryPage(1)
+                        }}
                         className="h-9 px-3 border border-slate-200 rounded-lg text-xs font-semibold bg-white text-slate-800 focus:outline-none"
                       >
                         {registryDistricts.map(dist => (
@@ -299,6 +317,7 @@ export default function PlayersPage() {
                           setRegistrySearch('')
                           setRegistryDivision('all')
                           setRegistryDistrict('all')
+                          setRegistryPage(1)
                         }}
                         className="h-9 px-3 text-xs font-bold text-slate-600 hover:text-slate-900 border border-slate-200 rounded-lg transition"
                       >
@@ -340,27 +359,98 @@ export default function PlayersPage() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 font-semibold">
-                      {filteredRegistry.map((player, idx) => (
-                        <tr key={idx} className="hover:bg-blue-50/40 transition">
-                          <td className="py-3 px-4 text-slate-400 font-mono text-[11px]">{idx + 1}</td>
-                          <td className="py-3 px-4 font-extrabold text-slate-800">{player.name}</td>
-                          <td className="py-3 px-4 text-slate-600">{player.district || 'Maharashtra'}</td>
-                          <td className="py-3 px-4">
-                            <Badge variant="outline" className="text-[10px] font-bold px-2 py-0.5 border-slate-200">
-                              {player.division}
-                            </Badge>
-                          </td>
-                          <td className="py-3 px-4 text-slate-500">{player.gender || 'N/A'}</td>
-                          <td className="py-3 px-4 font-bold text-slate-700">
-                            {player.jerseyNumber ? `#${player.jerseyNumber}` : '-'}
-                          </td>
-                          <td className="py-3 px-4 text-right font-mono font-bold text-blue-600 text-[11px]">
-                            {player.urn}
+                      {paginatedRegistry.length > 0 ? (
+                        paginatedRegistry.map((player, idx) => (
+                          <tr key={idx} className="hover:bg-blue-50/40 transition">
+                            <td className="py-3 px-4 text-slate-400 font-mono text-[11px]">
+                              {(safeRegistryPage - 1) * registryPageSize + idx + 1}
+                            </td>
+                            <td className="py-3 px-4 font-extrabold text-slate-800">{player.name}</td>
+                            <td className="py-3 px-4 text-slate-600">{player.district || 'Maharashtra'}</td>
+                            <td className="py-3 px-4">
+                              <Badge variant="outline" className="text-[10px] font-bold px-2 py-0.5 border-slate-200">
+                                {player.division}
+                              </Badge>
+                            </td>
+                            <td className="py-3 px-4 text-slate-500">{player.gender || 'N/A'}</td>
+                            <td className="py-3 px-4 font-bold text-slate-700">
+                              {player.jerseyNumber ? `#${player.jerseyNumber}` : '-'}
+                            </td>
+                            <td className="py-3 px-4 text-right font-mono font-bold text-blue-600 text-[11px]">
+                              {player.urn}
+                            </td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan={7} className="text-center py-12 text-slate-400 font-bold">
+                            No athletes match the current search or filters.
                           </td>
                         </tr>
-                      ))}
+                      )}
                     </tbody>
                   </table>
+                </div>
+
+                {/* Pagination Controls */}
+                <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold">
+                  <span className="text-slate-500">
+                    Showing {filteredRegistry.length === 0 ? 0 : (safeRegistryPage - 1) * registryPageSize + 1} to{' '}
+                    {Math.min(safeRegistryPage * registryPageSize, filteredRegistry.length)} of{' '}
+                    {filteredRegistry.length} athletes
+                  </span>
+                  
+                  {totalRegistryPages > 1 && (
+                    <div className="flex items-center gap-1.5 flex-wrap justify-center">
+                      <button
+                        onClick={() => setRegistryPage(p => Math.max(1, p - 1))}
+                        disabled={safeRegistryPage === 1}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold"
+                      >
+                        Previous
+                      </button>
+
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: totalRegistryPages }).map((_, i) => {
+                          const pageNum = i + 1
+                          if (
+                            pageNum === 1 ||
+                            pageNum === totalRegistryPages ||
+                            (pageNum >= safeRegistryPage - 1 && pageNum <= safeRegistryPage + 1)
+                          ) {
+                            return (
+                              <button
+                                key={pageNum}
+                                onClick={() => setRegistryPage(pageNum)}
+                                className={`w-8 h-8 rounded-lg text-xs font-black transition ${
+                                  safeRegistryPage === pageNum
+                                    ? 'bg-[#1e3a8a] text-white shadow-xs'
+                                    : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
+                                }`}
+                              >
+                                {pageNum}
+                              </button>
+                            )
+                          }
+                          if (
+                            (pageNum === 2 && safeRegistryPage > 3) ||
+                            (pageNum === totalRegistryPages - 1 && safeRegistryPage < totalRegistryPages - 2)
+                          ) {
+                            return <span key={pageNum} className="px-1 text-slate-400">...</span>
+                          }
+                          return null
+                        })}
+                      </div>
+
+                      <button
+                        onClick={() => setRegistryPage(p => Math.min(totalRegistryPages, p + 1))}
+                        disabled={safeRegistryPage === totalRegistryPages}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
