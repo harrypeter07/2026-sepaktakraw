@@ -1,0 +1,1746 @@
+[
+  {
+    "name": "Bhavesh Raut",
+    "gender": "Male",
+    "jerseyNumber": "02",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-122/2026-27",
+    "birthYear": "2010"
+  },
+  {
+    "name": "Darshan Dharpure",
+    "gender": "Male",
+    "jerseyNumber": "14",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-60/26-27",
+    "birthYear": "2009"
+  },
+  {
+    "name": "Dipesh Milind Ramteke",
+    "gender": "Male",
+    "jerseyNumber": "09",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-61/26-27",
+    "birthYear": "2010"
+  },
+  {
+    "name": "Syed Umar",
+    "gender": "Male",
+    "jerseyNumber": "06",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-69/26-27",
+    "birthYear": "2008"
+  },
+  {
+    "name": "Vedant Amit Charde",
+    "gender": "Male",
+    "jerseyNumber": "01",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-57/26/27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Riya Santosh Maginkeri",
+    "gender": "Female",
+    "jerseyNumber": "04",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-140/26-27",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Renuka Ghadge",
+    "gender": "Female",
+    "jerseyNumber": "09",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W149/2026-27",
+    "birthYear": "2010"
+  },
+  {
+    "name": "Saniya Bandenwaj Sutar",
+    "gender": "Female",
+    "jerseyNumber": "10",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/w-150/2026-27",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Aarohi Kshirsagar",
+    "gender": "Female",
+    "jerseyNumber": "08",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-142/26-27",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Mohammad Ammar",
+    "gender": "Male",
+    "jerseyNumber": "12",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-145/26-27",
+    "birthYear": "2008"
+  },
+  {
+    "name": "Yashaswi U Rathod",
+    "gender": "Female",
+    "jerseyNumber": "12",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-139/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Vanshika Kamal Kishor",
+    "gender": "Female",
+    "jerseyNumber": "15",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-99/25-26",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Shlok Narendra Masram",
+    "gender": "Male",
+    "jerseyNumber": "08",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-54/26-27",
+    "birthYear": "2010"
+  },
+  {
+    "name": "Ansh Ashok Tiwari",
+    "gender": "Male",
+    "jerseyNumber": "05",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "M 158",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Harshal Bhaskar Bhosle",
+    "gender": "Male",
+    "jerseyNumber": "12",
+    "division": "Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M155/2026-27",
+    "birthYear": "2010"
+  },
+  {
+    "name": "Aaradhya Sagar Harde",
+    "gender": "Male",
+    "jerseyNumber": "02",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-124/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Aarohi Hariba Kshirsagar",
+    "gender": "Female",
+    "jerseyNumber": "08",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-142/2026-27",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Aayan Noman Khan",
+    "gender": "Male",
+    "jerseyNumber": "03",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M/169/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Ajinkya Vijay Ingle",
+    "gender": "Male",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/m-163/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Alok Vitthal Sukhalkar",
+    "gender": "Male",
+    "jerseyNumber": "04",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTM/M-165/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Ansh Vilas Patil",
+    "gender": "Male",
+    "jerseyNumber": "06",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-109/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Antara Manoj Thakur",
+    "gender": "Female",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-180/26-27",
+    "birthYear": "2016"
+  },
+  {
+    "name": "Anup Chandrabhushan Vishwakarma",
+    "gender": "Male",
+    "jerseyNumber": "11",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/ M-167/ 26-27",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Anvi Mangesh Babhulkar",
+    "gender": "Female",
+    "jerseyNumber": "14",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-182/26-27",
+    "birthYear": "2015"
+  },
+  {
+    "name": "Chaitanya Sanjay Sonwane",
+    "gender": "Male",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-161/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Chitranshi Satish Kshirsagar",
+    "gender": "Female",
+    "jerseyNumber": "02",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-179/26-27",
+    "birthYear": "2016"
+  },
+  {
+    "name": "Daksha Ashwin Chavhan",
+    "gender": "Female",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-164/26-27",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Dhanika Rakesh Katekhaye",
+    "gender": "Female",
+    "jerseyNumber": "10",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-184/26-27",
+    "birthYear": "2016"
+  },
+  {
+    "name": "Farhan Altaf Bhole",
+    "gender": "Male",
+    "jerseyNumber": "03",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M147/2026-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Harshal Jagannath Kawre",
+    "gender": "Male",
+    "jerseyNumber": "08",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "207466266385.0",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Mitali Gajanan Thakre",
+    "gender": "Female",
+    "jerseyNumber": "04",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/w-177/26-27",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Namrata Pramod Kamble",
+    "gender": "Female",
+    "jerseyNumber": "06",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-148/2026-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Navinya Satish Thote",
+    "gender": "Male",
+    "jerseyNumber": "10",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-55/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Om Wakulkarwakulkar",
+    "gender": "Male",
+    "jerseyNumber": "04",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-174/26-27",
+    "birthYear": "2017"
+  },
+  {
+    "name": "Pragati Ninhave",
+    "gender": "Female",
+    "jerseyNumber": "09",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-113/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Ranveer Singh . Mahavir Singh . Vyas",
+    "gender": "Male",
+    "jerseyNumber": "08",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/ M - 125 / 26- 27 .",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Ritiksha Parteke",
+    "gender": "Female",
+    "jerseyNumber": "09",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-175/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Rudra Kamlesh Wakulkar",
+    "gender": "Male",
+    "jerseyNumber": "15",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-173/26-27",
+    "birthYear": "2017"
+  },
+  {
+    "name": "Sahil .Pravin. Wakulkar",
+    "gender": "Male",
+    "jerseyNumber": "12",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-117/2026-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Sahil .Pravin. Wakulkar",
+    "gender": "Male",
+    "jerseyNumber": "12",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-117/2026-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Sejal Sunil Desai",
+    "gender": "Female",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "S1310792324910",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Sejal Sunil Desai",
+    "gender": "Female",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-160/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Sunay Vivek Gajbhiye",
+    "gender": "Male",
+    "jerseyNumber": "11",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-166/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Syed Hamzah",
+    "gender": "Male",
+    "jerseyNumber": "08",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-171/26-27",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Tihami Sayyad",
+    "gender": "Male",
+    "jerseyNumber": "09",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M/168/26-27",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Vanshika Kamal Kishor",
+    "gender": "Female",
+    "jerseyNumber": "15",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-99/26-27",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Vedant Amit Charde",
+    "gender": "Male",
+    "jerseyNumber": "05",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-57/2026",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Vihang Shrikant Bhingare",
+    "gender": "Male",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-176/26-27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Yashaswi Umakant Rathod",
+    "gender": "Female",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA / W -139 /26 - 27",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Titu Sunil Rathor",
+    "gender": "Male",
+    "jerseyNumber": "07",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "Ndsta/m/189126/27",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Syed Zamam",
+    "gender": "Male",
+    "jerseyNumber": "03",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-170/26-27",
+    "birthYear": "2015"
+  },
+  {
+    "name": "Rudrani Prakash Kamble",
+    "gender": "Female",
+    "jerseyNumber": "09",
+    "division": "Sub-Junior",
+    "district": "Nagpur",
+    "urn": "NDSTA/w-183/26-27",
+    "birthYear": "2016"
+  },
+  {
+    "name": "Shivraj Sanjay Sole",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Beed",
+    "urn": "BDSA00020",
+    "position": "Tekong",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Srushti Ganesh Jangilwad",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nanded",
+    "urn": "NDSTAN/NED/023/2025-2026",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Aditya Vilas Pangrekar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nanded",
+    "urn": "URN NO:NDSTAN/NED/061/2025-26",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Aditya Vilas Pangrekar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nanded",
+    "urn": "URN No: NDSTAN/NED/061/2025",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Shreya Dilip Bhonge",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nanded",
+    "urn": "NDSTAN/NED/024/2025-26",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Shreya Dilip Bhonge",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nanded",
+    "urn": "NDSTAN/NED/024/2025-26",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Navinya Satish Thote",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA/M-56/25-26",
+    "position": "Tekong",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Rudra Ravindra Pidkalwar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADSTAOO57",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Kundan Bharat Bante",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nagpur",
+    "urn": "NDSTS/M59/25-26",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Pranav Dadahari Datir",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nashik",
+    "urn": "STANSK-M-012",
+    "position": "Striker",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Vanshika Kamal Kishor",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA/W-99/2526",
+    "position": "Tekong",
+    "birthYear": "2014"
+  },
+  {
+    "name": "Bhakti Prabhakar Nagane",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "SOLAPUR",
+    "urn": "SDTA/25-26W03",
+    "position": "Tekong",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Sai Prakash Koli",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "SOLAPUR",
+    "urn": "SDTA/ 25-26W05",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Vaishnavi Laxman Wagh",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "SOLAPUR",
+    "urn": "SDTA/ 25-26W04",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Mahi Ramesh Nagdive",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADSTA/2025-26/f/014",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Nainsi Narendra Jaiswal",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADSTA/2025/26/f/050",
+    "position": "Feeder",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Purvi Balasaheb Jadhav",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "SOLAPUR",
+    "urn": "SDTA/ 25-26W06",
+    "position": "Feeder",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Jeshika Pramod Kale",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADTA-2025-26-F-051",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Akshara Ajay Taywade",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADSTA/2025-26/F/033",
+    "position": "Striker",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Vedika Nitin Mahale",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nashik",
+    "urn": "Stank 0-37",
+    "position": "Tekong",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Anjali Umesh Rathod",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Amravati",
+    "urn": "HADSTA/2025-26/p/031",
+    "position": "Tekong",
+    "birthYear": "2013"
+  },
+  {
+    "name": "Shreeraj Deepak Nikam",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Nashik",
+    "urn": "STANSK-M-090",
+    "position": "Feeder",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Riya Santosh Maginkeri",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Pune",
+    "urn": "TPDSTA 32/25",
+    "position": "Striker",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Namrata Kambale",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "Pune",
+    "urn": "TPDSTA 37/25",
+    "position": "Tekong",
+    "birthYear": "2012"
+  },
+  {
+    "name": "Samarjit Sujit Kadam",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "State Registered",
+    "district": "SOLAPUR",
+    "urn": "SDTA/ 25-26M02",
+    "position": "Tekong",
+    "birthYear": "2011"
+  },
+  {
+    "name": "Kamran Ansari",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-01",
+    "birthYear": ""
+  },
+  {
+    "name": "Riya Sharma",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-02",
+    "birthYear": ""
+  },
+  {
+    "name": "Ashit Shriavs",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-03",
+    "birthYear": ""
+  },
+  {
+    "name": "Kunal Evanate",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-04",
+    "birthYear": ""
+  },
+  {
+    "name": "Irshad Saghar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-05",
+    "birthYear": ""
+  },
+  {
+    "name": "Rutuja Jadhav",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-06",
+    "birthYear": ""
+  },
+  {
+    "name": "Avantika Lokhande",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-07",
+    "birthYear": ""
+  },
+  {
+    "name": "Gungun Pandit",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-08",
+    "birthYear": ""
+  },
+  {
+    "name": "Avani Baghel",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-09",
+    "birthYear": ""
+  },
+  {
+    "name": "Avantika Baghel",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-010",
+    "birthYear": ""
+  },
+  {
+    "name": "Kunal Shingne",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-011",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Safwaan",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-012",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Ali",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-013",
+    "birthYear": ""
+  },
+  {
+    "name": "Qazi Huzaifuddin",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-014",
+    "birthYear": ""
+  },
+  {
+    "name": "Swapnil Nagrare",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-015",
+    "birthYear": ""
+  },
+  {
+    "name": "Sonal Dhadse",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-016",
+    "birthYear": ""
+  },
+  {
+    "name": "Ekta Shahu",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-017",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Sohail",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-018",
+    "birthYear": ""
+  },
+  {
+    "name": "Sneha Uikey",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-019",
+    "birthYear": ""
+  },
+  {
+    "name": "Nidhi Verma",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-020",
+    "birthYear": ""
+  },
+  {
+    "name": "Chetana Rongala",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-021",
+    "birthYear": ""
+  },
+  {
+    "name": "Selina Bhoyar",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-022",
+    "birthYear": ""
+  },
+  {
+    "name": "Sohail Sheikh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-023",
+    "birthYear": ""
+  },
+  {
+    "name": "Ankush Sirsat",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-024",
+    "birthYear": ""
+  },
+  {
+    "name": "Altamash Pasha",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-025",
+    "birthYear": ""
+  },
+  {
+    "name": "Shahnawaz Khan",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-026",
+    "birthYear": ""
+  },
+  {
+    "name": "Umar Ansari",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-027",
+    "birthYear": ""
+  },
+  {
+    "name": "Hari Yadav",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-028",
+    "birthYear": ""
+  },
+  {
+    "name": "Safiya Sayyad",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-029",
+    "birthYear": ""
+  },
+  {
+    "name": "Anchal Mourya",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-030",
+    "birthYear": ""
+  },
+  {
+    "name": "Aahad Pasha",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-031",
+    "birthYear": ""
+  },
+  {
+    "name": "Abdul Moiz",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-032",
+    "birthYear": ""
+  },
+  {
+    "name": "Abuzar Sheikh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-033",
+    "birthYear": ""
+  },
+  {
+    "name": "Hunain Khan",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-034",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Saad",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-035",
+    "birthYear": ""
+  },
+  {
+    "name": "Abubakar Siddique",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-036",
+    "birthYear": ""
+  },
+  {
+    "name": "Piyush Nikhare",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-037",
+    "birthYear": ""
+  },
+  {
+    "name": "Tanmay Khande",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-038",
+    "birthYear": ""
+  },
+  {
+    "name": "Ritu Sharma",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-039",
+    "birthYear": ""
+  },
+  {
+    "name": "Sameer Thhool",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-040",
+    "birthYear": ""
+  },
+  {
+    "name": "Samiruddin Sheikh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-041",
+    "birthYear": ""
+  },
+  {
+    "name": "Slok Masram",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-054",
+    "birthYear": ""
+  },
+  {
+    "name": "Navinya Thote",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-055",
+    "birthYear": ""
+  },
+  {
+    "name": "Siddhant Shende",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-056",
+    "birthYear": ""
+  },
+  {
+    "name": "Vedant Charde",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-057",
+    "birthYear": ""
+  },
+  {
+    "name": "Dipesh Ramteke",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-061",
+    "birthYear": ""
+  },
+  {
+    "name": "Sayyed Umer",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-069",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Taha",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-070",
+    "birthYear": ""
+  },
+  {
+    "name": "Yuvaraj Shingade",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-071",
+    "birthYear": ""
+  },
+  {
+    "name": "Shruti Nighot",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-086",
+    "birthYear": ""
+  },
+  {
+    "name": "Bobby Gedam",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-087",
+    "birthYear": ""
+  },
+  {
+    "name": "Pankajkumar Godghase",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-089",
+    "birthYear": ""
+  },
+  {
+    "name": "Sairam Idhole",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-090",
+    "birthYear": ""
+  },
+  {
+    "name": "Ridhima Ghadge",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-091",
+    "birthYear": ""
+  },
+  {
+    "name": "Nirali Gurav",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-092",
+    "birthYear": ""
+  },
+  {
+    "name": "Janhvi Lambse",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-093",
+    "birthYear": ""
+  },
+  {
+    "name": "Saumya Sakhare",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-094",
+    "birthYear": ""
+  },
+  {
+    "name": "Bhavukta Dongre",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-095",
+    "birthYear": ""
+  },
+  {
+    "name": "Alvina Khan",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-096",
+    "birthYear": ""
+  },
+  {
+    "name": "Shravani Suke",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-097",
+    "birthYear": ""
+  },
+  {
+    "name": "Shravika Bannore",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-098",
+    "birthYear": ""
+  },
+  {
+    "name": "Vanshika Kishor",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-099",
+    "birthYear": ""
+  },
+  {
+    "name": "Aarya Pusadkar",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-100",
+    "birthYear": ""
+  },
+  {
+    "name": "Tanisha Rangne",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-101",
+    "birthYear": ""
+  },
+  {
+    "name": "Tehrim Sheikh",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-102",
+    "birthYear": ""
+  },
+  {
+    "name": "Owais Sadik",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-103",
+    "birthYear": ""
+  },
+  {
+    "name": "Humayl Sheikh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-104",
+    "birthYear": ""
+  },
+  {
+    "name": "Kevalya Khandalkar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-105",
+    "birthYear": ""
+  },
+  {
+    "name": "Anmol Mukharjee",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-106",
+    "birthYear": ""
+  },
+  {
+    "name": "Shantanu Bhagat",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-107",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Adnan",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-108",
+    "birthYear": ""
+  },
+  {
+    "name": "Ansh Patil",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-109",
+    "birthYear": ""
+  },
+  {
+    "name": "Vedant Thakur",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-110",
+    "birthYear": ""
+  },
+  {
+    "name": "Minal Gadpayle",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-111",
+    "birthYear": ""
+  },
+  {
+    "name": "Dev Parwani",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-112",
+    "birthYear": ""
+  },
+  {
+    "name": "Avanti Kamble",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-114",
+    "birthYear": ""
+  },
+  {
+    "name": "Nandini Shahu",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-115",
+    "birthYear": ""
+  },
+  {
+    "name": "Sahil Wakulkar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-117",
+    "birthYear": ""
+  },
+  {
+    "name": "Anshul Verma",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-118",
+    "birthYear": ""
+  },
+  {
+    "name": "Jay Hatti",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-119",
+    "birthYear": ""
+  },
+  {
+    "name": "Sufiyan Muniyar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-120",
+    "birthYear": ""
+  },
+  {
+    "name": "Mohammad Bilal",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-121",
+    "birthYear": ""
+  },
+  {
+    "name": "Naman Mute",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-123",
+    "birthYear": ""
+  },
+  {
+    "name": "Aaradhya Harde",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-124",
+    "birthYear": ""
+  },
+  {
+    "name": "Ranveer Singh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-125",
+    "birthYear": ""
+  },
+  {
+    "name": "Shardul Aaradhe",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-126",
+    "birthYear": ""
+  },
+  {
+    "name": "Mahak Sheikh",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-127",
+    "birthYear": ""
+  },
+  {
+    "name": "Trusha Gosavi",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-130",
+    "birthYear": ""
+  },
+  {
+    "name": "Swara Patle",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-132",
+    "birthYear": ""
+  },
+  {
+    "name": "Abdul Razique",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-133",
+    "birthYear": ""
+  },
+  {
+    "name": "Kundan Bante",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-134",
+    "birthYear": ""
+  },
+  {
+    "name": "Gangaprasad Shelke",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-135",
+    "birthYear": ""
+  },
+  {
+    "name": "Gajulwar Baburao",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-136",
+    "birthYear": ""
+  },
+  {
+    "name": "Choudante Sandipan",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-137",
+    "birthYear": ""
+  },
+  {
+    "name": "Pritam Waghmare",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-138",
+    "birthYear": ""
+  },
+  {
+    "name": "Yashaswi Rathod",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-139",
+    "birthYear": ""
+  },
+  {
+    "name": "Riya Maginker",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-140",
+    "birthYear": ""
+  },
+  {
+    "name": "Kiran Pawar",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-141",
+    "birthYear": ""
+  },
+  {
+    "name": "Arohi Kshirsagar",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-142",
+    "birthYear": ""
+  },
+  {
+    "name": "Atharv Pol",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-143",
+    "birthYear": ""
+  },
+  {
+    "name": "Jishan Shaikh",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-144",
+    "birthYear": ""
+  },
+  {
+    "name": "Kartik Rathod",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-146",
+    "birthYear": ""
+  },
+  {
+    "name": "Farhan Bhole",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-147",
+    "birthYear": ""
+  },
+  {
+    "name": "Namrata Kamble",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-148",
+    "birthYear": ""
+  },
+  {
+    "name": "Saniya Sutar",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-150",
+    "birthYear": ""
+  },
+  {
+    "name": "Mayur Saneshwar",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-151",
+    "birthYear": ""
+  },
+  {
+    "name": "Anurag Chandane",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-152",
+    "birthYear": ""
+  },
+  {
+    "name": "Shivam Sangode",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-153",
+    "birthYear": ""
+  },
+  {
+    "name": "Syed Abubakaruddin",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-154",
+    "birthYear": ""
+  },
+  {
+    "name": "Harshal Bhosale",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-155",
+    "birthYear": ""
+  },
+  {
+    "name": "Vedika Mourya",
+    "gender": "Female",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-W-156",
+    "birthYear": ""
+  },
+  {
+    "name": "Yatharth Mogre",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-157",
+    "birthYear": ""
+  },
+  {
+    "name": "Ansh Tiwari",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-158",
+    "birthYear": ""
+  },
+  {
+    "name": "Kandhare Milind",
+    "gender": "Male",
+    "jerseyNumber": "",
+    "division": "NDSTA Registered",
+    "district": "Nagpur",
+    "urn": "NDSTA-M-159",
+    "birthYear": ""
+  }
+]

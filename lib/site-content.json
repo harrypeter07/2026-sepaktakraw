@@ -18,16 +18,16 @@
     "text": "Promoting excellence and growth in Sepaktakraw across Maharashtra through competitive tournaments and player development."
   },
   "site.footer_contact_address": {
-    "text": "Maharashtra, India"
+    "text": "MSTA State Headquarters, Shree Shiv Chhatrapati Sports Complex, Balewadi, Pune, Maharashtra 411045"
   },
   "site.footer_contact_phone": {
-    "text": "+91 (XXX) XXX-XXXX"
+    "text": "+91 94220 18234 / +91 20 2737 4000"
   },
   "site.footer_contact_email": {
     "text": "info@msa.org.in"
   },
   "site.footer_copyright": {
-    "text": "2025 Maharashtra Sepaktakraw Association. All rights reserved."
+    "text": "2026 Maharashtra Sepaktakraw Association. All rights reserved."
   },
   "site.footer_logo_1": {
     "url": ""
@@ -282,5 +282,38 @@
   },
   "home.gallery_9": {
     "url": "/hero.jpg"
+  },
+  "about.gallery_1": {
+    "url": "/hero/gallery_1.jpg",
+    "alt": "Sepaktakraw bicycle kick spike"
+  },
+  "about.gallery_2": {
+    "url": "/hero/gallery_2.jpg",
+    "alt": "Tekong high service kick"
+  },
+  "about.gallery_3": {
+    "url": "/hero/gallery_3.jpg",
+    "alt": "Roll spike over the net"
+  },
+  "about.gallery_4": {
+    "url": "/hero/gallery_4.jpg",
+    "alt": "Net defense block"
+  },
+  "about.gallery_5": {
+    "url": "/hero/gallery_5.jpg",
+    "alt": "Feeder setting the ball"
+  },
+  "about.gallery_6": {
+    "url": "/hero/gallery_6.jpg",
+    "alt": "Sunback spike execution"
+  },
+  "about.gallery_7": {
+    "url": "/hero/gallery_7.jpg",
+    "alt": "Team celebration and trophy"
+  },
+  "about.gallery_8": {
+    "url": "/hero/hero-image.jpg",
+    "alt": "Championship match action"
   }
 }
+

@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { TeamCard } from '@/components/team-card'
 import { PageHero } from '@/components/page-hero'
+import { StateSquadShowcase } from '@/components/state-squad-showcase'
 import { useState, useEffect } from 'react'
 import { TeamManager, PlayerManager, Team, Player } from '@/lib/data-manager'
 import { Search, Trophy, ShieldAlert } from 'lucide-react'
@@ -55,10 +56,16 @@ export default function TeamsPage() {
   // Helper for position color badge
   const getPositionBadge = (pos: string) => {
     switch (pos) {
+      case 'Tekong':
+        return 'bg-amber-50 text-amber-700 border-amber-200'
+      case 'Killer':
+        return 'bg-rose-50 text-rose-700 border-rose-200'
+      case 'Feeder':
+        return 'bg-blue-50 text-blue-700 border-blue-200'
       case 'Spiker':
         return 'bg-red-50 text-red-700 border-red-200'
       case 'Setter':
-        return 'bg-blue-50 text-blue-700 border-blue-200'
+        return 'bg-sky-50 text-sky-700 border-sky-200'
       case 'Blocker':
         return 'bg-emerald-50 text-emerald-700 border-emerald-200'
       case 'Libero':
@@ -98,9 +105,19 @@ export default function TeamsPage() {
           </div>
         </section>
 
-        {/* Teams Grid */}
-        <section className="py-16 sm:py-24 flex-1">
+        {/* Teams Grid & State Squad */}
+        <section className="py-12 sm:py-16 flex-1">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Official State Squad Showcase */}
+            <StateSquadShowcase />
+
+            <div className="mb-8 flex items-center justify-between border-b pb-4">
+              <div>
+                <h3 className="text-xl font-black uppercase text-slate-900 tracking-tight">Affiliated Club Teams</h3>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">Competitive regional clubs participating in Maharashtra State League</p>
+              </div>
+            </div>
+
             {!isLoaded ? (
               <div className="flex flex-col items-center justify-center py-20 gap-4">
                 <span className="animate-spin rounded-full h-10 w-10 border-4 border-primary border-t-transparent" />

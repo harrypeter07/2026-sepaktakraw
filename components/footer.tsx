@@ -86,8 +86,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
           <p>&copy; {txt('site.footer_copyright', '2025 Maharashtra Sepaktakraw Association. All rights reserved.')}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:opacity-100 transition">Privacy Policy</Link>
-            <Link href="#" className="hover:opacity-100 transition">Terms of Service</Link>
+            <Link href="/privacy" className="hover:opacity-100 transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:opacity-100 transition">Terms of Service</Link>
           </div>
         </div>
       </div>

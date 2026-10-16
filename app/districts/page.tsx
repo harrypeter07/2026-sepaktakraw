@@ -6,7 +6,9 @@ import Footer from '@/components/footer'
 import { PageHero } from '@/components/page-hero'
 import { useState } from 'react'
 import districtsData from '@/lib/districts.json'
-import { Search, Mail, MapPin, Award, Building, Phone } from 'lucide-react'
+import recordsData from '@/lib/msta-records.json'
+import { DistrictMedalLeaderboard } from '@/components/district-medal-leaderboard'
+import { Search, Mail, MapPin, Award, Building, Phone, Trophy, Medal } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -43,6 +45,21 @@ export default function DistrictsPage() {
     const matchesRegion = selectedRegion === 'All' || d.region === selectedRegion
     return matchesSearch && matchesRegion
   })
+
+  // Helper to retrieve official state medal tally for district
+  const getDistrictTally = (districtName: string, districtId: string) => {
+    const normName = districtName.toLowerCase()
+    const normId = districtId.toLowerCase()
+    return recordsData.tallies.find(t => {
+      const tNorm = t.district.toLowerCase()
+      return (
+        tNorm === normName ||
+        normName.includes(tNorm) ||
+        tNorm.includes(normName) ||
+        (normId === 'aurangabad' && tNorm.includes('sambhaji'))
+      )
+    })
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -93,46 +110,81 @@ export default function DistrictsPage() {
           </div>
         </section>
 
-        {/* District Grid */}
-        <section className="py-16">
+        {/* District Grid & Medal Leaderboard */}
+        <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Real MSTA Championship Leaderboard */}
+            <DistrictMedalLeaderboard />
+
+            <div className="mb-8 flex items-center justify-between border-b pb-4">
+              <div>
+                <h3 className="text-xl font-black uppercase text-slate-900 tracking-tight">Affiliated District Associations</h3>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">Showing {filteredDistricts.length} registered regional units of Maharashtra Sepaktakraw</p>
+              </div>
+            </div>
+
             {filteredDistricts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {filteredDistricts.map(district => (
-                  <Link
-                    key={district.id}
-                    href={`/districts/${district.id}`}
-                    className="group cursor-pointer bg-white border border-slate-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between"
-                  >
-                    <div className="p-6 text-center flex flex-col items-center flex-grow">
-                      {/* Logo Frame */}
-                      <div className="w-24 h-24 rounded-full border border-slate-100 bg-slate-50/50 flex items-center justify-center overflow-hidden mb-4 p-2 transition-transform duration-300 group-hover:scale-105 shadow-inner shrink-0">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={district.logo}
-                          alt={`${district.district} Logo`}
-                          className="h-full w-full object-contain"
-                        />
+                {filteredDistricts.map(district => {
+                  const tally = getDistrictTally(district.district, district.id)
+                  return (
+                    <Link
+                      key={district.id}
+                      href={`/districts/${district.id}`}
+                      className="group cursor-pointer bg-white border border-slate-200/80 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between"
+                    >
+                      <div className="p-6 text-center flex flex-col items-center flex-grow">
+                        {/* Logo Frame */}
+                        <div className="w-24 h-24 rounded-full border border-slate-100 bg-slate-50/50 flex items-center justify-center overflow-hidden mb-4 p-2 transition-transform duration-300 group-hover:scale-105 shadow-inner shrink-0">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={district.logo}
+                            alt={`${district.district} Logo`}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+
+                        {/* District Title */}
+                        <h3 className="font-bold text-slate-800 text-base group-hover:text-blue-600 transition-colors line-clamp-2">
+                          {district.district}
+                        </h3>
+                        <p className="text-xs text-slate-500 font-medium mt-1">
+                          {district.region} Region
+                        </p>
+
+                        {/* Real Championship Medals from MSTA Records */}
+                        {tally && tally.total > 0 && (
+                          <div className="flex items-center justify-center gap-1.5 mt-3 pt-2.5 border-t border-slate-100 w-full text-[11px] font-extrabold flex-wrap">
+                            {tally.gold > 0 && (
+                              <span className="bg-amber-50 text-amber-800 border border-amber-200/90 px-1.5 py-0.5 rounded shadow-2xs" title={`${tally.gold} Gold Medals`}>
+                                🥇 {tally.gold}
+                              </span>
+                            )}
+                            {tally.silver > 0 && (
+                              <span className="bg-slate-100 text-slate-800 border border-slate-200/90 px-1.5 py-0.5 rounded shadow-2xs" title={`${tally.silver} Silver Medals`}>
+                                🥈 {tally.silver}
+                              </span>
+                            )}
+                            {tally.bronze > 0 && (
+                              <span className="bg-amber-100/60 text-amber-900 border border-amber-200/80 px-1.5 py-0.5 rounded shadow-2xs" title={`${tally.bronze} Bronze Medals`}>
+                                🥉 {tally.bronze}
+                              </span>
+                            )}
+                            <span className="text-[10px] text-slate-400 font-bold ml-0.5">({tally.total} medals)</span>
+                          </div>
+                        )}
                       </div>
 
-                      {/* District Title */}
-                      <h3 className="font-bold text-slate-800 text-base group-hover:text-blue-600 transition-colors line-clamp-2">
-                        {district.district}
-                      </h3>
-                      <p className="text-xs text-slate-500 font-medium mt-1">
-                        {district.region} Region
-                      </p>
-                    </div>
-
-                    {/* Footer stats */}
-                    <div className="bg-slate-50 border-t px-4 py-3 flex items-center justify-between text-xs">
-                      <span className="font-semibold text-slate-500">MSTA Affiliate</span>
-                      <Badge className="bg-green-50 text-green-700 hover:bg-green-50 border-green-200 border text-[10px] font-bold">
-                        {district.status}
-                      </Badge>
-                    </div>
-                  </Link>
-                ))}
+                      {/* Footer stats */}
+                      <div className="bg-slate-50 border-t px-4 py-3 flex items-center justify-between text-xs">
+                        <span className="font-semibold text-slate-500">MSTA Affiliate</span>
+                        <Badge className="bg-green-50 text-green-700 hover:bg-green-50 border-green-200 border text-[10px] font-bold">
+                          {district.status}
+                        </Badge>
+                      </div>
+                    </Link>
+                  )
+                })}
               </div>
             ) : (
               <div className="text-center py-20 bg-slate-50 rounded-2xl border border-dashed border-slate-300 max-w-xl mx-auto px-6">

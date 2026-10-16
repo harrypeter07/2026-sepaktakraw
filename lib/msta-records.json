@@ -1,0 +1,2339 @@
+{
+  "tallies": [
+    {
+      "district": "Nagpur",
+      "gold": 13,
+      "silver": 13,
+      "bronze": 8,
+      "total": 34
+    },
+    {
+      "district": "Solapur",
+      "gold": 13,
+      "silver": 5,
+      "bronze": 11,
+      "total": 29
+    },
+    {
+      "district": "Nanded",
+      "gold": 12,
+      "silver": 3,
+      "bronze": 15,
+      "total": 30
+    },
+    {
+      "district": "Wardha",
+      "gold": 10,
+      "silver": 9,
+      "bronze": 17,
+      "total": 36
+    },
+    {
+      "district": "Nashik",
+      "gold": 9,
+      "silver": 9,
+      "bronze": 22,
+      "total": 40
+    },
+    {
+      "district": "Jalgaon",
+      "gold": 2,
+      "silver": 5,
+      "bronze": 11,
+      "total": 18
+    },
+    {
+      "district": "Chhatrapati Sambhaji Nagar",
+      "gold": 2,
+      "silver": 0,
+      "bronze": 5,
+      "total": 7
+    },
+    {
+      "district": "Amravati",
+      "gold": 1,
+      "silver": 8,
+      "bronze": 9,
+      "total": 18
+    },
+    {
+      "district": "Satara",
+      "gold": 0,
+      "silver": 2,
+      "bronze": 3,
+      "total": 5
+    },
+    {
+      "district": "Beed",
+      "gold": 0,
+      "silver": 2,
+      "bronze": 2,
+      "total": 4
+    },
+    {
+      "district": "Washim",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 6,
+      "total": 7
+    },
+    {
+      "district": "Gondia",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 2,
+      "total": 3
+    },
+    {
+      "district": "Parbhani",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    },
+    {
+      "district": "Jalana",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0,
+      "total": 1
+    },
+    {
+      "district": "Thane",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 4,
+      "total": 4
+    },
+    {
+      "district": "Pune",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 4,
+      "total": 4
+    },
+    {
+      "district": "Jalna",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    },
+    {
+      "district": "Kolhapur",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    },
+    {
+      "district": "Yavatmal",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    }
+  ],
+  "podiumRecords": [
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Solapur"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2021-22",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nanded"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Satara"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Gondia"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2022-23",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Satara"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Gondia"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Solapur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalna"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Thane"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Thane"
+    },
+    {
+      "year": "2023-24",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Satara"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Satara"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Thane"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Satara"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Solapur"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Thane"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2024-25",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Pune"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Pune"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Team Event",
+      "category": "Sub-Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Pune"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Pune"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Parbhani"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Beed"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Beed"
+    },
+    {
+      "year": "2025-26",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2025-26",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Gondia"
+    },
+    {
+      "year": "2026-27",
+      "event": "Team Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Regu Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Solapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Beed"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Beed"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Quad Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nagpur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Jalana"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Washim"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "II",
+      "medal": "Silver",
+      "district": "Wardha"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Kolhapur"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Washim"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Nanded"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Yavatmal"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Women",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Jalgaon"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Girls",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Chhatrapati Sambhaji Nagar"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "I",
+      "medal": "Gold",
+      "district": "Nashik"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Senior Men",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Amravati"
+    },
+    {
+      "year": "2026-27",
+      "event": "Double Event",
+      "category": "Junior Boys",
+      "rank": "III",
+      "medal": "Bronze",
+      "district": "Solapur"
+    }
+  ],
+  "stateSquad": {
+    "men": [
+      {
+        "id": "ms-men-1",
+        "name": "Aniket Kale",
+        "district": "Amravati",
+        "birthYear": "1999",
+        "jerseyNumber": 1,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/aniket.jpg"
+      },
+      {
+        "id": "ms-men-2",
+        "name": "Lekhanshu Ladke",
+        "district": "Wardha",
+        "birthYear": "2003",
+        "jerseyNumber": 2,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/lekhanshu.jpg"
+      },
+      {
+        "id": "ms-men-3",
+        "name": "Faizan Sheikh",
+        "district": "Jalgaon",
+        "birthYear": "2000",
+        "jerseyNumber": 3,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/faizan.jpg"
+      },
+      {
+        "id": "ms-men-4",
+        "name": "Ashit Shrivas",
+        "district": "Nagpur",
+        "birthYear": "1997",
+        "jerseyNumber": 4,
+        "position": "Feeder",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/ashit.jpg"
+      },
+      {
+        "id": "ms-men-5",
+        "name": "Vijaysingh Tomar",
+        "district": "Wardha",
+        "birthYear": "2000",
+        "jerseyNumber": 5,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/vijay.jpg"
+      },
+      {
+        "id": "ms-men-6",
+        "name": "Altamash Pasha",
+        "district": "Nagpur",
+        "birthYear": "2005",
+        "jerseyNumber": 6,
+        "position": "Feeder",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/altamash.jpg"
+      },
+      {
+        "id": "ms-men-7",
+        "name": "Sandip Meshram",
+        "district": "Gondia",
+        "birthYear": "1992",
+        "jerseyNumber": 7,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/sandip.jpg"
+      },
+      {
+        "id": "ms-men-8",
+        "name": "Sukumar Tiwari",
+        "district": "Nashik",
+        "birthYear": "2004",
+        "jerseyNumber": 8,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/sukumar.jpg"
+      },
+      {
+        "id": "ms-men-9",
+        "name": "Kunal Evanate",
+        "district": "Nagpur",
+        "birthYear": "1998",
+        "jerseyNumber": 9,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/kunal.jpg"
+      },
+      {
+        "id": "ms-men-10",
+        "name": "Irshad Saghar Khan",
+        "district": "Nagpur",
+        "birthYear": "1996",
+        "jerseyNumber": 10,
+        "position": "Feeder",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/irshad.jpg"
+      },
+      {
+        "id": "ms-men-11",
+        "name": "Mohammad Sohail",
+        "district": "Nagpur",
+        "birthYear": "1997",
+        "jerseyNumber": 11,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/sohail.jpg"
+      },
+      {
+        "id": "ms-men-12",
+        "name": "Amol Rathod",
+        "district": "Nashik",
+        "birthYear": "1997",
+        "jerseyNumber": 12,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/amol.jpg"
+      },
+      {
+        "id": "ms-men-13",
+        "name": "Om Muley",
+        "district": "Wardha",
+        "birthYear": "2002",
+        "jerseyNumber": 13,
+        "position": "Feeder",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/om.jpg"
+      },
+      {
+        "id": "ms-men-14",
+        "name": "Asang Jondhale",
+        "district": "Nanded",
+        "birthYear": "2005",
+        "jerseyNumber": 14,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/asang.jpg"
+      },
+      {
+        "id": "ms-men-15",
+        "name": "Shahnawaz Khan",
+        "district": "Nagpur",
+        "birthYear": "0720",
+        "jerseyNumber": 15,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Men",
+        "photoUrl": "/players/shahnawaz.jpg"
+      }
+    ],
+    "women": [
+      {
+        "id": "ms-women-1",
+        "name": "Apeksha Anil Dadas",
+        "district": "Satara",
+        "birthYear": "1999",
+        "jerseyNumber": 1,
+        "position": "Killer",
+        "role": "State Athlete",
+        "division": "Senior Women",
+        "photoUrl": "/players/apeksha.jpg"
+      },
+      {
+        "id": "ms-women-2",
+        "name": "Chetana Sankaram Rongala",
+        "district": "Nagpur",
+        "birthYear": "2001",
+        "jerseyNumber": 2,
+        "position": "Tekong",
+        "role": "State Athlete",
+        "division": "Senior Women",
+        "photoUrl": "/players/chetana.jpg"
+      },
+      {
+        "id": "ms-women-3",
+        "name": "Madhura Anant Tepale",
+        "district": "Nashik",
+        "birthYear": "2004",
+        "jerseyNumber": 3,
+        "position": "Feeder",
+        "role": "State Athlete",
+        "division": "Senior Women",
+        "photoUrl": "/players/madhura.jpg"
+      }
+    ],
+    "staff": [
+      {
+        "id": "staff-1",
+        "name": "Sandeep Ramkanwar Saroha",
+        "role": "National / State Chief Coach",
+        "photoUrl": "/players/sandeep.jpg"
+      },
+      {
+        "id": "staff-2",
+        "name": "Dr. Amrita Yogendra Pande",
+        "role": "State Team Physiotherapist & Official",
+        "photoUrl": "/players/amrita.jpeg"
+      },
+      {
+        "id": "staff-3",
+        "name": "Amit Ramesh Kanwar",
+        "role": "Team Manager (Senior Squad)",
+        "photoUrl": "/players/amit.jpg"
+      },
+      {
+        "id": "staff-4",
+        "name": "Vinay Divakar Moon",
+        "role": "Assistant Coach & Technical Official",
+        "photoUrl": "/players/vinay.jpeg"
+      },
+      {
+        "id": "staff-5",
+        "name": "Sonal Bhanudas Dhadse",
+        "role": "Women Team Coach / Coordinator",
+        "photoUrl": "/players/sonal.jpg"
+      },
+      {
+        "id": "staff-6",
+        "name": "Vipin Manharkant Kamdar",
+        "role": "Head of Delegation & Official",
+        "photoUrl": "/players/vipin.jpeg"
+      },
+      {
+        "id": "staff-7",
+        "name": "Dr. Yogendra Vinay Pandey",
+        "role": "MSTA President / Technical Director",
+        "photoUrl": "/players/dr_pandey.jpeg"
+      }
+    ]
+  }
+}

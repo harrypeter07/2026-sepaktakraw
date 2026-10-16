@@ -1,6 +1,17 @@
 import { FEATURE_FLAGS } from './feature-flags'
 import { supabase } from './supabase'
 import { ContactResponse, ContactStatus, FormSubmission } from './types'
+import {
+  INITIAL_TEAMS,
+  INITIAL_PLAYERS,
+  INITIAL_TOURNAMENTS,
+  INITIAL_MATCHES,
+  INITIAL_ARTICLES,
+  MatchItem,
+  MatchSetItem,
+} from './initial-data'
+
+export type { MatchItem, MatchSetItem }
 
 // Types
 export type TournamentFormat = 'league' | 'knockout' | 'group_stage'
@@ -28,6 +39,7 @@ export interface Team {
   playerCount: number
   established: string
   logoUrl?: string
+  districtId?: string
 }
 
 export type ArticleCategory = 'news' | 'tournament' | 'team' | 'player' | 'other'
@@ -58,13 +70,42 @@ export interface Player {
 const TOURNAMENTS_KEY = 'msa_tournaments'
 const TEAMS_KEY = 'msa_teams'
 const PLAYERS_KEY = 'msa_players'
+const ARTICLES_KEY = 'msa_articles'
+const MATCHES_KEY = 'msa_matches'
 
-// Helper for localStorage fallback. Returns whatever has been saved locally —
-// no seeded sample data, so empty really means empty (all content is DB-driven).
+const getInitialDefault = <T>(key: string): T[] => {
+  if (key === TOURNAMENTS_KEY) return INITIAL_TOURNAMENTS as unknown as T[]
+  if (key === TEAMS_KEY) return INITIAL_TEAMS as unknown as T[]
+  if (key === PLAYERS_KEY) return INITIAL_PLAYERS as unknown as T[]
+  if (key === ARTICLES_KEY) return INITIAL_ARTICLES as unknown as T[]
+  if (key === MATCHES_KEY) return INITIAL_MATCHES as unknown as T[]
+  return []
+}
+
+// Helper for localStorage fallback with initial data seeding
 const getLocal = <T>(key: string): T[] => {
-  if (typeof window === 'undefined') return []
+  const initial = getInitialDefault<T>(key)
+  if (typeof window === 'undefined') return initial
   const data = localStorage.getItem(key)
-  return data ? JSON.parse(data) : []
+  if (!data) {
+    if (initial.length > 0) {
+      try {
+        localStorage.setItem(key, JSON.stringify(initial))
+      } catch (e) {
+        // Ignore quota/private mode errors
+      }
+    }
+    return initial
+  }
+  try {
+    const parsed = JSON.parse(data)
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      return parsed
+    }
+    return initial.length > 0 ? initial : []
+  } catch {
+    return initial
+  }
 }
 
 const setLocal = <T>(key: string, data: T[]): void => {
@@ -72,6 +113,7 @@ const setLocal = <T>(key: string, data: T[]): void => {
     localStorage.setItem(key, JSON.stringify(data))
   }
 }
+
 
 // Tournament Management
 export const TournamentManager = {
@@ -248,6 +290,7 @@ export const TeamManager = {
           playerCount: item.players?.[0]?.count || 0,
           established: item.founded_year?.toString() || '',
           logoUrl: item.logo_url || '',
+          districtId: item.district_id || item.districtId,
         }))
       } catch (err) {
         console.error('Error fetching teams from Supabase, falling back to local storage:', err)
@@ -811,7 +854,6 @@ export const FormSubmissionManager = {
 }
 
 // News / Article Management (backed by the `articles` table)
-const ARTICLES_KEY = 'msa_articles'
 
 const mapArticleRow = (item: any): Article => ({
   id: item.id,
@@ -992,5 +1034,132 @@ export const articleDate = (article: Article): string => {
     ? ''
     : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
+
+// Match Management
+export const MatchManager = {
+  getAll: async (): Promise<MatchItem[]> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('matches')
+          .select('*, match_sets(*)')
+          .order('match_date', { ascending: false })
+
+        if (error) throw error
+        return (data || []).map((m: any) => ({
+          id: m.id,
+          tournament_id: m.tournament_id,
+          home_team_id: m.home_team_id,
+          away_team_id: m.away_team_id,
+          venue: m.venue || '',
+          match_date: m.match_date,
+          status: m.status,
+          home_score: m.home_score || 0,
+          away_score: m.away_score || 0,
+          duration_minutes: m.duration_minutes,
+          sets: (m.match_sets || []).map((s: any) => ({
+            set_number: s.set_number,
+            home_points: s.home_points,
+            away_points: s.away_points,
+          })),
+        }))
+      } catch (err) {
+        console.error('Error fetching matches from Supabase, falling back to local storage:', err)
+      }
+    }
+    return getLocal<MatchItem>(MATCHES_KEY)
+  },
+
+  getByTournament: async (tournamentId: string): Promise<MatchItem[]> => {
+    const all = await MatchManager.getAll()
+    return all.filter(m => m.tournament_id === tournamentId)
+  },
+
+  add: async (match: Omit<MatchItem, 'id'>): Promise<MatchItem> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { data, error } = await supabase
+          .from('matches')
+          .insert([
+            {
+              tournament_id: match.tournament_id,
+              home_team_id: match.home_team_id,
+              away_team_id: match.away_team_id,
+              venue: match.venue,
+              match_date: match.match_date,
+              status: match.status,
+              home_score: match.home_score,
+              away_score: match.away_score,
+              duration_minutes: match.duration_minutes || null,
+            },
+          ])
+          .select()
+          .single()
+
+        if (error) throw error
+        return {
+          id: data.id,
+          ...match,
+        }
+      } catch (err) {
+        console.error('Error adding match to Supabase:', err)
+        throw err
+      }
+    }
+
+    const matches = getLocal<MatchItem>(MATCHES_KEY)
+    const newMatch: MatchItem = {
+      ...match,
+      id: `match-${Date.now()}`,
+    }
+    matches.unshift(newMatch)
+    setLocal(MATCHES_KEY, matches)
+    return newMatch
+  },
+
+  update: async (id: string, updates: Partial<MatchItem>): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const mapped: any = {}
+        if (updates.status !== undefined) mapped.status = updates.status
+        if (updates.home_score !== undefined) mapped.home_score = updates.home_score
+        if (updates.away_score !== undefined) mapped.away_score = updates.away_score
+        if (updates.venue !== undefined) mapped.venue = updates.venue
+        if (updates.match_date !== undefined) mapped.match_date = updates.match_date
+
+        const { error } = await supabase.from('matches').update(mapped).eq('id', id)
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error updating match in Supabase:', err)
+        throw err
+      }
+    }
+
+    const matches = getLocal<MatchItem>(MATCHES_KEY)
+    const index = matches.findIndex(m => m.id === id)
+    if (index !== -1) {
+      matches[index] = { ...matches[index], ...updates }
+      setLocal(MATCHES_KEY, matches)
+    }
+  },
+
+  delete: async (id: string): Promise<void> => {
+    if (FEATURE_FLAGS.USE_SUPABASE) {
+      try {
+        const { error } = await supabase.from('matches').delete().eq('id', id)
+        if (error) throw error
+        return
+      } catch (err) {
+        console.error('Error deleting match from Supabase:', err)
+        throw err
+      }
+    }
+
+    const matches = getLocal<MatchItem>(MATCHES_KEY)
+    setLocal(MATCHES_KEY, matches.filter(m => m.id !== id))
+  },
+}
+
 
 

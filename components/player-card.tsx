@@ -1,9 +1,12 @@
 const POSITION_STYLES: Record<string, { badge: string; bg: string }> = {
-  Spiker:  { badge: 'bg-red-600 text-white',     bg: 'from-red-900 to-red-700' },
-  Setter:  { badge: 'bg-blue-600 text-white',    bg: 'from-blue-900 to-blue-700' },
-  Blocker: { badge: 'bg-emerald-600 text-white', bg: 'from-emerald-900 to-emerald-700' },
-  Libero:  { badge: 'bg-purple-600 text-white',  bg: 'from-purple-900 to-purple-700' },
-  default: { badge: 'bg-slate-600 text-white',   bg: 'from-slate-800 to-slate-600' },
+  Tekong:  { badge: 'bg-amber-600 text-white',    bg: 'from-amber-950 to-amber-800' },
+  Killer:  { badge: 'bg-rose-600 text-white',     bg: 'from-rose-950 to-rose-800' },
+  Feeder:  { badge: 'bg-blue-600 text-white',     bg: 'from-blue-950 to-blue-800' },
+  Spiker:  { badge: 'bg-red-600 text-white',      bg: 'from-red-900 to-red-700' },
+  Setter:  { badge: 'bg-sky-600 text-white',      bg: 'from-sky-900 to-sky-700' },
+  Blocker: { badge: 'bg-emerald-600 text-white',  bg: 'from-emerald-900 to-emerald-700' },
+  Libero:  { badge: 'bg-purple-600 text-white',   bg: 'from-purple-900 to-purple-700' },
+  default: { badge: 'bg-slate-600 text-white',    bg: 'from-slate-800 to-slate-600' },
 }
 
 interface PlayerCardProps {

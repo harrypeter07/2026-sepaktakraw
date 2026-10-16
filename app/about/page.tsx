@@ -165,10 +165,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 px-4 sm:px-6 lg:px-8">
             {GALLERY_KEYS.map((key, i) => (
               <div key={key} className="group relative aspect-square overflow-hidden rounded-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={img(key)}
+                  src={img(key) || `/hero/gallery_${(i % 7) + 1}.jpg`}
                   alt={alt(key, `Sport gallery ${i + 1}`)}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = `/hero/gallery_${(i % 7) + 1}.jpg`
+                  }}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
