@@ -3,10 +3,11 @@
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { PageHero } from '@/components/page-hero'
-import { Award, ShieldCheck, HeartHandshake, Lightbulb, Zap, ArrowRight } from 'lucide-react'
+import { Award, ShieldCheck, HeartHandshake, Lightbulb, Zap, ArrowRight, Shield, Building2, MapPin, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import { useSiteSettings } from '@/lib/site-settings'
 import { ScrollReveal } from '@/components/scroll-reveal'
+import recordsData from '@/lib/msta-records.json'
 
 // Copy for these sections lives in site settings; only the icon / setting key
 // prefix is fixed here.
@@ -148,6 +149,106 @@ export default function AboutPage() {
                     <h3 className="text-2xl sm:text-3xl font-black text-[#0A0F1E] tracking-tight">{txt(`${m.key}.title`)}</h3>
                     <div className="h-1 w-12 bg-gradient-to-r from-[#2563eb] to-[#38bdf8] rounded-full" />
                     <p className="text-slate-600 leading-relaxed">{txt(`${m.key}.desc`)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── GOVERNANCE & AFFILIATIONS ─── */}
+        <section className="py-16 sm:py-24 bg-slate-50 border-y border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="reveal mx-auto mb-12 max-w-2xl text-center">
+              <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">Official Authority</span>
+              <h2 className="mt-2 text-3xl sm:text-4xl font-black uppercase text-[#0A0F1E] tracking-tight">
+                GOVERNANCE & ACCREDITATION
+              </h2>
+              <p className="mt-3 text-sm text-slate-500 font-medium">
+                The apex governing body legally mandated for the sport of Sepaktakraw in the State of Maharashtra
+              </p>
+            </div>
+
+            {/* Accreditation Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div className="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                  <Shield size={20} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block">State Registration</span>
+                  <h4 className="font-extrabold text-slate-900 text-sm mt-1">Reg.No. MAHARASHTRA/910/98</h4>
+                  <p className="text-xs text-slate-500 mt-1">Registered Public Society under F-15285 (Nagpur)</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div className="h-10 w-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 mb-4">
+                  <Award size={20} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block">National Federation</span>
+                  <h4 className="font-extrabold text-slate-900 text-sm mt-1">Sepaktakraw Federation of India</h4>
+                  <p className="text-xs text-slate-500 mt-1">Affiliated State Member Unit of STFI</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div className="h-10 w-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                  <CheckCircle2 size={20} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block">Olympic Council</span>
+                  <h4 className="font-extrabold text-slate-900 text-sm mt-1">Maharashtra Olympic Association</h4>
+                  <p className="text-xs text-slate-500 mt-1">Official Member & Recognized State Association (MOA)</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div className="h-10 w-10 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 mb-4">
+                  <Building2 size={20} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400 block">Sports Council</span>
+                  <h4 className="font-extrabold text-slate-900 text-sm mt-1">Maharashtra Krida Parishad</h4>
+                  <p className="text-xs text-slate-500 mt-1">Govt. Recognised क्रीडा व खेळ (१) भ/७६९८/ क्रीसड, २००३-०४</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Official Leadership & Technical Staff */}
+            <div className="reveal mx-auto mb-10 max-w-2xl text-center">
+              <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">Leadership Council</span>
+              <h3 className="mt-2 text-2xl sm:text-3xl font-black uppercase text-[#0A0F1E] tracking-tight">
+                OFFICERS & TECHNICAL COMMISSION
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {recordsData.stateSquad.staff.map((officer) => (
+                <div
+                  key={officer.id}
+                  className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col"
+                >
+                  <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={officer.photoUrl}
+                      alt={officer.name}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/placeholder-user.jpg'
+                      }}
+                      className="h-full w-full object-cover object-top hover:scale-105 transition duration-300"
+                    />
+                  </div>
+                  <div className="p-5 flex-grow flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-extrabold text-slate-900 text-sm leading-snug">{officer.name}</h4>
+                      <p className="text-xs text-blue-600 font-bold mt-1">{officer.role}</p>
+                    </div>
+                    <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-3 pt-2 border-t border-slate-100 block">
+                      Maharashtra Sepaktakraw
+                    </span>
                   </div>
                 </div>
               ))}
