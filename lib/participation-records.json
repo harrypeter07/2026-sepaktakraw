@@ -1,0 +1,1166 @@
+{
+  "seasons": [
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ],
+  "seasonSummaries": {
+    "2021-22": {
+      "seniorMen": 184,
+      "seniorWomen": 105,
+      "juniorBoys": 0,
+      "juniorGirls": 0,
+      "subJuniorBoys": 0,
+      "subJuniorGirls": 0,
+      "grandTotal": 289
+    },
+    "2022-23": {
+      "seniorMen": 237,
+      "seniorWomen": 133,
+      "juniorBoys": 0,
+      "juniorGirls": 0,
+      "subJuniorBoys": 0,
+      "subJuniorGirls": 0,
+      "grandTotal": 370
+    },
+    "2023-24": {
+      "seniorMen": 184,
+      "seniorWomen": 132,
+      "juniorBoys": 12,
+      "juniorGirls": 12,
+      "subJuniorBoys": 131,
+      "subJuniorGirls": 88,
+      "grandTotal": 559
+    },
+    "2024-25": {
+      "seniorMen": 230,
+      "seniorWomen": 141,
+      "juniorBoys": 15,
+      "juniorGirls": 15,
+      "subJuniorBoys": 12,
+      "subJuniorGirls": 12,
+      "grandTotal": 425
+    }
+  },
+  "districts": [
+    {
+      "srNo": 1,
+      "district": "Wardha",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 11,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 23
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 10,
+          "juniorBoys": 12,
+          "juniorGirls": 12,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 12,
+          "total": 70
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 14,
+          "juniorBoys": 15,
+          "juniorGirls": 15,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 12,
+          "total": 83
+        }
+      },
+      "allTimeAthletes": 200
+    },
+    {
+      "srNo": 14,
+      "district": "Solapur",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 11,
+          "total": 47
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 15,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 30
+        }
+      },
+      "allTimeAthletes": 125
+    },
+    {
+      "srNo": 3,
+      "district": "Nashik",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 21
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 11,
+          "subJuniorGirls": 12,
+          "total": 47
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 15,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 30
+        }
+      },
+      "allTimeAthletes": 122
+    },
+    {
+      "srNo": 5,
+      "district": "Amravati",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 11,
+          "total": 47
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 15,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 30
+        }
+      },
+      "allTimeAthletes": 113
+    },
+    {
+      "srNo": 2,
+      "district": "Nagpur",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 11,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 11,
+          "subJuniorGirls": 0,
+          "total": 34
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 15,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 30
+        }
+      },
+      "allTimeAthletes": 112
+    },
+    {
+      "srNo": 4,
+      "district": "Nanded",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 21
+        },
+        "2023-24": {
+          "seniorMen": 11,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 9,
+          "subJuniorGirls": 9,
+          "total": 38
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 27
+        }
+      },
+      "allTimeAthletes": 110
+    },
+    {
+      "srNo": 12,
+      "district": "Gondia",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 11,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 23
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 10,
+          "subJuniorGirls": 0,
+          "total": 34
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 15
+        }
+      },
+      "allTimeAthletes": 96
+    },
+    {
+      "srNo": 15,
+      "district": "Sangli",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        }
+      },
+      "allTimeAthletes": 72
+    },
+    {
+      "srNo": 10,
+      "district": "Thane",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 21
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 9,
+          "subJuniorGirls": 12,
+          "total": 21
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 10,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 25
+        }
+      },
+      "allTimeAthletes": 67
+    },
+    {
+      "srNo": 6,
+      "district": "Jalgaon",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 15
+        }
+      },
+      "allTimeAthletes": 63
+    },
+    {
+      "srNo": 8,
+      "district": "Beed",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2024-25": {
+          "seniorMen": 13,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 13
+        }
+      },
+      "allTimeAthletes": 61
+    },
+    {
+      "srNo": 16,
+      "district": "Aurangabad",
+      "history": {
+        "2021-22": {
+          "seniorMen": 10,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 10
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 9,
+          "subJuniorGirls": 9,
+          "total": 27
+        },
+        "2024-25": {
+          "seniorMen": 13,
+          "seniorWomen": 11,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        }
+      },
+      "allTimeAthletes": 61
+    },
+    {
+      "srNo": 20,
+      "district": "Chandrapur",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 60
+    },
+    {
+      "srNo": 23,
+      "district": "Ahmednagar",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 48
+    },
+    {
+      "srNo": 24,
+      "district": "Dhule",
+      "history": {
+        "2021-22": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 12,
+          "total": 36
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 48
+    },
+    {
+      "srNo": 13,
+      "district": "Bhandara",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 15,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 30
+        }
+      },
+      "allTimeAthletes": 42
+    },
+    {
+      "srNo": 7,
+      "district": "Jalna",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 12,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2024-25": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        }
+      },
+      "allTimeAthletes": 36
+    },
+    {
+      "srNo": 11,
+      "district": "Raigad",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 12,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 24
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 36
+    },
+    {
+      "srNo": 21,
+      "district": "Latur",
+      "history": {
+        "2021-22": {
+          "seniorMen": 9,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 9
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2024-25": {
+          "seniorMen": 15,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 15
+        }
+      },
+      "allTimeAthletes": 36
+    },
+    {
+      "srNo": 18,
+      "district": "Satara",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 10,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 10
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 9,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 9
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 10,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 10
+        }
+      },
+      "allTimeAthletes": 29
+    },
+    {
+      "srNo": 9,
+      "district": "Mumbai Sub-Urban",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 11,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 23
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 23
+    },
+    {
+      "srNo": 19,
+      "district": "Pune",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2023-24": {
+          "seniorMen": 9,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 9
+        },
+        "2024-25": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        }
+      },
+      "allTimeAthletes": 21
+    },
+    {
+      "srNo": 17,
+      "district": "Parbhani",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 8,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 8
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 20
+    },
+    {
+      "srNo": 22,
+      "district": "Kolhapur",
+      "history": {
+        "2021-22": {
+          "seniorMen": 9,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 9
+        },
+        "2022-23": {
+          "seniorMen": 9,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 9
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 18
+    },
+    {
+      "srNo": 25,
+      "district": "Buldhana",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2023-24": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 12
+    },
+    {
+      "srNo": 26,
+      "district": "Hingoli",
+      "history": {
+        "2021-22": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2022-23": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        },
+        "2023-24": {
+          "seniorMen": 12,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 12
+        },
+        "2024-25": {
+          "seniorMen": 0,
+          "seniorWomen": 0,
+          "juniorBoys": 0,
+          "juniorGirls": 0,
+          "subJuniorBoys": 0,
+          "subJuniorGirls": 0,
+          "total": 0
+        }
+      },
+      "allTimeAthletes": 12
+    }
+  ]
+}

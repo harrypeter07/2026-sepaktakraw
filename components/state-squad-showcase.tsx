@@ -4,6 +4,7 @@ import { useState } from 'react'
 import recordsData from '@/lib/msta-records.json'
 import { Shield, Trophy, Users, Award, MapPin } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 export function StateSquadShowcase() {
   const [activeTab, setActiveTab] = useState<'men' | 'women' | 'staff'>('men')
@@ -88,7 +89,7 @@ export function StateSquadShowcase() {
                 <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={player.photoUrl}
+                    src={getCdnUrl(player.photoUrl)}
                     alt={player.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = '/placeholder-user.jpg'
@@ -133,7 +134,7 @@ export function StateSquadShowcase() {
                 <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={player.photoUrl}
+                    src={getCdnUrl(player.photoUrl)}
                     alt={player.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = '/placeholder-user.jpg'
@@ -178,7 +179,7 @@ export function StateSquadShowcase() {
                 <div className="h-16 w-16 rounded-full overflow-hidden border border-slate-200 shrink-0 bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={member.photoUrl}
+                    src={getCdnUrl(member.photoUrl)}
                     alt={member.name}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = '/placeholder-user.jpg'

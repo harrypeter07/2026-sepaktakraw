@@ -8,6 +8,8 @@ import { useState } from 'react'
 import districtsData from '@/lib/districts.json'
 import recordsData from '@/lib/msta-records.json'
 import { DistrictMedalLeaderboard } from '@/components/district-medal-leaderboard'
+import { ParticipationAnalytics } from '@/components/participation-analytics'
+import { getCdnUrl } from '@/lib/cdn-image'
 import { Search, Mail, MapPin, Award, Building, Phone, Trophy, Medal } from 'lucide-react'
 import {
   Dialog,
@@ -138,7 +140,7 @@ export default function DistrictsPage() {
                         <div className="w-24 h-24 rounded-full border border-slate-100 bg-slate-50/50 flex items-center justify-center overflow-hidden mb-4 p-2 transition-transform duration-300 group-hover:scale-105 shadow-inner shrink-0">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={district.logo}
+                            src={getCdnUrl(district.logo)}
                             alt={`${district.district} Logo`}
                             className="h-full w-full object-contain"
                           />
@@ -195,6 +197,9 @@ export default function DistrictsPage() {
                 </p>
               </div>
             )}
+
+            {/* Official Athlete Participation & Growth Diagram */}
+            <ParticipationAnalytics />
           </div>
         </section>
       </main>

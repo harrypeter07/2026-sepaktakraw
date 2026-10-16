@@ -30,16 +30,25 @@
     "text": "2026 Maharashtra Sepaktakraw Association. All rights reserved."
   },
   "site.footer_logo_1": {
-    "url": ""
+    "url": "/official/stfi-logo.png"
   },
   "site.footer_logo_2": {
-    "url": ""
+    "url": "/official/astaf-logo.jpg"
   },
   "site.footer_logo_3": {
-    "url": ""
+    "url": "/official/istaf-logo.jpg"
   },
   "site.footer_logo_4": {
-    "url": ""
+    "url": "/official/sai-logo.png"
+  },
+  "site.footer_logo_5": {
+    "url": "/official/fit-india.jpg"
+  },
+  "site.footer_logo_6": {
+    "url": "/official/khelo-india.jpg"
+  },
+  "site.footer_logo_7": {
+    "url": "/official/nada-logo.jpg"
   },
   "home.hero.media_type": {
     "text": "image"

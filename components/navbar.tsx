@@ -6,6 +6,7 @@ import { Menu, X, LogOut, LayoutDashboard } from 'lucide-react'
 import { useState } from 'react'
 import { useAuth } from '@/lib/auth-context'
 import { useSiteSettings } from '@/lib/site-settings'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -37,7 +38,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-slate-100 rounded-full animate-pulse" />
             ) : logo ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={logo} alt="MSTA logo" className="h-10 w-10 rounded-full object-contain shadow-sm border border-slate-200 animate-in fade-in duration-300" />
+              <img src={getCdnUrl(logo)} alt="MSTA logo" className="h-10 w-10 rounded-full object-contain shadow-sm border border-slate-200 animate-in fade-in duration-300" />
             ) : (
               <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-sm">
                 <span className="text-white font-bold text-sm">MS</span>

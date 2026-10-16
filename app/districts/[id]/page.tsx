@@ -16,6 +16,7 @@ import {
   Mail, MapPin, Award, Building, Users, Calendar, Trophy, User, ArrowLeft, Users2, Shield, Medal, CheckCircle2 
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 interface District {
   id: string
@@ -216,7 +217,7 @@ export default function DistrictDetailPage() {
               <div className="w-32 h-32 md:w-36 md:h-36 rounded-full bg-white flex items-center justify-center p-3 overflow-hidden shadow-2xl border border-white/10 shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={district.logo}
+                  src={getCdnUrl(district.logo)}
                   alt={district.name}
                   className="h-full w-full object-contain"
                 />
@@ -469,7 +470,7 @@ export default function DistrictDetailPage() {
                       <div key={t.id} className="p-4 bg-background border border-border rounded-xl flex items-center gap-4 hover:shadow-sm transition">
                         <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center p-1.5 overflow-hidden shrink-0 border border-border">
                           {t.logoUrl ? (
-                            <img src={t.logoUrl} alt={t.name} className="h-full w-full object-contain" />
+                            <img src={getCdnUrl(t.logoUrl)} alt={t.name} className="h-full w-full object-contain" />
                           ) : (
                             <Building className="h-6 w-6 text-muted-foreground" />
                           )}

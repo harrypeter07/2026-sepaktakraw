@@ -8,6 +8,8 @@ import Link from 'next/link'
 import { useSiteSettings } from '@/lib/site-settings'
 import { ScrollReveal } from '@/components/scroll-reveal'
 import recordsData from '@/lib/msta-records.json'
+import { GameDisciplines } from '@/components/game-disciplines'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 // Copy for these sections lives in site settings; only the icon / setting key
 // prefix is fixed here.
@@ -255,6 +257,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* ─── OFFICIAL DISCIPLINES & RULES ─── */}
+        <GameDisciplines />
 
         {/* ─── PHOTO GALLERY ─── */}
         <section className="bg-[#1d4ed8] py-16 sm:py-20">

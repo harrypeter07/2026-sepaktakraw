@@ -11,6 +11,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'ik.imagekit.io',
+      },
+      {
+        protocol: 'https',
         hostname: '**.supabase.co',
       },
       {
@@ -49,6 +53,15 @@ const nextConfig = {
       },
       {
         source: '/logos/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/official/:path*',
         headers: [
           {
             key: 'Cache-Control',
