@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 // Home hero. Switchable from the admin panel (home.hero.media_type):
 //   • "video" → autoplays hero.mp4 (muted) and plays through completely.
@@ -11,10 +12,10 @@ import { ArrowRight } from 'lucide-react'
 // end-frame. Media uses object-contain so the full frame (and the image's logo
 // + wordmark) is visible — not cropped/zoomed.
 
-const VIDEO_SRC = '/hero/hero.mp4'
-const POSTER = '/hero/poster.jpg'
-const POSTER_END = '/hero/poster-end.jpg'
-const FALLBACK_IMAGE = '/hero/hero-image.jpg'
+const VIDEO_SRC = getCdnUrl('/hero/hero.mp4')
+const POSTER = getCdnUrl('/hero/poster.jpg')
+const POSTER_END = getCdnUrl('/hero/poster-end.jpg')
+const FALLBACK_IMAGE = getCdnUrl('/hero/hero-image.jpg')
 
 interface HeroScrollSequenceProps {
   title: string
@@ -67,7 +68,7 @@ export function HeroScrollSequence({
       <div className="absolute inset-0 block md:hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/hero/hero_mobile.jpg"
+          src={getCdnUrl('/hero/hero_mobile.jpg')}
           alt={title}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -84,7 +85,7 @@ export function HeroScrollSequence({
             muted={true}
             playsInline
             loop={true}
-            preload="auto"
+            preload="none"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"
           />

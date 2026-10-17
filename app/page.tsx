@@ -1,172 +1,126 @@
-'use client'
-
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { HeroScrollSequence } from '@/components/hero-scroll-sequence'
 import { ScrollReveal } from '@/components/scroll-reveal'
-import { Trophy, Users, Zap, Target, ArrowRight, MapPin, ChevronLeft, ChevronRight, Calendar } from 'lucide-react'
-import { useSiteSettings } from '@/lib/site-settings'
+import { HomeGalleryCarousel } from '@/components/home-gallery-carousel'
+import { Trophy, Users, Zap, Target, ArrowRight, Calendar } from 'lucide-react'
+import siteContent from '@/lib/site-content.json'
+import { getCdnUrl } from '@/lib/cdn-image'
 import {
-  TeamManager, PlayerManager, TournamentManager,
-  ArticleManager, Article, ARTICLE_CATEGORY_LABELS, articleExcerpt, articleDate,
+  TeamManager,
+  PlayerManager,
+  TournamentManager,
+  ArticleManager,
+  ARTICLE_CATEGORY_LABELS,
+  articleExcerpt,
+  articleDate,
 } from '@/lib/data-manager'
 
-// Image sources are admin-editable site settings (see SETTING_DESCRIPTORS).
-// Only alt text and copy live here; every `src` is resolved via img(key).
+// ISR: Cache pre-rendered page at the edge for 1 hour, revalidating in background.
+export const revalidate = 3600
+
 const GALLERY_IMAGES = [
-  { key: 'home.gallery_1', alt: 'Athlete in action' },
-  { key: 'home.gallery_2', alt: 'Sports kick' },
-  { key: 'home.gallery_3', alt: 'Athletic performance' },
-  { key: 'home.gallery_4', alt: 'Tournament play' },
-  { key: 'home.gallery_5', alt: 'Sports competition' },
-  { key: 'home.gallery_6', alt: 'Championship match' },
-  { key: 'home.gallery_7', alt: 'Team sports' },
-  { key: 'home.gallery_8', alt: 'Training session' },
-  { key: 'home.gallery_9', alt: 'Youth players' },
+  { key: 'home.gallery_1', alt: 'Athlete in action', fallback: '/hero/gallery_1.jpg' },
+  { key: 'home.gallery_2', alt: 'Sports kick', fallback: '/hero/gallery_2.jpg' },
+  { key: 'home.gallery_3', alt: 'Athletic performance', fallback: '/hero/gallery_3.jpg' },
+  { key: 'home.gallery_4', alt: 'Tournament play', fallback: '/hero/gallery_4.jpg' },
+  { key: 'home.gallery_5', alt: 'Sports competition', fallback: '/hero/gallery_5.jpg' },
+  { key: 'home.gallery_6', alt: 'Championship match', fallback: '/hero/gallery_6.jpg' },
+  { key: 'home.gallery_7', alt: 'Team sports', fallback: '/hero/gallery_7.jpg' },
+  { key: 'home.gallery_8', alt: 'Training session', fallback: '/hero.jpg' },
+  { key: 'home.gallery_9', alt: 'Youth players', fallback: '/team.jpg' },
 ]
 
-const GALLERY_FALLBACKS = [
-  '/hero/gallery_1.jpg',
-  '/hero/gallery_2.jpg',
-  '/hero/gallery_3.jpg',
-  '/hero/gallery_4.jpg',
-  '/hero/gallery_5.jpg',
-  '/hero/gallery_6.jpg',
-  '/hero/gallery_7.jpg',
-  '/hero.jpg',
-  '/team.jpg',
-]
-
-// Titles/descriptions come from site settings (home.focus_*); only the icon is fixed.
 const FOCUS_AREAS = [
-  { icon: Trophy, key: 'home.focus_1' },
-  { icon: Users,  key: 'home.focus_2' },
-  { icon: Zap,    key: 'home.focus_3' },
-  { icon: Target, key: 'home.focus_4' },
+  {
+    icon: Trophy,
+    title: 'Tournaments',
+    desc: 'Competitive state events showcasing athlete talent and team excellence across Maharashtra.',
+  },
+  {
+    icon: Users,
+    title: 'Team Management',
+    desc: 'Supporting affiliated district units in grassroots player scouting, logistics, and coaching.',
+  },
+  {
+    icon: Zap,
+    title: 'Player Development',
+    desc: 'Nurturing young talent and advancing athletic capabilities at Senior, Junior, and Sub-Junior levels.',
+  },
+  {
+    icon: Target,
+    title: 'Community Growth',
+    desc: 'Building a thriving Sepaktakraw sports ecosystem across all 36 districts of Maharashtra.',
+  },
 ]
 
-export default function Home() {
-  const { img, txt, alt } = useSiteSettings()
-  const [stats, setStats] = useState({ teams: 0, players: 0, tournaments: 0 })
-  const [news, setNews] = useState<Article[]>([])
-  const galleryRef = useRef<HTMLDivElement>(null)
+export default async function Home() {
+  // Server-side parallel fetch: 0ms client-side waterfall, instant HTML generation
+  const [teams, players, tournaments, articles] = await Promise.all([
+    TeamManager.getAll(),
+    PlayerManager.getAll(),
+    TournamentManager.getAll(),
+    ArticleManager.getPublished(),
+  ])
 
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const [teams, players, tournaments, articles] = await Promise.all([
-          TeamManager.getAll(),
-          PlayerManager.getAll(),
-          TournamentManager.getAll(),
-          ArticleManager.getPublished(),
-        ])
-        setStats({
-          teams: teams.length,
-          players: players.length,
-          tournaments: tournaments.length,
-        })
-        setNews(articles.slice(0, 3))
-      } catch (err) {
-        console.error('Error loading homepage data:', err)
-      }
-    }
-    load()
-  }, [])
-
-  const aboutImage = img('home.about.image')
-
-  const scrollGallery = (dir: 'left' | 'right') => {
-    galleryRef.current?.scrollBy({ left: dir === 'left' ? -380 : 380, behavior: 'smooth' })
+  const stats = {
+    teams: teams.length,
+    players: players.length,
+    tournaments: tournaments.length,
   }
 
-  const heroTitle = txt('home.hero.title', '')
-  const heroSubtitle = txt('home.hero.subtitle', "Maharashtra's premier Sepaktakraw association — developing champions, building community.")
+  const news = articles.slice(0, 3)
+
+  const settings = siteContent as Record<string, any>
+  const heroTitle = settings['home.hero.title']?.text || 'Maharashtra Sepaktakraw'
+  const heroSubtitle =
+    settings['home.hero.subtitle']?.text ||
+    "Maharashtra's premier Sepaktakraw association — developing champions, building community."
+  const heroMediaType = settings['home.hero.media_type']?.text || 'video'
+  const heroImage = settings['home.hero.image']?.url || '/hero/hero-image.jpg'
+  const aboutImage = settings['home.about.image']?.url || '/hero/about_hero.jpg'
+
+  const carouselItems = GALLERY_IMAGES.map((item) => ({
+    key: item.key,
+    alt: item.alt,
+    src: settings[item.key]?.url || item.fallback,
+    fallback: item.fallback,
+  }))
 
   return (
     <>
       <Navbar />
       <ScrollReveal />
       <main className="flex flex-col min-h-screen bg-background overflow-x-clip">
-
-        {/* ─── HERO (scroll-driven frame sequence) ─── */}
+        {/* ─── HERO (scroll-driven sequence) ─── */}
         <HeroScrollSequence
-          title={heroTitle || 'Maharashtra Sepaktakraw'}
+          title={heroTitle}
           subtitle={heroSubtitle}
           primaryCta={{ href: '/tournaments', label: 'View Tournaments' }}
           secondaryCta={{ href: '/about', label: 'Learn More' }}
-          mediaType={txt('home.hero.media_type', 'video')}
-          imageSrc={img('home.hero.image')}
+          mediaType={heroMediaType}
+          imageSrc={heroImage}
         />
 
-        {/* ─── GALLERY STRIP ─── */}
-        <section className="bg-[#1d4ed8] py-10 border-y border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between">
-            <div>
-              <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">Action Gallery</span>
-              <h2 className="text-white text-2xl sm:text-3xl font-black uppercase mt-1 tracking-tight">THE SPORT IN MOTION</h2>
-            </div>
-            <div className="flex gap-2 mb-0.5">
-              <button
-                onClick={() => scrollGallery('left')}
-                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/55 hover:text-white transition"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => scrollGallery('right')}
-                className="p-2.5 rounded-full border border-white/20 text-white/50 hover:border-white/55 hover:text-white transition"
-                aria-label="Scroll right"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
-          </div>
+        {/* ─── HORIZONTAL GALLERY CAROUSEL ─── */}
+        <HomeGalleryCarousel items={carouselItems} />
 
-          <div
-            ref={galleryRef}
-            className="flex gap-3 overflow-x-auto no-scrollbar px-4 sm:px-6 lg:px-8 pb-1"
-          >
-            {GALLERY_IMAGES.map((item, i) => {
-              const fallback = GALLERY_FALLBACKS[i % GALLERY_FALLBACKS.length]
-              return (
-                <div
-                  key={i}
-                  className="flex-shrink-0 w-48 sm:w-60 h-64 sm:h-76 overflow-hidden rounded-xl relative group cursor-pointer"
-                  style={{ height: '18rem' }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={img(item.key) || fallback}
-                    alt={alt(item.key, item.alt)}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = fallback
-                    }}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
-                </div>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* ─── STATS BAND ─── */}
+        {/* ─── STATS BAND (Pre-rendered on Server - 0ms delay) ─── */}
         <section className="bg-[#1d4ed8] py-16 sm:py-20 border-b border-white/5">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-3 gap-6 sm:gap-16 text-center">
               {[
                 { label: 'Registered Teams', value: stats.teams },
-                { label: 'Active Players', value: stats.players },
+                { label: 'Verified Athletes', value: stats.players },
                 { label: 'Tournaments Held', value: stats.tournaments },
               ].map((s) => (
                 <div key={s.label} className="rise-in">
                   <div className="text-[clamp(2.5rem,8vw,5rem)] font-black text-white tracking-tighter leading-none">
-                    {s.value}<span className="text-[#93c5fd]">+</span>
+                    {s.value}
+                    <span className="text-[#93c5fd]">+</span>
                   </div>
-                  <div className="mt-3 text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] text-white/35">
+                  <div className="mt-3 text-[9px] sm:text-xs font-black uppercase tracking-[0.2em] text-white/40">
                     {s.label}
                   </div>
                 </div>
@@ -184,37 +138,41 @@ export default function Home() {
                 <div className="relative h-[420px] sm:h-[520px] overflow-hidden rounded-2xl shadow-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={aboutImage}
-                    alt={alt('home.about.image', 'Sepaktakraw team training')}
+                    src={getCdnUrl(aboutImage)}
+                    alt="Sepaktakraw team training"
+                    loading="lazy"
                     className="h-full w-full object-cover transition duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1d4ed8]/40 to-transparent" />
-                  {/* Floating stat badge */}
-                  <div className="absolute bottom-5 left-5 bg-[#2563eb] text-white rounded-xl px-5 py-3 shadow-xl">
-                    <div className="text-2xl font-black leading-none">35+</div>
-                    <div className="text-[10px] font-black uppercase tracking-wider opacity-80 mt-0.5">Years of Excellence</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#38bdf8]">
+                      Origin & Heritage
+                    </span>
+                    <p className="mt-1 text-sm font-extrabold text-white">
+                      Traditional Southeast Asian kick-volleyball sport dating back centuries.
+                    </p>
                   </div>
                 </div>
-                {/* Decorative block */}
-                <div className="absolute -bottom-4 -right-4 h-48 w-48 rounded-2xl bg-gradient-to-br from-[#2563eb]/15 to-[#38bdf8]/5 -z-10" />
               </div>
 
               {/* Text */}
               <div className="reveal reveal-d1 order-1 lg:order-2 space-y-5">
-                <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">The Sport</span>
+                <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">
+                  The Sport
+                </span>
                 <h2 className="text-4xl sm:text-5xl font-black uppercase leading-tight text-[#0A0F1E] tracking-tight">
-                  {txt('home.about.title', 'WHAT IS SEPAKTAKRAW?')}
+                  WHAT IS SEPAKTAKRAW?
                 </h2>
                 <div className="h-1 w-16 bg-gradient-to-r from-[#2563eb] to-[#38bdf8] rounded-full" />
                 <p className="text-slate-600 leading-relaxed text-base">
-                  {txt('home.about.desc_1', 'Sepaktakraw is a Southeast Asian team sport combining volleyball with martial arts. Players use feet, knees, chest and head to send a rattan ball over a net — a spectacular display of agility, timing and precision.')}
+                  Sepaktakraw is a high-speed Asian team sport combining football athleticism with volleyball geometry. Players use feet, knees, chest, and head to send a rattan/synthetic ball over a 1.52m net — performing gravity-defying Sunback spikes and Roll spikes.
                 </p>
                 <p className="text-slate-600 leading-relaxed text-base">
-                  {txt('home.about.desc_2', 'The Maharashtra Sepaktakraw Association promotes this dynamic sport, develops athletes and organises competitive tournaments across the region.')}
+                  The Maharashtra Sepaktakraw Association promotes this dynamic Olympic-style sport, develops athletes, and organises sanctioned championships across the state.
                 </p>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#1e3a8a] px-7 py-3.5 text-sm font-black text-white hover:bg-[#2563eb] transition-all mt-2"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#1e3a8a] px-7 py-3.5 text-sm font-black text-white hover:bg-[#2563eb] transition-all mt-2 shadow-md hover:shadow-lg"
                 >
                   Explore Our Mission <ArrowRight size={16} />
                 </Link>
@@ -227,129 +185,144 @@ export default function Home() {
         <section className="bg-slate-50 py-20 sm:py-24 border-y border-slate-200">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="reveal mx-auto mb-14 max-w-2xl text-center">
-              <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">What We Do</span>
+              <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">
+                What We Do
+              </span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-black uppercase text-[#0A0F1E] tracking-tight">
                 OUR FOCUS AREAS
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {FOCUS_AREAS.map(({ icon: Icon, key }) => (
+              {FOCUS_AREAS.map(({ icon: Icon, title, desc }) => (
                 <div
-                  key={key}
+                  key={title}
                   className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-xl"
                 >
                   <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#2563eb] to-[#38bdf8] transition-transform duration-300 group-hover:scale-x-100 rounded-t-2xl" />
                   <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-[#2563eb] group-hover:bg-[#2563eb] group-hover:text-white transition duration-300">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mb-3 text-sm font-black uppercase tracking-wider text-[#0A0F1E]">{txt(`${key}.title`)}</h3>
-                  <p className="text-sm leading-relaxed text-slate-500">{txt(`${key}.desc`)}</p>
+                  <h3 className="mb-3 text-sm font-black uppercase tracking-wider text-[#0A0F1E]">
+                    {title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-slate-500">{desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ─── LATEST NEWS ─── */}
+        {/* ─── LATEST NEWS (Server-Rendered for SEO & 0ms LCP) ─── */}
         {news.length > 0 && (
-        <section className="bg-white py-20 sm:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="reveal flex items-end justify-between mb-12">
-              <div>
-                <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">Latest</span>
-                <h2 className="mt-2 text-3xl sm:text-4xl font-black uppercase text-[#0A0F1E] tracking-tight">
-                  NEWS & UPDATES
-                </h2>
-              </div>
-              <Link
-                href="/news"
-                className="text-sm font-black text-[#2563eb] hover:text-blue-800 flex items-center gap-1 transition"
-              >
-                All News <ArrowRight size={14} />
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {news.map((item, i) => (
+          <section className="bg-white py-20 sm:py-28">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="reveal flex items-end justify-between mb-12">
+                <div>
+                  <span className="text-[#2563eb] text-[10px] font-black uppercase tracking-[0.3em]">
+                    Latest
+                  </span>
+                  <h2 className="mt-2 text-3xl sm:text-4xl font-black uppercase text-[#0A0F1E] tracking-tight">
+                    NEWS & UPDATES
+                  </h2>
+                </div>
                 <Link
                   href="/news"
-                  key={item.id}
-                  className={`group block rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 bg-white ${
-                    i === 0 ? 'md:col-span-2' : ''
-                  }`}
+                  className="text-sm font-black text-[#2563eb] hover:text-blue-800 flex items-center gap-1 transition"
                 >
-                  <div className={`relative overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] ${i === 0 ? 'h-56 sm:h-72' : 'h-44'}`}>
-                    {item.imageUrl && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={item.imageUrl}
-                        alt={item.title}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                    <span className="absolute top-3 left-3 bg-[#2563eb] text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-md">
-                      {ARTICLE_CATEGORY_LABELS[item.category]}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 text-[11px] text-slate-400 font-semibold mb-2">
-                      <Calendar size={11} />
-                      {articleDate(item)}
-                    </div>
-                    <h3
-                      className={`font-black text-[#0A0F1E] leading-snug group-hover:text-[#2563eb] transition line-clamp-2 ${
-                        i === 0 ? 'text-xl sm:text-2xl' : 'text-base'
+                  All News <ArrowRight size={14} />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {news.map((item, i) => (
+                  <Link
+                    href="/news"
+                    key={item.id}
+                    className={`group block rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 bg-white ${
+                      i === 0 ? 'md:col-span-2' : ''
+                    }`}
+                  >
+                    <div
+                      className={`relative overflow-hidden bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] ${
+                        i === 0 ? 'h-56 sm:h-72' : 'h-44'
                       }`}
                     >
-                      {item.title}
-                    </h3>
-                    {i === 0 && (
-                      <p className="mt-3 text-sm text-slate-500 leading-relaxed line-clamp-2">{articleExcerpt(item.content)}</p>
-                    )}
-                  </div>
-                </Link>
-              ))}
+                      {item.imageUrl && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={getCdnUrl(item.imageUrl)}
+                          alt={item.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      <div className="absolute top-3.5 left-3.5">
+                        <span className="rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#1e3a8a]">
+                          {ARTICLE_CATEGORY_LABELS[item.category] || item.category}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-2">
+                        <Calendar size={13} />
+                        <span>{articleDate(item)}</span>
+                      </div>
+                      <h3
+                        className={`font-black text-slate-900 group-hover:text-[#2563eb] transition-colors leading-snug ${
+                          i === 0 ? 'text-lg sm:text-xl' : 'text-sm'
+                        }`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                        {articleExcerpt(item.content, i === 0 ? 160 : 90)}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         )}
 
-        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-28 text-white">
-          {/* Background image overlay */}
+        {/* ─── CTA ─── */}
+        <section className="relative overflow-hidden bg-[#1d4ed8] py-20 sm:py-24 text-white">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero/tournaments_hero.jpg"
+            src={getCdnUrl('/hero/about_hero.jpg')}
             alt="CTA Background"
+            loading="lazy"
             className="absolute inset-0 h-full w-full object-cover opacity-20 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1d4ed8] via-[#1d4ed8]/85 to-[#1d4ed8]/45 -z-10" />
 
-          <div className="reveal mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8 relative z-10">
-            <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">Get Involved</span>
-            <h2 className="mt-4 text-4xl sm:text-6xl font-black uppercase leading-tight text-white tracking-tight">
-              {txt('home.cta.title', 'READY TO JOIN THE ACTION?')}
+          <div className="relative z-10 max-w-3xl mx-auto px-4 text-center sm:px-6">
+            <span className="text-[#93c5fd] text-[10px] font-black uppercase tracking-[0.3em]">
+              Get Started
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-black uppercase text-white tracking-tight">
+              JOIN THE SEPAKTAKRAW MOVEMENT
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-base text-white/80 font-medium">
-              {txt('home.cta.subtitle', 'Explore our tournaments, teams and players to stay connected with the sport.')}
+            <p className="mt-5 text-white/80 text-base leading-relaxed">
+              Explore Maharashtra&apos;s active district associations, register as an athlete, or follow state championships.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/tournaments"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-black text-[#1d4ed8] shadow-xl hover:bg-slate-100 transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-black text-[#1d4ed8] hover:bg-slate-100 transition-all shadow-lg"
               >
-                Browse Tournaments
+                View Tournaments <ArrowRight size={16} />
               </Link>
               <Link
-                href="/teams"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-sm font-black text-white hover:bg-white/20 transition-all"
+                href="/districts"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-black text-white hover:bg-white/20 transition-all"
               >
-                <MapPin size={16} /> Meet the Teams
+                Find Your District
               </Link>
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>

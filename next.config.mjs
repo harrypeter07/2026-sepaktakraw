@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // TypeScript errors now fail the build instead of being silently ignored.
-  // (Previously `ignoreBuildErrors: true` masked real bugs such as the broken
-  // async `cookies()` server client and the TeamManager.update ReferenceError.)
+  // TypeScript errors fail the build instead of being silently ignored.
   typescript: {
     ignoreBuildErrors: false,
   },
+  compress: true,
+  poweredByHeader: false,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -62,6 +62,42 @@ const nextConfig = {
       },
       {
         source: '/official/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/court/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/equipment/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/rules/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/imagekit-upload/:path*',
         headers: [
           {
             key: 'Cache-Control',

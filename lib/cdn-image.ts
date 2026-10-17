@@ -1,10 +1,16 @@
 /**
- * Resolves image paths to ImageKit CDN or returns local public fallback.
- * If NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT or NEXT_PUBLIC_CDN_URL is configured,
- * it prepends the CDN endpoint.
- * Otherwise, it returns the local path as-is (with leading slash).
+ * Resolves image paths to ImageKit CDN with automatic WebP/AVIF format and quality optimization,
+ * or gracefully returns the local public fallback path.
  */
-export function getCdnUrl(src?: string | null): string {
+
+export interface ImageTransformOptions {
+  width?: number
+  height?: number
+  quality?: number
+  format?: 'auto' | 'webp' | 'avif'
+}
+
+export function getCdnUrl(src?: string | null, options?: ImageTransformOptions): string {
   if (!src) return '/placeholder.svg'
 
   // If already an absolute external URL, return as is
@@ -25,7 +31,19 @@ export function getCdnUrl(src?: string | null): string {
   }
 
   const base = cdnEndpoint.endsWith('/') ? cdnEndpoint.slice(0, -1) : cdnEndpoint
-  return `${base}${normalizedPath}`
+
+  // Don't append query transformations to video files
+  if (normalizedPath.endsWith('.mp4') || normalizedPath.endsWith('.webm')) {
+    return `${base}${normalizedPath}`
+  }
+
+  const trParts: string[] = ['f-auto', 'q-80']
+  if (options?.width) trParts.push(`w-${options.width}`)
+  if (options?.height) trParts.push(`h-${options.height}`)
+  if (options?.quality) trParts[1] = `q-${options.quality}`
+  if (options?.format) trParts[0] = `f-${options.format}`
+
+  return `${base}${normalizedPath}?tr=${trParts.join(',')}`
 }
 
 export default getCdnUrl
