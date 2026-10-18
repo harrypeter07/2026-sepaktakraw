@@ -470,23 +470,14 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
         {selectedPlayer && (
           <DialogContent className="max-w-md bg-white border rounded-2xl p-6 sm:p-8">
             <DialogHeader className="flex flex-col items-center text-center pb-4 border-b border-slate-100">
-              {/* Large Avatar */}
-              <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-secondary text-primary font-extrabold text-2xl ring-4 ring-primary/10 shadow-md mb-4">
-                {selectedPlayer.photoUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={selectedPlayer.photoUrl}
-                    alt={selectedPlayer.name}
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  selectedPlayer.name
-                    .split(' ')
-                    .map((w) => w[0])
-                    .slice(0, 2)
-                    .join('')
-                    .toUpperCase()
-                )}
+              {/* Athletic Jersey Monogram Badge */}
+              <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] text-white font-black text-2xl shadow-lg ring-4 ring-blue-600/20 mb-4">
+                {selectedPlayer.name
+                  .split(' ')
+                  .map((w) => w[0])
+                  .slice(0, 2)
+                  .join('')
+                  .toUpperCase()}
               </div>
 
               <Badge

@@ -158,7 +158,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 4,
     height: "5'9\"",
     weight: '68 kg',
-    photoUrl: '/players/ashit.jpg',
   },
   {
     id: 'player-altamash-pasha',
@@ -168,7 +167,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 6,
     height: "5'11\"",
     weight: '70 kg',
-    photoUrl: '/players/altamash.jpg',
   },
   {
     id: 'player-kunal-evanate',
@@ -178,7 +176,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 9,
     height: "6'0\"",
     weight: '73 kg',
-    photoUrl: '/players/kunal.jpg',
   },
   {
     id: 'player-mohammad-sohail',
@@ -188,7 +185,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 11,
     height: "6'1\"",
     weight: '74 kg',
-    photoUrl: '/players/sohail.jpg',
   },
   {
     id: 'player-shahnawaz-khan',
@@ -198,7 +194,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 15,
     height: "6'0\"",
     weight: '72 kg',
-    photoUrl: '/players/shahnawaz.jpg',
   },
 
   // Wardha
@@ -210,7 +205,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 2,
     height: "5'10\"",
     weight: '69 kg',
-    photoUrl: '/players/lekhanshu.jpg',
   },
   {
     id: 'player-vijaysingh-tomar',
@@ -220,7 +214,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 5,
     height: "5'11\"",
     weight: '71 kg',
-    photoUrl: '/players/vijay.jpg',
   },
   {
     id: 'player-om-muley',
@@ -230,7 +223,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 13,
     height: "5'8\"",
     weight: '66 kg',
-    photoUrl: '/players/om.jpg',
   },
 
   // Amravati
@@ -242,7 +234,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 1,
     height: "6'1\"",
     weight: '75 kg',
-    photoUrl: '/players/kunal.jpg',
   },
 
   // Jalgaon
@@ -254,7 +245,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 3,
     height: "6'0\"",
     weight: '72 kg',
-    photoUrl: '/players/faizan.jpg',
   },
 
   // Gondia
@@ -266,7 +256,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 7,
     height: "5'11\"",
     weight: '70 kg',
-    photoUrl: '/players/sandip.jpg',
   },
 
   // Nashik
@@ -278,7 +267,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 8,
     height: "5'10\"",
     weight: '68 kg',
-    photoUrl: '/players/sandeep.jpg',
   },
   {
     id: 'player-amol-rathod',
@@ -288,7 +276,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 12,
     height: "5'11\"",
     weight: '70 kg',
-    photoUrl: '/players/vinay.jpeg',
   },
 
   // Nanded
@@ -300,7 +287,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 14,
     height: "5'10\"",
     weight: '67 kg',
-    photoUrl: '/players/asang.jpg',
   },
 
   // Official State Athletes - Senior Women
@@ -312,7 +298,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 1,
     height: "5'7\"",
     weight: '58 kg',
-    photoUrl: '/players/apeksha.jpg',
   },
   {
     id: 'player-chetana-rongala',
@@ -322,7 +307,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 2,
     height: "5'8\"",
     weight: '60 kg',
-    photoUrl: '/players/chetana.jpg',
   },
   {
     id: 'player-madhura-tepale',
@@ -332,7 +316,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 3,
     height: "5'6\"",
     weight: '56 kg',
-    photoUrl: '/players/madhura.jpg',
   },
 
   // Pune
@@ -344,7 +327,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 7,
     height: "5'11\"",
     weight: '70 kg',
-    photoUrl: '/hero/gallery_1.jpg',
   },
   {
     id: 'player-rohan-mane',
@@ -354,7 +336,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 10,
     height: "6'0\"",
     weight: '73 kg',
-    photoUrl: '/hero/gallery_2.jpg',
   },
 
   // Mumbai Suburban
@@ -366,7 +347,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 18,
     height: "6'1\"",
     weight: '74 kg',
-    photoUrl: '/hero/gallery_4.jpg',
   },
   {
     id: 'player-saurabh-varma',
@@ -376,7 +356,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 21,
     height: "5'10\"",
     weight: '69 kg',
-    photoUrl: '/hero/gallery_5.jpg',
   },
 
   // Chhatrapati Sambhajinagar
@@ -388,7 +367,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 99,
     height: "6'0\"",
     weight: '75 kg',
-    photoUrl: '/hero/gallery_3.jpg',
   },
   {
     id: 'player-sagar-bhosle',
@@ -398,7 +376,6 @@ export const INITIAL_PLAYERS: Player[] = [
     jerseyNumber: 5,
     height: "5'10\"",
     weight: '68 kg',
-    photoUrl: '/hero/gallery_4.jpg',
   },
 ]
 

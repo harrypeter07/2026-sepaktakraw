@@ -297,35 +297,41 @@ export function AboutClient() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {recordsData.stateSquad.staff.map((officer) => (
-                <div
-                  key={officer.id}
-                  className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col"
-                >
-                  <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={officer.photoUrl}
-                      alt={officer.name}
-                      onError={(e) => {
-                        ;(e.target as HTMLImageElement).src = '/placeholder-user.jpg'
-                      }}
-                      className="h-full w-full object-cover object-top hover:scale-105 transition duration-300"
-                    />
-                  </div>
-                  <div className="p-5 flex-grow flex flex-col justify-between">
+              {recordsData.stateSquad.staff.map((officer) => {
+                const initials = officer.name
+                  .split(' ')
+                  .map((w) => w[0])
+                  .slice(0, 2)
+                  .join('')
+                  .toUpperCase()
+
+                return (
+                  <div
+                    key={officer.id}
+                    className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                  >
                     <div>
-                      <h4 className="font-extrabold text-slate-900 text-sm leading-snug">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] text-white font-black text-base shadow-md">
+                          {initials}
+                        </div>
+                        <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-blue-700">
+                          Council Officer
+                        </span>
+                      </div>
+                      <h4 className="font-black text-slate-900 text-base leading-snug">
                         {officer.name}
                       </h4>
-                      <p className="text-xs text-blue-600 font-bold mt-1">{officer.role}</p>
+                      <p className="text-xs text-blue-600 font-bold mt-1.5 leading-relaxed">
+                        {officer.role}
+                      </p>
                     </div>
-                    <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-3 pt-2 border-t border-slate-100 block">
-                      Maharashtra Sepaktakraw
+                    <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-4 pt-3 border-t border-slate-100 block">
+                      Maharashtra Sepaktakraw Association
                     </span>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
