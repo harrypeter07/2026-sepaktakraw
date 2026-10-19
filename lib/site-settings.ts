@@ -61,7 +61,7 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   
   // Homepage ---------------------------------------------------------------
   { key: 'home.hero.media_type', label: 'Hero Media Type (video or image)', page: 'home', type: 'text', options: ['video', 'image'], default: { text: 'video' } },
-  { key: 'home.hero.image', label: 'Hero Image (used when media type is "image")', page: 'home', type: 'image', shape: 'banner', default: { url: '/hero/hero-image.jpg', alt: 'Sepaktakraw Federation of India' } },
+  { key: 'home.hero.image', label: 'Hero Image (used when media type is "image")', page: 'home', type: 'image', shape: 'banner', default: { url: '/hero.jpg', alt: 'Maharashtra Sepaktakraw Acrobatic Action' } },
   { key: 'home.hero.title', label: 'Hero Title', page: 'home', type: 'text', default: { text: 'Maharashtra Sepaktakraw' } },
   { key: 'home.hero.subtitle', label: 'Hero Subtitle', page: 'home', type: 'text', default: { text: 'Excellence in Asian Kick-Volleyball Sport' } },
   { key: 'home.about.title', label: 'About Section Title', page: 'home', type: 'text', default: { text: 'What is Sepaktakraw?' } },
@@ -134,6 +134,9 @@ export const SETTING_DESCRIPTORS: SettingDescriptor[] = [
   { key: 'news.hero.subtitle', label: 'News Hero Subtitle', page: 'news', type: 'text', default: { text: 'Updates from Maharashtra Sepaktakraw Association' } },
 
   // Browse pages -----------------------------------------------------------
+  { key: 'districts.hero.image', label: 'Districts Hero Background', page: 'districts', type: 'image', shape: 'banner', default: { url: '/hero/teams_hero.jpg' } },
+  { key: 'districts.hero.title', label: 'Districts Hero Title', page: 'districts', type: 'text', default: { text: 'Affiliated Districts' } },
+  { key: 'districts.hero.subtitle', label: 'Districts Hero Subtitle', page: 'districts', type: 'text', default: { text: 'Official network of 36 affiliated district associations driving Sepaktakraw across Maharashtra' } },
   { key: 'teams.hero.image', label: 'Teams Hero Background', page: 'teams', type: 'image', shape: 'banner', default: { url: '/hero/teams_hero.jpg' } },
   { key: 'teams.hero.title', label: 'Teams Hero Title', page: 'teams', type: 'text', default: { text: 'Teams' } },
   { key: 'teams.hero.subtitle', label: 'Teams Hero Subtitle', page: 'teams', type: 'text', default: { text: 'Meet the competitive teams across Maharashtra' } },

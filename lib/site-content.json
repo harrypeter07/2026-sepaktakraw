@@ -54,14 +54,24 @@
     "text": "image"
   },
   "home.hero.image": {
-    "url": "/hero/hero-image.jpg",
-    "alt": "Sepaktakraw Federation of India"
+    "url": "/hero.jpg",
+    "alt": "Maharashtra Sepaktakraw Acrobatic Sunback Spike Action"
   },
   "home.hero.title": {
     "text": "Maharashtra Sepaktakraw"
   },
   "home.hero.subtitle": {
     "text": "Excellence in Asian Kick-Volleyball Sport"
+  },
+  "districts.hero.image": {
+    "url": "/hero/teams_hero.jpg",
+    "alt": "Maharashtra Sepaktakraw Affiliated District Units"
+  },
+  "districts.hero.title": {
+    "text": "Affiliated Districts"
+  },
+  "districts.hero.subtitle": {
+    "text": "Official network of 36 affiliated district associations driving Sepaktakraw across Maharashtra"
   },
   "home.about.title": {
     "text": "What is Sepaktakraw?"

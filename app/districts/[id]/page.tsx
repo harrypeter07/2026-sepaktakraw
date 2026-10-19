@@ -201,8 +201,16 @@ export default async function DistrictDetailPage({ params }: DistrictPageProps) 
 
       <main className="flex-grow pb-16">
         {/* Header Hero Area */}
-        <section className="bg-primary text-primary-foreground py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        <section className="bg-slate-950 text-white py-16 sm:py-20 relative overflow-hidden">
+          {/* Large background sports photo with dark sports overlay */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={getCdnUrl('/hero/tournaments_hero.jpg')}
+            alt="Sepaktakraw tournament arena"
+            className="absolute inset-0 h-full w-full object-cover -z-20 brightness-40 select-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/60 -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40 -z-10" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Link
               href="/districts"

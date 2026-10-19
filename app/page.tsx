@@ -77,9 +77,9 @@ export default async function Home() {
   const heroSubtitle =
     settings['home.hero.subtitle']?.text ||
     "Maharashtra's premier Sepaktakraw association — developing champions, building community."
-  const heroMediaType = settings['home.hero.media_type']?.text || 'video'
-  const heroImage = settings['home.hero.image']?.url || '/hero/hero-image.jpg'
-  const aboutImage = settings['home.about.image']?.url || '/hero/about_hero.jpg'
+  const heroMediaType = settings['home.hero.media_type']?.text || 'image'
+  const heroImage = settings['home.hero.image']?.url || '/hero.jpg'
+  const aboutImage = settings['home.about.image']?.url || '/team.jpg'
 
   const carouselItems = GALLERY_IMAGES.map((item) => ({
     key: item.key,

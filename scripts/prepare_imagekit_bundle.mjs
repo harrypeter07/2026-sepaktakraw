@@ -20,6 +20,16 @@ for (const folder of foldersToCopy) {
   }
 }
 
+const rootFiles = ['hero.jpg', 'team.jpg', 'msta-logo.png', 'og-image.png', 'icon.png']
+for (const file of rootFiles) {
+  const src = path.resolve('public', file)
+  const dest = path.resolve('imagekit-upload', file)
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest)
+    console.log(`✓ Copied ${file} to imagekit-upload/`)
+  }
+}
+
 const readmeContent = `# ImageKit Upload Bundle for Maharashtra Sepaktakraw (MSTA)
 
 This folder contains all the official, production-ready image assets for the Maharashtra Sepaktakraw Association website.
