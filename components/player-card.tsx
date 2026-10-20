@@ -2,10 +2,9 @@ const POSITION_STYLES: Record<string, { badge: string; bg: string; accent: strin
   Tekong:  { badge: 'bg-amber-500 text-white border-amber-400',   bg: 'from-amber-950 via-amber-900 to-amber-800', accent: 'text-amber-300', text: 'Server / Back' },
   Killer:  { badge: 'bg-rose-500 text-white border-rose-400',    bg: 'from-rose-950 via-rose-900 to-rose-800',   accent: 'text-rose-300',  text: 'Acrobatic Spiker' },
   Feeder:  { badge: 'bg-blue-600 text-white border-blue-400',    bg: 'from-blue-950 via-blue-900 to-blue-800',   accent: 'text-blue-300',  text: 'Setter / Playmaker' },
-  Spiker:  { badge: 'bg-red-600 text-white border-red-400',      bg: 'from-red-950 via-red-900 to-red-800',     accent: 'text-red-300',   text: 'Attacker' },
-  Setter:  { badge: 'bg-sky-600 text-white border-sky-400',      bg: 'from-sky-950 via-sky-900 to-sky-800',     accent: 'text-sky-300',   text: 'Ball Controller' },
-  Blocker: { badge: 'bg-emerald-600 text-white border-emerald-400', bg: 'from-emerald-950 via-emerald-900 to-emerald-800', accent: 'text-emerald-300', text: 'Net Defense' },
-  Libero:  { badge: 'bg-purple-600 text-white border-purple-400',  bg: 'from-purple-950 via-purple-900 to-purple-800', accent: 'text-purple-300', text: 'Defense Specialist' },
+  Striker: { badge: 'bg-rose-500 text-white border-rose-400',    bg: 'from-rose-950 via-rose-900 to-rose-800',   accent: 'text-rose-300',  text: 'Acrobatic Spiker' },
+  Spiker:  { badge: 'bg-rose-500 text-white border-rose-400',    bg: 'from-rose-950 via-rose-900 to-rose-800',   accent: 'text-rose-300',  text: 'Acrobatic Spiker' },
+  Setter:  { badge: 'bg-blue-600 text-white border-blue-400',    bg: 'from-blue-950 via-blue-900 to-blue-800',   accent: 'text-blue-300',  text: 'Setter / Playmaker' },
   default: { badge: 'bg-slate-600 text-white border-slate-400',   bg: 'from-slate-900 via-slate-800 to-slate-700',   accent: 'text-slate-300', text: 'State Athlete' },
 }
 

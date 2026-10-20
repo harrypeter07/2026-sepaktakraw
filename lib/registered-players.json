@@ -6,7 +6,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-122/2026-27",
-    "birthYear": "2010"
+    "birthYear": "2010",
+    "position": "Tekong"
   },
   {
     "name": "Darshan Dharpure",
@@ -15,7 +16,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-60/26-27",
-    "birthYear": "2009"
+    "birthYear": "2009",
+    "position": "Killer"
   },
   {
     "name": "Dipesh Milind Ramteke",
@@ -24,7 +26,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-61/26-27",
-    "birthYear": "2010"
+    "birthYear": "2010",
+    "position": "Feeder"
   },
   {
     "name": "Syed Umar",
@@ -33,7 +36,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-69/26-27",
-    "birthYear": "2008"
+    "birthYear": "2008",
+    "position": "Tekong"
   },
   {
     "name": "Vedant Amit Charde",
@@ -42,7 +46,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-57/26/27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Riya Santosh Maginkeri",
@@ -51,7 +56,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-140/26-27",
-    "birthYear": "2011"
+    "birthYear": "2011",
+    "position": "Feeder"
   },
   {
     "name": "Renuka Ghadge",
@@ -60,7 +66,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W149/2026-27",
-    "birthYear": "2010"
+    "birthYear": "2010",
+    "position": "Tekong"
   },
   {
     "name": "Saniya Bandenwaj Sutar",
@@ -69,7 +76,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/w-150/2026-27",
-    "birthYear": "2011"
+    "birthYear": "2011",
+    "position": "Killer"
   },
   {
     "name": "Aarohi Kshirsagar",
@@ -78,7 +86,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-142/26-27",
-    "birthYear": "2013"
+    "birthYear": "2013",
+    "position": "Feeder"
   },
   {
     "name": "Mohammad Ammar",
@@ -87,7 +96,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-145/26-27",
-    "birthYear": "2008"
+    "birthYear": "2008",
+    "position": "Tekong"
   },
   {
     "name": "Yashaswi U Rathod",
@@ -96,7 +106,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-139/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Vanshika Kamal Kishor",
@@ -105,7 +116,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-99/25-26",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Feeder"
   },
   {
     "name": "Shlok Narendra Masram",
@@ -114,7 +126,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-54/26-27",
-    "birthYear": "2010"
+    "birthYear": "2010",
+    "position": "Tekong"
   },
   {
     "name": "Ansh Ashok Tiwari",
@@ -123,7 +136,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "M 158",
-    "birthYear": "2011"
+    "birthYear": "2011",
+    "position": "Killer"
   },
   {
     "name": "Harshal Bhaskar Bhosle",
@@ -132,7 +146,8 @@
     "division": "Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M155/2026-27",
-    "birthYear": "2010"
+    "birthYear": "2010",
+    "position": "Feeder"
   },
   {
     "name": "Aaradhya Sagar Harde",
@@ -141,7 +156,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-124/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Aarohi Hariba Kshirsagar",
@@ -150,7 +166,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-142/2026-27",
-    "birthYear": "2013"
+    "birthYear": "2013",
+    "position": "Killer"
   },
   {
     "name": "Aayan Noman Khan",
@@ -159,7 +176,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M/169/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Ajinkya Vijay Ingle",
@@ -168,7 +186,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/m-163/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Alok Vitthal Sukhalkar",
@@ -177,7 +196,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTM/M-165/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Ansh Vilas Patil",
@@ -186,7 +206,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-109/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Antara Manoj Thakur",
@@ -195,7 +216,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-180/26-27",
-    "birthYear": "2016"
+    "birthYear": "2016",
+    "position": "Tekong"
   },
   {
     "name": "Anup Chandrabhushan Vishwakarma",
@@ -204,7 +226,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/ M-167/ 26-27",
-    "birthYear": "2013"
+    "birthYear": "2013",
+    "position": "Killer"
   },
   {
     "name": "Anvi Mangesh Babhulkar",
@@ -213,7 +236,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-182/26-27",
-    "birthYear": "2015"
+    "birthYear": "2015",
+    "position": "Feeder"
   },
   {
     "name": "Chaitanya Sanjay Sonwane",
@@ -222,7 +246,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-161/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Chitranshi Satish Kshirsagar",
@@ -231,7 +256,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-179/26-27",
-    "birthYear": "2016"
+    "birthYear": "2016",
+    "position": "Killer"
   },
   {
     "name": "Daksha Ashwin Chavhan",
@@ -240,7 +266,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-164/26-27",
-    "birthYear": "2013"
+    "birthYear": "2013",
+    "position": "Feeder"
   },
   {
     "name": "Dhanika Rakesh Katekhaye",
@@ -249,7 +276,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-184/26-27",
-    "birthYear": "2016"
+    "birthYear": "2016",
+    "position": "Tekong"
   },
   {
     "name": "Farhan Altaf Bhole",
@@ -258,7 +286,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M147/2026-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Harshal Jagannath Kawre",
@@ -267,7 +296,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "207466266385.0",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Feeder"
   },
   {
     "name": "Mitali Gajanan Thakre",
@@ -276,7 +306,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/w-177/26-27",
-    "birthYear": "2013"
+    "birthYear": "2013",
+    "position": "Tekong"
   },
   {
     "name": "Namrata Pramod Kamble",
@@ -285,7 +316,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-148/2026-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Navinya Satish Thote",
@@ -294,7 +326,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-55/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Om Wakulkarwakulkar",
@@ -303,7 +336,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-174/26-27",
-    "birthYear": "2017"
+    "birthYear": "2017",
+    "position": "Tekong"
   },
   {
     "name": "Pragati Ninhave",
@@ -312,7 +346,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-113/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Ranveer Singh . Mahavir Singh . Vyas",
@@ -321,7 +356,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/ M - 125 / 26- 27 .",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Ritiksha Parteke",
@@ -330,7 +366,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-175/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Rudra Kamlesh Wakulkar",
@@ -339,7 +376,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-173/26-27",
-    "birthYear": "2017"
+    "birthYear": "2017",
+    "position": "Killer"
   },
   {
     "name": "Sahil .Pravin. Wakulkar",
@@ -348,7 +386,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-117/2026-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Sahil .Pravin. Wakulkar",
@@ -357,7 +396,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-117/2026-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Sejal Sunil Desai",
@@ -366,7 +406,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "S1310792324910",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Sejal Sunil Desai",
@@ -375,7 +416,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-160/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Sunay Vivek Gajbhiye",
@@ -384,7 +426,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-166/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Syed Hamzah",
@@ -393,7 +436,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-171/26-27",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Killer"
   },
   {
     "name": "Tihami Sayyad",
@@ -402,7 +446,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M/168/26-27",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Feeder"
   },
   {
     "name": "Vanshika Kamal Kishor",
@@ -411,7 +456,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/W-99/26-27",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Tekong"
   },
   {
     "name": "Vedant Amit Charde",
@@ -420,7 +466,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-57/2026",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Killer"
   },
   {
     "name": "Vihang Shrikant Bhingare",
@@ -429,7 +476,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-176/26-27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Feeder"
   },
   {
     "name": "Yashaswi Umakant Rathod",
@@ -438,7 +486,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA / W -139 /26 - 27",
-    "birthYear": "2012"
+    "birthYear": "2012",
+    "position": "Tekong"
   },
   {
     "name": "Titu Sunil Rathor",
@@ -447,7 +496,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "Ndsta/m/189126/27",
-    "birthYear": "2014"
+    "birthYear": "2014",
+    "position": "Killer"
   },
   {
     "name": "Syed Zamam",
@@ -456,7 +506,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/M-170/26-27",
-    "birthYear": "2015"
+    "birthYear": "2015",
+    "position": "Feeder"
   },
   {
     "name": "Rudrani Prakash Kamble",
@@ -465,7 +516,8 @@
     "division": "Sub-Junior",
     "district": "Nagpur",
     "urn": "NDSTA/w-183/26-27",
-    "birthYear": "2016"
+    "birthYear": "2016",
+    "position": "Tekong"
   },
   {
     "name": "Shivraj Sanjay Sole",
@@ -484,7 +536,7 @@
     "division": "State Registered",
     "district": "Nanded",
     "urn": "NDSTAN/NED/023/2025-2026",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -494,7 +546,7 @@
     "division": "State Registered",
     "district": "Nanded",
     "urn": "URN NO:NDSTAN/NED/061/2025-26",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -504,7 +556,7 @@
     "division": "State Registered",
     "district": "Nanded",
     "urn": "URN No: NDSTAN/NED/061/2025",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -564,7 +616,7 @@
     "division": "State Registered",
     "district": "Nashik",
     "urn": "STANSK-M-012",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2012"
   },
   {
@@ -582,7 +634,7 @@
     "gender": "Female",
     "jerseyNumber": "",
     "division": "State Registered",
-    "district": "SOLAPUR",
+    "district": "Solapur",
     "urn": "SDTA/25-26W03",
     "position": "Tekong",
     "birthYear": "2011"
@@ -592,7 +644,7 @@
     "gender": "Female",
     "jerseyNumber": "",
     "division": "State Registered",
-    "district": "SOLAPUR",
+    "district": "Solapur",
     "urn": "SDTA/ 25-26W05",
     "position": "Feeder",
     "birthYear": "2011"
@@ -602,9 +654,9 @@
     "gender": "Female",
     "jerseyNumber": "",
     "division": "State Registered",
-    "district": "SOLAPUR",
+    "district": "Solapur",
     "urn": "SDTA/ 25-26W04",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -632,7 +684,7 @@
     "gender": "Female",
     "jerseyNumber": "",
     "division": "State Registered",
-    "district": "SOLAPUR",
+    "district": "Solapur",
     "urn": "SDTA/ 25-26W06",
     "position": "Feeder",
     "birthYear": "2012"
@@ -644,7 +696,7 @@
     "division": "State Registered",
     "district": "Amravati",
     "urn": "HADTA-2025-26-F-051",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -654,7 +706,7 @@
     "division": "State Registered",
     "district": "Amravati",
     "urn": "HADSTA/2025-26/F/033",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2012"
   },
   {
@@ -694,7 +746,7 @@
     "division": "State Registered",
     "district": "Pune",
     "urn": "TPDSTA 32/25",
-    "position": "Striker",
+    "position": "Killer",
     "birthYear": "2011"
   },
   {
@@ -712,7 +764,7 @@
     "gender": "Male",
     "jerseyNumber": "",
     "division": "State Registered",
-    "district": "SOLAPUR",
+    "district": "Solapur",
     "urn": "SDTA/ 25-26M02",
     "position": "Tekong",
     "birthYear": "2011"
@@ -724,7 +776,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-01",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Riya Sharma",
@@ -733,7 +786,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-02",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Ashit Shriavs",
@@ -742,7 +796,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-03",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Kunal Evanate",
@@ -751,7 +806,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-04",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Irshad Saghar",
@@ -760,7 +816,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-05",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Rutuja Jadhav",
@@ -769,7 +826,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-06",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Avantika Lokhande",
@@ -778,7 +836,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-07",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Gungun Pandit",
@@ -787,7 +846,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-08",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Avani Baghel",
@@ -796,7 +856,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-09",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Avantika Baghel",
@@ -805,7 +866,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-010",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Kunal Shingne",
@@ -814,7 +876,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-011",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Mohammad Safwaan",
@@ -823,7 +886,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-012",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Mohammad Ali",
@@ -832,7 +896,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-013",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Qazi Huzaifuddin",
@@ -841,7 +906,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-014",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Swapnil Nagrare",
@@ -850,7 +916,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-015",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Sonal Dhadse",
@@ -859,7 +926,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-016",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Ekta Shahu",
@@ -868,7 +936,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-017",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Mohammad Sohail",
@@ -877,7 +946,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-018",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Sneha Uikey",
@@ -886,7 +956,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-019",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Nidhi Verma",
@@ -895,7 +966,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-020",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Chetana Rongala",
@@ -904,7 +976,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-021",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Selina Bhoyar",
@@ -913,7 +986,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-022",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Sohail Sheikh",
@@ -922,7 +996,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-023",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Ankush Sirsat",
@@ -931,7 +1006,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-024",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Altamash Pasha",
@@ -940,7 +1016,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-025",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Shahnawaz Khan",
@@ -949,7 +1026,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-026",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Umar Ansari",
@@ -958,7 +1036,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-027",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Hari Yadav",
@@ -967,7 +1046,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-028",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Safiya Sayyad",
@@ -976,7 +1056,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-029",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Anchal Mourya",
@@ -985,7 +1066,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-030",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Aahad Pasha",
@@ -994,7 +1076,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-031",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Abdul Moiz",
@@ -1003,7 +1086,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-032",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Abuzar Sheikh",
@@ -1012,7 +1096,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-033",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Hunain Khan",
@@ -1021,7 +1106,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-034",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Mohammad Saad",
@@ -1030,7 +1116,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-035",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Abubakar Siddique",
@@ -1039,7 +1126,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-036",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Piyush Nikhare",
@@ -1048,7 +1136,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-037",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Tanmay Khande",
@@ -1057,7 +1146,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-038",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Ritu Sharma",
@@ -1066,7 +1156,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-039",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Sameer Thhool",
@@ -1075,7 +1166,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-040",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Samiruddin Sheikh",
@@ -1084,7 +1176,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-041",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Slok Masram",
@@ -1093,7 +1186,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-054",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Navinya Thote",
@@ -1102,7 +1196,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-055",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Siddhant Shende",
@@ -1111,7 +1206,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-056",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Vedant Charde",
@@ -1120,7 +1216,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-057",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Dipesh Ramteke",
@@ -1129,7 +1226,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-061",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Sayyed Umer",
@@ -1138,7 +1236,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-069",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Mohammad Taha",
@@ -1147,7 +1246,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-070",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Yuvaraj Shingade",
@@ -1156,7 +1256,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-071",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Shruti Nighot",
@@ -1165,7 +1266,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-086",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Bobby Gedam",
@@ -1174,7 +1276,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-087",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Pankajkumar Godghase",
@@ -1183,7 +1286,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-089",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Sairam Idhole",
@@ -1192,7 +1296,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-090",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Ridhima Ghadge",
@@ -1201,7 +1306,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-091",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Nirali Gurav",
@@ -1210,7 +1316,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-092",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Janhvi Lambse",
@@ -1219,7 +1326,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-093",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Saumya Sakhare",
@@ -1228,7 +1336,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-094",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Bhavukta Dongre",
@@ -1237,7 +1346,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-095",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Alvina Khan",
@@ -1246,7 +1356,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-096",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Shravani Suke",
@@ -1255,7 +1366,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-097",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Shravika Bannore",
@@ -1264,7 +1376,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-098",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Vanshika Kishor",
@@ -1273,7 +1386,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-099",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Aarya Pusadkar",
@@ -1282,7 +1396,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-100",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Tanisha Rangne",
@@ -1291,7 +1406,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-101",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Tehrim Sheikh",
@@ -1300,7 +1416,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-102",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Owais Sadik",
@@ -1309,7 +1426,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-103",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Humayl Sheikh",
@@ -1318,7 +1436,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-104",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Kevalya Khandalkar",
@@ -1327,7 +1446,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-105",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Anmol Mukharjee",
@@ -1336,7 +1456,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-106",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Shantanu Bhagat",
@@ -1345,7 +1466,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-107",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Mohammad Adnan",
@@ -1354,7 +1476,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-108",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Ansh Patil",
@@ -1363,7 +1486,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-109",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Vedant Thakur",
@@ -1372,7 +1496,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-110",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Minal Gadpayle",
@@ -1381,7 +1506,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-111",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Dev Parwani",
@@ -1390,7 +1516,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-112",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Avanti Kamble",
@@ -1399,7 +1526,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-114",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Nandini Shahu",
@@ -1408,7 +1536,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-115",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Sahil Wakulkar",
@@ -1417,7 +1546,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-117",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Anshul Verma",
@@ -1426,7 +1556,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-118",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Jay Hatti",
@@ -1435,7 +1566,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-119",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Sufiyan Muniyar",
@@ -1444,7 +1576,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-120",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Mohammad Bilal",
@@ -1453,7 +1586,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-121",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Naman Mute",
@@ -1462,7 +1596,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-123",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Aaradhya Harde",
@@ -1471,7 +1606,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-124",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Ranveer Singh",
@@ -1480,7 +1616,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-125",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Shardul Aaradhe",
@@ -1489,7 +1626,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-126",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Mahak Sheikh",
@@ -1498,7 +1636,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-127",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Trusha Gosavi",
@@ -1507,7 +1646,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-130",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Swara Patle",
@@ -1516,7 +1656,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-132",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Abdul Razique",
@@ -1525,7 +1666,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-133",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Kundan Bante",
@@ -1534,7 +1676,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-134",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Gangaprasad Shelke",
@@ -1543,7 +1686,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-135",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Gajulwar Baburao",
@@ -1552,7 +1696,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-136",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Choudante Sandipan",
@@ -1561,7 +1706,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-137",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Pritam Waghmare",
@@ -1570,7 +1716,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-138",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Yashaswi Rathod",
@@ -1579,7 +1726,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-139",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Riya Maginker",
@@ -1588,7 +1736,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-140",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Kiran Pawar",
@@ -1597,7 +1746,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-141",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Arohi Kshirsagar",
@@ -1606,7 +1756,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-142",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Atharv Pol",
@@ -1615,7 +1766,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-143",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Jishan Shaikh",
@@ -1624,7 +1776,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-144",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Kartik Rathod",
@@ -1633,7 +1786,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-146",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Farhan Bhole",
@@ -1642,7 +1796,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-147",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Namrata Kamble",
@@ -1651,7 +1806,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-148",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Saniya Sutar",
@@ -1660,7 +1816,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-150",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Mayur Saneshwar",
@@ -1669,7 +1826,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-151",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Anurag Chandane",
@@ -1678,7 +1836,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-152",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Shivam Sangode",
@@ -1687,7 +1846,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-153",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Syed Abubakaruddin",
@@ -1696,7 +1856,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-154",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Harshal Bhosale",
@@ -1705,7 +1866,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-155",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Vedika Mourya",
@@ -1714,7 +1876,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-W-156",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   },
   {
     "name": "Yatharth Mogre",
@@ -1723,7 +1886,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-157",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Killer"
   },
   {
     "name": "Ansh Tiwari",
@@ -1732,7 +1896,8 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-158",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Feeder"
   },
   {
     "name": "Kandhare Milind",
@@ -1741,6 +1906,7 @@
     "division": "NDSTA Registered",
     "district": "Nagpur",
     "urn": "NDSTA-M-159",
-    "birthYear": ""
+    "birthYear": "",
+    "position": "Tekong"
   }
 ]

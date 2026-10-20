@@ -31,11 +31,51 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
   const [registryPage, setRegistryPage] = useState(1)
   const registryPageSize = 20
 
-  const positions = ['Tekong', 'Killer', 'Feeder', 'Spiker', 'Setter', 'Blocker', 'Libero']
+  const positions = [
+    {
+      id: 'Tekong',
+      label: 'Tekong (Server / Back)',
+      short: 'Tekong',
+      count: initialPlayers.filter((p) => {
+        const pos = (p.position || '').toLowerCase()
+        return pos === 'tekong' || pos === 'server'
+      }).length,
+    },
+    {
+      id: 'Killer',
+      label: 'Killer (Acrobatic Striker)',
+      short: 'Killer',
+      count: initialPlayers.filter((p) => {
+        const pos = (p.position || '').toLowerCase()
+        return pos === 'killer' || pos === 'striker' || pos === 'spiker'
+      }).length,
+    },
+    {
+      id: 'Feeder',
+      label: 'Feeder (Setter / Playmaker)',
+      short: 'Feeder',
+      count: initialPlayers.filter((p) => {
+        const pos = (p.position || '').toLowerCase()
+        return pos === 'feeder' || pos === 'setter'
+      }).length,
+    },
+  ]
   const teams = Array.from(new Set(initialPlayers.map((p) => p.team)))
 
   const filteredPlayers = initialPlayers.filter((player) => {
-    const positionMatch = filterPosition === 'all' || player.position === filterPosition
+    const pPos = (player.position || '').toLowerCase()
+    let positionMatch = filterPosition === 'all'
+    if (!positionMatch) {
+      if (filterPosition === 'Tekong') {
+        positionMatch = pPos === 'tekong' || pPos === 'server'
+      } else if (filterPosition === 'Killer') {
+        positionMatch = pPos === 'killer' || pPos === 'striker' || pPos === 'spiker'
+      } else if (filterPosition === 'Feeder') {
+        positionMatch = pPos === 'feeder' || pPos === 'setter'
+      } else {
+        positionMatch = pPos === filterPosition.toLowerCase()
+      }
+    }
     const teamMatch = filterTeam === 'all' || player.team === filterTeam
     return positionMatch && teamMatch
   })
@@ -49,11 +89,13 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
     ...Array.from(new Set(registeredPlayersData.map((p) => p.division).filter(Boolean))),
   ]
 
-  const filteredRegistry = registeredPlayersData.filter((p) => {
+  const filteredRegistry = registeredPlayersData.filter((p: any) => {
+    const searchLower = registrySearch.toLowerCase()
     const matchesSearch =
-      p.name.toLowerCase().includes(registrySearch.toLowerCase()) ||
-      (p.urn && p.urn.toLowerCase().includes(registrySearch.toLowerCase())) ||
-      (p.district && p.district.toLowerCase().includes(registrySearch.toLowerCase()))
+      p.name.toLowerCase().includes(searchLower) ||
+      (p.urn && p.urn.toLowerCase().includes(searchLower)) ||
+      (p.district && p.district.toLowerCase().includes(searchLower)) ||
+      (p.position && p.position.toLowerCase().includes(searchLower))
     const matchesDiv = registryDivision === 'all' || p.division === registryDivision
     const matchesDist = registryDistrict === 'all' || p.district === registryDistrict
     return matchesSearch && matchesDiv && matchesDist
@@ -67,45 +109,31 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
   )
 
   const getPositionDescription = (pos: string) => {
-    switch (pos) {
-      case 'Tekong':
-        return 'The Tekong is the server stationed at the back circle. They execute high-speed, dipping service kicks into the opponent’s court to score aces and initiate attacks.'
-      case 'Killer':
-        return 'The Killer is the primary attacker responsible for acrobatic spikes (roll spikes, sunback spikes) and aggressive net blocks at tremendous velocity.'
-      case 'Feeder':
-        return 'The Feeder controls the rally by receiving the opponent’s ball and setting up precision high-loft passes for the Killer to execute devastating spikes.'
-      case 'Spiker':
-        return 'Spikers carry out lethal acrobatic kicks over the net, including roll spikes and sunback spikes, to score points.'
-      case 'Setter':
-        return 'Setters control the pace of the play with precise foot and head control to set up high-accuracy balls perfectly positioned for the attack.'
-      case 'Blocker':
-        return 'Blockers occupy the net defense, leaping high to block roll spikes using their legs and back.'
-      case 'Libero':
-        return 'Liberos are defense experts specializing in receiving high-velocity services and roll spikes.'
-      default:
-        return 'A professional Sepaktakraw athlete representing Maharashtra.'
+    const p = (pos || '').toLowerCase()
+    if (p.includes('tekong') || p.includes('server')) {
+      return 'The Tekong is the server stationed inside the back service circle. They execute high-velocity, dipping service kicks directly over the net to score aces and initiate attacks.'
     }
+    if (p.includes('killer') || p.includes('striker') || p.includes('spiker')) {
+      return 'The Killer (Striker) is the primary attacker responsible for acrobatic spikes (roll spikes, sunback spikes) and aggressive net blocks at tremendous velocity.'
+    }
+    if (p.includes('feeder') || p.includes('setter')) {
+      return 'The Feeder (Setter) controls the rally tempo by receiving opponent attacks and setting up precision high-loft passes for the Killer to execute devastating spikes.'
+    }
+    return 'An elite registered Sepaktakraw athlete representing Maharashtra in official state championships.'
   }
 
   const getPositionBadge = (pos: string) => {
-    switch (pos) {
-      case 'Tekong':
-        return 'bg-amber-100 text-amber-800 border-amber-200'
-      case 'Killer':
-        return 'bg-rose-100 text-rose-800 border-rose-200'
-      case 'Feeder':
-        return 'bg-blue-100 text-blue-800 border-blue-200'
-      case 'Spiker':
-        return 'bg-red-100 text-red-800 border-red-200'
-      case 'Setter':
-        return 'bg-sky-100 text-sky-800 border-sky-200'
-      case 'Blocker':
-        return 'bg-emerald-100 text-emerald-800 border-emerald-200'
-      case 'Libero':
-        return 'bg-purple-100 text-purple-800 border-purple-200'
-      default:
-        return 'bg-slate-100 text-slate-800 border-slate-200'
+    const p = (pos || '').toLowerCase()
+    if (p.includes('tekong') || p.includes('server')) {
+      return 'bg-amber-100 text-amber-900 border-amber-300'
     }
+    if (p.includes('killer') || p.includes('striker') || p.includes('spiker')) {
+      return 'bg-rose-100 text-rose-900 border-rose-300'
+    }
+    if (p.includes('feeder') || p.includes('setter')) {
+      return 'bg-blue-100 text-blue-900 border-blue-300'
+    }
+    return 'bg-slate-100 text-slate-800 border-slate-200'
   }
 
   const handleResetFilters = () => {
@@ -171,10 +199,10 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
                     onChange={(e) => setFilterPosition(e.target.value)}
                     className="w-full h-11 px-3 py-2 border border-slate-200 rounded-xl bg-background text-foreground text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-accent transition cursor-pointer"
                   >
-                    <option value="all">All Positions</option>
-                    {positions.map((position) => (
-                      <option key={position} value={position}>
-                        {position}
+                    <option value="all">All Tactical Positions ({initialPlayers.length})</option>
+                    {positions.map((pos) => (
+                      <option key={pos.id} value={pos.id}>
+                        {pos.label} ({pos.count})
                       </option>
                     ))}
                   </select>
@@ -341,6 +369,7 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
                     <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-black uppercase text-[10px] tracking-wider">
                       <th className="py-3 px-4">#</th>
                       <th className="py-3 px-4">Player Full Name</th>
+                      <th className="py-3 px-4">Role</th>
                       <th className="py-3 px-4">District</th>
                       <th className="py-3 px-4">Division</th>
                       <th className="py-3 px-4">Gender</th>
@@ -357,6 +386,16 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
                           </td>
                           <td className="py-3 px-4 font-extrabold text-slate-800">
                             {player.name}
+                          </td>
+                          <td className="py-3 px-4">
+                            <Badge
+                              variant="outline"
+                              className={`text-[10px] font-bold px-2 py-0.5 border ${getPositionBadge(
+                                (player as any).position || 'Tekong'
+                              )}`}
+                            >
+                              {(player as any).position || 'Tekong'}
+                            </Badge>
                           </td>
                           <td className="py-3 px-4 text-slate-600">
                             {player.district || 'Maharashtra'}
@@ -380,7 +419,7 @@ export function PlayersClient({ initialPlayers }: PlayersClientProps) {
                       ))
                     ) : (
                       <tr>
-                        <td colSpan={7} className="text-center py-12 text-slate-400 font-bold">
+                        <td colSpan={8} className="text-center py-12 text-slate-400 font-bold">
                           No athletes match the current search or filters.
                         </td>
                       </tr>

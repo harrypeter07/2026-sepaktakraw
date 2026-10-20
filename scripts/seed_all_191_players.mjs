@@ -34,12 +34,14 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 const DISTRICT_TO_TEAM_ID = {
   'Nagpur': 'aaaaaaaa-0001-0000-0000-000000000001',
   'Solapur': 'aaaaaaaa-0002-0000-0000-000000000002',
+  'SOLAPUR': 'aaaaaaaa-0002-0000-0000-000000000002',
   'Nanded': 'aaaaaaaa-0003-0000-0000-000000000003',
   'Wardha': 'aaaaaaaa-0004-0000-0000-000000000004',
   'Nashik': 'aaaaaaaa-0005-0000-0000-000000000005',
   'Jalgaon': 'aaaaaaaa-0006-0000-0000-000000000006',
   'Chhatrapati Sambhaji Nagar': 'aaaaaaaa-0007-0000-0000-000000000007',
   'Chhatrapati Sambhajinagar': 'aaaaaaaa-0007-0000-0000-000000000007',
+  'Beed': 'aaaaaaaa-0007-0000-0000-000000000007',
   'Amravati': 'aaaaaaaa-0008-0000-0000-000000000008',
   'Pune': 'aaaaaaaa-0009-0000-0000-000000000009',
   'Mumbai Suburban': 'aaaaaaaa-000a-0000-0000-00000000000a',
@@ -56,15 +58,16 @@ async function seedAllPlayers() {
   // Prepare batch of player objects
   const playerRows = athletes.map((a, idx) => {
     const teamId = DISTRICT_TO_TEAM_ID[a.district] || 'aaaaaaaa-0001-0000-0000-000000000001'
-    let pos = a.position || 'Player'
-    if (pos.toLowerCase().includes('tekong') || pos.toLowerCase().includes('feeder')) pos = 'Setter'
-    else if (pos.toLowerCase().includes('killer') || pos.toLowerCase().includes('spiker')) pos = 'Spiker'
+    let pos = a.position || 'Tekong'
+    if (pos.toLowerCase().includes('tekong') || pos.toLowerCase().includes('server')) pos = 'Tekong'
+    else if (pos.toLowerCase().includes('killer') || pos.toLowerCase().includes('spiker') || pos.toLowerCase().includes('striker')) pos = 'Killer'
+    else if (pos.toLowerCase().includes('feeder') || pos.toLowerCase().includes('setter')) pos = 'Feeder'
 
     return {
       team_id: teamId,
       name: a.name,
       position: pos,
-      jersey_number: a.jerseyNo || ((idx % 25) + 1),
+      jersey_number: parseInt(a.jerseyNumber || a.jerseyNo || ((idx % 25) + 1), 10) || ((idx % 25) + 1),
       photo_url: a.photo || null,
       bio: `State registered athlete representing ${a.district}. URN: ${a.urn || 'MSTA-REGISTERED'}. Competes in MSTA sanctioned state championships.`,
       height: a.gender === 'Female' ? "5'7\"" : "5'11\"",

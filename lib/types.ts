@@ -29,7 +29,7 @@ export interface Team {
   updated_at: string;
 }
 
-export type PlayerPosition = 'Spiker' | 'Setter' | 'Blocker' | 'Libero';
+export type PlayerPosition = 'Tekong' | 'Killer' | 'Feeder' | 'Spiker' | 'Setter' | string;
 
 export interface Player {
   id: string;

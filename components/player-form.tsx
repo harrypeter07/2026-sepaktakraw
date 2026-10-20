@@ -23,13 +23,13 @@ export interface PlayerFormData {
   photoUrl?: string
 }
 
-const POSITIONS = ['Spiker', 'Setter', 'Blocker', 'Libero']
+const POSITIONS = ['Tekong', 'Killer', 'Feeder']
 
 export function PlayerForm({ onClose, onSubmit, initialData, teams }: PlayerFormProps) {
   const [formData, setFormData] = useState<PlayerFormData>(
     initialData || {
       name: '',
-      position: 'Spiker',
+      position: 'Tekong',
       team: teams[0] || '',
       jerseyNumber: '',
       height: '',
