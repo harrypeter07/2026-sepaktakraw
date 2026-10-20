@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Stay updated with official bulletins, state championship results, trials, and player selection announcements from the Maharashtra Sepaktakraw Association (MSTA).',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/news',
+    canonical: 'https://mahasepaktakraw.com/news',
   },
   openGraph: {
     title: 'Maharashtra Sepaktakraw News & Press Bulletins',
     description:
       'Official announcements, tournament results, and updates from the governing body of Sepaktakraw in Maharashtra.',
-    url: 'https://sepaktakrawmaharashtra.in/news',
+    url: 'https://mahasepaktakraw.com/news',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -49,14 +49,14 @@ export default async function NewsPage() {
         author: {
           '@type': 'SportsOrganization',
           name: 'Maharashtra Sepaktakraw Association',
-          url: 'https://sepaktakrawmaharashtra.in',
+          url: 'https://mahasepaktakraw.com',
         },
         publisher: {
           '@type': 'SportsOrganization',
           name: 'Maharashtra Sepaktakraw Association',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://sepaktakrawmaharashtra.in/logo.png',
+            url: 'https://mahasepaktakraw.com/logo.png',
           },
         },
       },

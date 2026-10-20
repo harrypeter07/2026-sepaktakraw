@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Official registry of 191+ verified Sepaktakraw athletes in Maharashtra. Search players by URN ID, position (Tekong, Killer, Feeder, Spiker), district, and division.',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/players',
+    canonical: 'https://mahasepaktakraw.com/players',
   },
   openGraph: {
     title: 'Maharashtra Sepaktakraw Athlete Roster & State URN Registry',
     description:
       'Search official state roster, verified URN registration numbers, and athlete profiles representing Maharashtra Sepaktakraw.',
-    url: 'https://sepaktakrawmaharashtra.in/players',
+    url: 'https://mahasepaktakraw.com/players',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },

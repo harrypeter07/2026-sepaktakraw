@@ -92,10 +92,10 @@ export function TeamsClient({ initialTeams, initialPlayers }: TeamsClientProps) 
           <div className="mb-8 flex items-center justify-between border-b pb-4">
             <div>
               <h3 className="text-xl font-black uppercase text-slate-900 tracking-tight">
-                Affiliated Club Teams
+                Maharashtra District Teams & Clubs
               </h3>
               <p className="text-xs text-slate-500 font-medium mt-0.5">
-                Competitive regional clubs participating in Maharashtra State League
+                Competitive district units participating in official Maharashtra State Championships
               </p>
             </div>
           </div>
@@ -132,18 +132,18 @@ export function TeamsClient({ initialTeams, initialPlayers }: TeamsClientProps) 
             <DialogHeader className="border-b pb-4 mb-4">
               <DialogTitle className="text-2xl font-extrabold text-primary flex items-center gap-2">
                 <Trophy className="text-accent h-6 w-6 shrink-0" />
-                {selectedTeam.name} Roster
+                {selectedTeam.name} — Players & Squad
               </DialogTitle>
               <DialogDescription className="text-sm text-slate-500 font-medium mt-1">
-                Coach: <strong className="text-slate-700">{selectedTeam.coach}</strong> |
+                Head Coach: <strong className="text-slate-700">{selectedTeam.coach}</strong> |
                 Established: <strong className="text-slate-700">{selectedTeam.established}</strong>
               </DialogDescription>
             </DialogHeader>
 
-            {/* Roster List */}
+            {/* Players List */}
             <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
               <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
-                Squad Players
+                Registered Athletes ({getRoster(selectedTeam.name).length})
               </h4>
               {getRoster(selectedTeam.name).length === 0 && (
                 <p className="text-sm text-muted-foreground py-6 text-center">

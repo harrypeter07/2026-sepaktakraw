@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description:
     'Official directory of 36 affiliated district Sepaktakraw associations across Konkan, Pune, Nashik, Chhatrapati Sambhajinagar, and Vidarbha divisions under MSTA. View contacts and medal tallies.',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/districts',
+    canonical: 'https://mahasepaktakraw.com/districts',
   },
   openGraph: {
     title: '36 Affiliated District Associations | Maharashtra Sepaktakraw',
     description:
       'Explore official district units, regional headquarters, contact emails, and state tournament medal statistics.',
-    url: 'https://sepaktakrawmaharashtra.in/districts',
+    url: 'https://mahasepaktakraw.com/districts',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -49,7 +49,7 @@ export default function DistrictsPage() {
         parentOrganization: {
           '@type': 'SportsOrganization',
           name: 'Maharashtra Sepaktakraw Association',
-          url: 'https://sepaktakrawmaharashtra.in',
+          url: 'https://mahasepaktakraw.com',
         },
       },
     })),

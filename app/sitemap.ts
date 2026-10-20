@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import districtsData from '@/lib/districts.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sepaktakrawmaharashtra.in'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mahasepaktakraw.com'
 
   const staticRoutes = [
     '',

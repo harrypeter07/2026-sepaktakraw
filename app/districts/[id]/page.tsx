@@ -58,16 +58,39 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `https://sepaktakrawmaharashtra.in/districts/${district.id}`,
+      canonical: `https://mahasepaktakraw.com/districts/${district.id}`,
     },
     openGraph: {
       title,
       description,
-      url: `https://sepaktakrawmaharashtra.in/districts/${district.id}`,
+      url: `https://mahasepaktakraw.com/districts/${district.id}`,
       siteName: 'Maharashtra Sepaktakraw Association',
       type: 'website',
     },
   }
+}
+
+const DISTRICT_BANNERS: Record<string, string> = {
+  amravati: '/hero/gallery_7.jpg',
+  nagpur: '/hero/tournaments_hero.jpg',
+  pune: '/hero/about_hero.jpg',
+  solapur: '/hero/gallery_4.jpg',
+  wardha: '/hero/gallery_1.jpg',
+  nanded: '/hero/gallery_2.jpg',
+  nashik: '/hero/gallery_3.jpg',
+  jalgaon: '/hero/gallery_6.jpg',
+  kolhapur: '/hero/teams_hero.jpg',
+  'mumbai-suburban': '/hero/gallery_5.jpg',
+  gondia: '/hero/gallery_1.jpg',
+  akola: '/hero/gallery_4.jpg',
+  washim: '/hero/gallery_3.jpg',
+  bhandara: '/hero/gallery_2.jpg',
+  yavatmal: '/hero/gallery_6.jpg',
+  beed: '/hero/gallery_7.jpg',
+  latur: '/hero/gallery_5.jpg',
+  parbhani: '/hero/gallery_1.jpg',
+  jalna: '/hero/gallery_4.jpg',
+  'chhatrapati-sambhajinagar': '/hero/tournaments_hero.jpg',
 }
 
 export default async function DistrictDetailPage({ params }: DistrictPageProps) {
@@ -172,7 +195,7 @@ export default async function DistrictDetailPage({ params }: DistrictPageProps) 
     '@type': 'SportsOrganization',
     name: district.name,
     sport: 'Sepaktakraw',
-    url: `https://sepaktakrawmaharashtra.in/districts/${district.id}`,
+    url: `https://mahasepaktakraw.com/districts/${district.id}`,
     logo: getCdnUrl(district.logo),
     email: district.email,
     location: {
@@ -187,7 +210,7 @@ export default async function DistrictDetailPage({ params }: DistrictPageProps) 
     parentOrganization: {
       '@type': 'SportsOrganization',
       name: 'Maharashtra Sepaktakraw Association',
-      url: 'https://sepaktakrawmaharashtra.in',
+      url: 'https://mahasepaktakraw.com',
     },
   }
 
@@ -205,11 +228,11 @@ export default async function DistrictDetailPage({ params }: DistrictPageProps) 
           {/* Large background sports photo with dark sports overlay */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={getCdnUrl('/hero/tournaments_hero.jpg')}
-            alt="Sepaktakraw tournament arena"
-            className="absolute inset-0 h-full w-full object-cover -z-20 brightness-40 select-none"
+            src={getCdnUrl(DISTRICT_BANNERS[district.id] || '/hero/tournaments_hero.jpg')}
+            alt={`${district.name} championship arena`}
+            className="absolute inset-0 h-full w-full object-cover -z-20 brightness-[0.5] select-none"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/60 -z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-950/40 -z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40 -z-10" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Link

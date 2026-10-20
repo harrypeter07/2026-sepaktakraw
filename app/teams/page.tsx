@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Directory of affiliated Sepaktakraw district clubs, senior state squads, coaching staff, and athlete rosters across Maharashtra.',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/teams',
+    canonical: 'https://mahasepaktakraw.com/teams',
   },
   openGraph: {
     title: 'Maharashtra Sepaktakraw District Teams & Rosters',
     description:
       'Explore official district teams, coaches, registered players, and state championship squads under MSTA.',
-    url: 'https://sepaktakrawmaharashtra.in/teams',
+    url: 'https://mahasepaktakraw.com/teams',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -65,7 +65,7 @@ export default async function TeamsPage() {
         memberOf: {
           '@type': 'SportsOrganization',
           name: 'Maharashtra Sepaktakraw Association',
-          url: 'https://sepaktakrawmaharashtra.in',
+          url: 'https://mahasepaktakraw.com',
         },
       },
     })),

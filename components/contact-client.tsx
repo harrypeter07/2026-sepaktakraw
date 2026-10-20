@@ -123,7 +123,7 @@ export function ContactClient() {
   const contactCards = [
     { icon: MapPin, label: 'Address', value: txt('site.footer_contact_address', 'Nagpur, Maharashtra, India') },
     { icon: Phone, label: 'Phone', value: txt('site.footer_contact_phone', '+91 98224 64555') },
-    { icon: Mail, label: 'Email', value: txt('site.footer_contact_email', 'contact@sepaktakrawmaharashtra.in') },
+    { icon: Mail, label: 'Email', value: txt('site.footer_contact_email', 'contact@mahasepaktakraw.com') },
   ]
 
   return (

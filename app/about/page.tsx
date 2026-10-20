@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Apex governing body for Sepaktakraw in Maharashtra. Registered public society Reg.No. MAHARASHTRA/910/98 (Nagpur). Affiliated with Sepaktakraw Federation of India (STFI) and Maharashtra Olympic Association (MOA).',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/about',
+    canonical: 'https://mahasepaktakraw.com/about',
   },
   openGraph: {
     title: 'About Maharashtra Sepaktakraw Association (MSTA)',
     description:
       'History, leadership, official affiliations, rules, and technical commission of Maharashtra Sepaktakraw Association.',
-    url: 'https://sepaktakrawmaharashtra.in/about',
+    url: 'https://mahasepaktakraw.com/about',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -27,7 +27,7 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About Maharashtra Sepaktakraw Association',
-    url: 'https://sepaktakrawmaharashtra.in/about',
+    url: 'https://mahasepaktakraw.com/about',
     mainEntity: {
       '@type': 'SportsOrganization',
       name: 'Maharashtra Sepaktakraw Association',

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Explore official tournaments, national qualifiers, district championships, and podium records of the Maharashtra Sepaktakraw Association (MSTA). View schedules, venues, and live results.',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/tournaments',
+    canonical: 'https://mahasepaktakraw.com/tournaments',
   },
   openGraph: {
     title: 'Sepaktakraw Tournaments & Championships - Maharashtra',
     description:
       'Official Maharashtra Sepaktakraw tournament schedules, participating district teams, format details, and historical medal records.',
-    url: 'https://sepaktakrawmaharashtra.in/tournaments',
+    url: 'https://mahasepaktakraw.com/tournaments',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -68,7 +68,7 @@ export default async function TournamentsPage() {
         organizer: {
           '@type': 'SportsOrganization',
           name: t.organizer || 'Maharashtra Sepaktakraw Association',
-          url: 'https://sepaktakrawmaharashtra.in',
+          url: 'https://mahasepaktakraw.com',
         },
         description: t.description || `${t.name} organized by MSTA.`,
       },

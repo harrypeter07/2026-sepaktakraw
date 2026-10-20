@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Contact the Maharashtra Sepaktakraw Association (MSTA) headquarters at Nagpur. Inquire about team registrations, district affiliations, tournament scheduling, or state trials.',
   alternates: {
-    canonical: 'https://sepaktakrawmaharashtra.in/contact',
+    canonical: 'https://mahasepaktakraw.com/contact',
   },
   openGraph: {
     title: 'Contact Maharashtra Sepaktakraw Association',
     description:
       'Official contact information, email, office hours, and inquiry form for Maharashtra Sepaktakraw Association.',
-    url: 'https://sepaktakrawmaharashtra.in/contact',
+    url: 'https://mahasepaktakraw.com/contact',
     siteName: 'Maharashtra Sepaktakraw Association',
     type: 'website',
   },
@@ -27,13 +27,13 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact Maharashtra Sepaktakraw Association',
-    url: 'https://sepaktakrawmaharashtra.in/contact',
+    url: 'https://mahasepaktakraw.com/contact',
     mainEntity: {
       '@type': 'SportsOrganization',
       name: 'Maharashtra Sepaktakraw Association',
       sport: 'Sepaktakraw',
       telephone: '+91 98224 64555',
-      email: 'contact@sepaktakrawmaharashtra.in',
+      email: 'contact@mahasepaktakraw.com',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Nagpur',
