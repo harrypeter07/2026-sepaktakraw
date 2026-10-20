@@ -65,7 +65,7 @@ async function seedAllPlayers() {
       name: a.name,
       position: pos,
       jersey_number: a.jerseyNo || ((idx % 25) + 1),
-      photo_url: a.photo || '/players/ashit.jpg',
+      photo_url: a.photo || null,
       bio: `State registered athlete representing ${a.district}. URN: ${a.urn || 'MSTA-REGISTERED'}. Competes in MSTA sanctioned state championships.`,
       height: a.gender === 'Female' ? "5'7\"" : "5'11\"",
       weight: a.gender === 'Female' ? "58 kg" : "70 kg",

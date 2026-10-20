@@ -181,6 +181,32 @@ export function TournamentsClient({
                 />
               ))}
             </div>
+          ) : filterStatus === 'ongoing' ? (
+            <div className="text-center py-16 px-6 bg-white rounded-3xl border border-slate-200/80 shadow-sm max-w-xl mx-auto">
+              <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <Trophy className="h-7 w-7" />
+              </div>
+              <h3 className="text-slate-900 text-xl font-black">
+                No Tournaments In Progress Today
+              </h3>
+              <p className="text-slate-600 text-sm mt-2 max-w-md mx-auto leading-relaxed">
+                The <span className="font-bold text-slate-800">36th Senior Maharashtra State Sepaktakraw Championship 2026</span> has concluded. The next sanctioned state tournament begins soon.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 justify-center">
+                <button
+                  onClick={() => setFilterStatus('upcoming')}
+                  className="px-5 py-2.5 rounded-xl bg-[#1e3a8a] text-white text-xs font-bold hover:bg-[#2563eb] transition shadow-sm cursor-pointer"
+                >
+                  View Upcoming Tournaments ({initialTournaments.filter(t => t.status === 'upcoming').length})
+                </button>
+                <button
+                  onClick={() => setFilterStatus('completed')}
+                  className="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition border border-slate-200 cursor-pointer"
+                >
+                  View Completed Results ({initialTournaments.filter(t => t.status === 'completed').length})
+                </button>
+              </div>
+            </div>
           ) : (
             <div className="text-center py-20 bg-white rounded-2xl border shadow-sm max-w-lg mx-auto">
               <ShieldAlert className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -190,6 +216,12 @@ export function TournamentsClient({
               <p className="text-muted-foreground text-sm mt-1">
                 Try selecting a different status filter above.
               </p>
+              <button
+                onClick={() => setFilterStatus('all')}
+                className="mt-4 px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200 transition"
+              >
+                Reset to All Tournaments
+              </button>
             </div>
           )}
         </div>
