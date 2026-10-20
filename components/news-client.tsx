@@ -1,5 +1,7 @@
 'use client'
 
+import { getCdnUrl } from '@/lib/cdn-image'
+
 import { useState } from 'react'
 import { PageHero } from '@/components/page-hero'
 import { Calendar, Clock, ArrowRight, X, Newspaper } from 'lucide-react'
@@ -59,7 +61,7 @@ export function NewsClient({ initialArticles }: NewsClientProps) {
                       {featured.imageUrl && (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
-                          src={featured.imageUrl}
+                          src={getCdnUrl(featured.imageUrl)}
                           alt={featured.title}
                           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                         />
@@ -106,7 +108,7 @@ export function NewsClient({ initialArticles }: NewsClientProps) {
                         {item.imageUrl && (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
-                            src={item.imageUrl}
+                            src={getCdnUrl(item.imageUrl)}
                             alt={item.title}
                             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                           />
@@ -159,7 +161,7 @@ export function NewsClient({ initialArticles }: NewsClientProps) {
               {selectedArticle.imageUrl && (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src={selectedArticle.imageUrl}
+                  src={getCdnUrl(selectedArticle.imageUrl)}
                   alt={selectedArticle.title}
                   className="h-full w-full object-cover"
                 />

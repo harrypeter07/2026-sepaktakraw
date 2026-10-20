@@ -1,6 +1,7 @@
 'use client'
 
 import siteContent from './site-content.json'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 // A single site setting value. Image keys use `url` (+ optional `alt`/`caption`);
 // text keys use `text`. JSONB in the DB lets one row carry either shape.
@@ -179,7 +180,10 @@ export const SettingsManager = {
 export function useSiteSettings() {
   const settings = { ...SETTINGS_DEFAULTS, ...(siteContent as SiteSettings) }
 
-  const img = (key: string, fallback = '') => settings[key]?.url || fallback
+  const img = (key: string, fallback = '') => {
+    const raw = settings[key]?.url || fallback
+    return raw ? getCdnUrl(raw) : ''
+  }
   const alt = (key: string, fallback = '') => settings[key]?.alt || fallback
   const txt = (key: string, fallback = '') => settings[key]?.text || fallback
 

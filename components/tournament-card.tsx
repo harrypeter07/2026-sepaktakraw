@@ -1,4 +1,5 @@
 import { Trophy, MapPin, Calendar } from 'lucide-react'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 interface TournamentCardProps {
   id: string
@@ -40,7 +41,7 @@ export function TournamentCard({
         {displayImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={displayImage}
+            src={getCdnUrl(displayImage)}
             alt={name}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
           />

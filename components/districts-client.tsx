@@ -266,7 +266,7 @@ export function DistrictsClient({ districts, tallies }: DistrictsClientProps) {
                 <div className="w-28 h-28 rounded-full border border-slate-100 bg-slate-50 flex items-center justify-center p-3 overflow-hidden shadow-inner mb-3 shrink-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={selectedDistrict.logo}
+                    src={getCdnUrl(selectedDistrict.logo)}
                     alt={selectedDistrict.name}
                     className="h-full w-full object-contain"
                   />

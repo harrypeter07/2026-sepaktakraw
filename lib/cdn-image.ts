@@ -32,9 +32,15 @@ export function getCdnUrl(src?: string | null, options?: ImageTransformOptions):
 
   const base = cdnEndpoint.endsWith('/') ? cdnEndpoint.slice(0, -1) : cdnEndpoint
 
+  // Safeguard: avoid repeating /imagekit-upload if both base and path contain it
+  let cleanPath = normalizedPath
+  if (base.endsWith('/imagekit-upload') && cleanPath.startsWith('/imagekit-upload/')) {
+    cleanPath = cleanPath.slice('/imagekit-upload'.length)
+  }
+
   // Don't append query transformations to video files
-  if (normalizedPath.endsWith('.mp4') || normalizedPath.endsWith('.webm')) {
-    return `${base}${normalizedPath}`
+  if (cleanPath.endsWith('.mp4') || cleanPath.endsWith('.webm')) {
+    return `${base}${cleanPath}`
   }
 
   const trParts: string[] = ['f-auto', 'q-80']
@@ -43,7 +49,7 @@ export function getCdnUrl(src?: string | null, options?: ImageTransformOptions):
   if (options?.quality) trParts[1] = `q-${options.quality}`
   if (options?.format) trParts[0] = `f-${options.format}`
 
-  return `${base}${normalizedPath}?tr=${trParts.join(',')}`
+  return `${base}${cleanPath}?tr=${trParts.join(',')}`
 }
 
 export default getCdnUrl

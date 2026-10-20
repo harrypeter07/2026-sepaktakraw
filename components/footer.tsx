@@ -67,7 +67,7 @@ export default function Footer() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={item.url}
+                  src={getCdnUrl(item.url)}
                   alt={item.name}
                   onError={(e) => {
                     ;(e.target as HTMLElement).style.display = 'none'

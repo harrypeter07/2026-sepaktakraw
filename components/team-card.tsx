@@ -1,4 +1,5 @@
 import { Users, MapPin, Calendar } from 'lucide-react'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 interface TeamCardProps {
   id: string
@@ -51,7 +52,7 @@ export function TeamCard({
         <div className="h-16 w-16 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white flex-shrink-0">
           {logoUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoUrl} alt={name} className="h-full w-full object-cover" />
+            <img src={getCdnUrl(logoUrl)} alt={name} className="h-full w-full object-cover" />
           ) : (
             <div className={`h-full w-full flex items-center justify-center bg-gradient-to-br ${color}`}>
               <span className="text-white font-black text-lg">{initials}</span>
