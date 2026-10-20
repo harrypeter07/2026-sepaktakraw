@@ -17,6 +17,7 @@ import { useSiteSettings } from '@/lib/site-settings'
 import { ScrollReveal } from '@/components/scroll-reveal'
 import recordsData from '@/lib/msta-records.json'
 import { GameDisciplines } from '@/components/game-disciplines'
+import { getCdnUrl } from '@/lib/cdn-image'
 
 const VALUES = [
   { key: 'about.value_1', icon: Award },
@@ -312,8 +313,20 @@ export function AboutClient() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1e3a8a] to-[#2563eb] text-white font-black text-base shadow-md">
-                          {initials}
+                        <div className="h-16 w-16 rounded-2xl overflow-hidden border-2 border-blue-600/30 shadow-md shrink-0 bg-slate-100 flex items-center justify-center">
+                          {officer.photoUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={getCdnUrl(officer.photoUrl)}
+                              alt={officer.name}
+                              onError={(e) => {
+                                ;(e.target as HTMLImageElement).style.display = 'none'
+                              }}
+                              className="h-full w-full object-cover object-top"
+                            />
+                          ) : (
+                            <span className="font-black text-blue-900 text-base">{initials}</span>
+                          )}
                         </div>
                         <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-200 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-blue-700">
                           Council Officer

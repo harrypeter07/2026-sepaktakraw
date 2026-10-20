@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-const foldersToCopy = ['logos', 'hero', 'official']
+const foldersToCopy = ['logos', 'hero', 'official', 'players']
 
 for (const folder of foldersToCopy) {
   const src = path.resolve('public', folder)

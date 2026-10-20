@@ -2098,7 +2098,8 @@
         "jerseyNumber": 1,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/aniket.jpg"
       },
       {
         "id": "ms-men-2",
@@ -2108,7 +2109,8 @@
         "jerseyNumber": 2,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/lekhanshu.jpg"
       },
       {
         "id": "ms-men-3",
@@ -2118,7 +2120,8 @@
         "jerseyNumber": 3,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/faizan.jpg"
       },
       {
         "id": "ms-men-4",
@@ -2128,7 +2131,8 @@
         "jerseyNumber": 4,
         "position": "Feeder",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/ashit.jpg"
       },
       {
         "id": "ms-men-5",
@@ -2138,7 +2142,8 @@
         "jerseyNumber": 5,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/vijay.jpg"
       },
       {
         "id": "ms-men-6",
@@ -2148,7 +2153,8 @@
         "jerseyNumber": 6,
         "position": "Feeder",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/altamash.jpg"
       },
       {
         "id": "ms-men-7",
@@ -2158,7 +2164,8 @@
         "jerseyNumber": 7,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/sandip.jpg"
       },
       {
         "id": "ms-men-8",
@@ -2168,7 +2175,8 @@
         "jerseyNumber": 8,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/sukumar.jpg"
       },
       {
         "id": "ms-men-9",
@@ -2178,7 +2186,8 @@
         "jerseyNumber": 9,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/kunal.jpg"
       },
       {
         "id": "ms-men-10",
@@ -2188,7 +2197,8 @@
         "jerseyNumber": 10,
         "position": "Feeder",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/irshad.jpg"
       },
       {
         "id": "ms-men-11",
@@ -2198,7 +2208,8 @@
         "jerseyNumber": 11,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/sohail.jpg"
       },
       {
         "id": "ms-men-12",
@@ -2208,7 +2219,8 @@
         "jerseyNumber": 12,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/amol.jpg"
       },
       {
         "id": "ms-men-13",
@@ -2218,7 +2230,8 @@
         "jerseyNumber": 13,
         "position": "Feeder",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/om.jpg"
       },
       {
         "id": "ms-men-14",
@@ -2228,7 +2241,8 @@
         "jerseyNumber": 14,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/asang.jpg"
       },
       {
         "id": "ms-men-15",
@@ -2238,7 +2252,8 @@
         "jerseyNumber": 15,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Men"
+        "division": "Senior Men",
+        "photoUrl": "/players/shahnawaz.jpg"
       }
     ],
     "women": [
@@ -2250,7 +2265,8 @@
         "jerseyNumber": 1,
         "position": "Killer",
         "role": "State Athlete",
-        "division": "Senior Women"
+        "division": "Senior Women",
+        "photoUrl": "/players/apeksha.jpg"
       },
       {
         "id": "ms-women-2",
@@ -2260,7 +2276,8 @@
         "jerseyNumber": 2,
         "position": "Tekong",
         "role": "State Athlete",
-        "division": "Senior Women"
+        "division": "Senior Women",
+        "photoUrl": "/players/chetana.jpg"
       },
       {
         "id": "ms-women-3",
@@ -2270,44 +2287,52 @@
         "jerseyNumber": 3,
         "position": "Feeder",
         "role": "State Athlete",
-        "division": "Senior Women"
+        "division": "Senior Women",
+        "photoUrl": "/players/madhura.jpg"
       }
     ],
     "staff": [
       {
         "id": "staff-1",
         "name": "Sandeep Ramkanwar Saroha",
-        "role": "National / State Chief Coach"
+        "role": "National / State Chief Coach",
+        "photoUrl": "/players/sandeep.jpg"
       },
       {
         "id": "staff-2",
         "name": "Dr. Amrita Yogendra Pande",
-        "role": "State Team Physiotherapist & Official"
+        "role": "State Team Physiotherapist & Official",
+        "photoUrl": "/players/amrita.jpeg"
       },
       {
         "id": "staff-3",
         "name": "Amit Ramesh Kanwar",
-        "role": "Team Manager (Senior Squad)"
+        "role": "Team Manager (Senior Squad)",
+        "photoUrl": "/players/amit.jpg"
       },
       {
         "id": "staff-4",
         "name": "Vinay Divakar Moon",
-        "role": "Assistant Coach & Technical Official"
+        "role": "Assistant Coach & Technical Official",
+        "photoUrl": "/players/vinay.jpeg"
       },
       {
         "id": "staff-5",
         "name": "Sonal Bhanudas Dhadse",
-        "role": "Women Team Coach / Coordinator"
+        "role": "Women Team Coach / Coordinator",
+        "photoUrl": "/players/sonal.jpg"
       },
       {
         "id": "staff-6",
         "name": "Vipin Manharkant Kamdar",
-        "role": "Head of Delegation & Official"
+        "role": "Head of Delegation & Official",
+        "photoUrl": "/players/vipin.jpeg"
       },
       {
         "id": "staff-7",
         "name": "Dr. Yogendra Vinay Pandey",
-        "role": "MSTA President / Technical Director"
+        "role": "MSTA President / Technical Director",
+        "photoUrl": "/players/dr_pandey.jpeg"
       }
     ]
   }
